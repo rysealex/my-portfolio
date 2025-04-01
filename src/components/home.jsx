@@ -2,8 +2,8 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>
-      <div>
+    <div className='home-container'>
+      <div className='pic-container'>
         <img src='/profile_pic.jpg' alt='profile_pic'></img>
       </div>
       <h2>Alex Ryse</h2>
