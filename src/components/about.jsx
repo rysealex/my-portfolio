@@ -1,8 +1,10 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function About() {
   return (
-    <div>
+    <div className='about-container'>
       <h2>About Me</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
@@ -25,6 +27,20 @@ function About() {
         Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. 
         Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
       </p>
+      <div className='socials'>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/alex-ryse/">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/rysealex">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

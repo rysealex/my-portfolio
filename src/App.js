@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Home from './components/home.jsx';
 import About from './components/about.jsx';
 import Skills from './components/skills.jsx';
@@ -5,6 +6,22 @@ import Projects from './components/projects.jsx';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+    const toggleScrollButtonVisibility = () => {
+      // if scroll down 200px, show the button
+      if (window.scrollY > 200) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+    };
+
+    window.addEventListener('scroll', toggleScrollButtonVisibility);
+    return () => window.removeEventListener('scroll', toggleScrollButtonVisibility);
+  }, []);
+
   return (
     <div id='page-top'>
       <nav>
@@ -34,6 +51,9 @@ function App() {
       <section id="projects">
         <Projects />
       </section>
+      <a className="scroll-to-top" href="#page-top">
+        <button>Up</button>
+      </a>
     </div>
   );
 }

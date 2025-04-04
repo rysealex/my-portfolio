@@ -45,8 +45,20 @@ section {
   text-align: center;
 }
 
-#about {
-  background-color: gray;
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in-out, visibility 0s 0.25s;
+  cursor: pointer;
+  z-index: 1000;
+}
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s ease-in-out;
 }
 
 #skills {
@@ -59,7 +71,7 @@ section {
 
 /* Styles for the home.jsx */
 
-#home h2, h3 {
+.home-container h2, h3 {
   color: white;
 }
 
@@ -74,7 +86,43 @@ section {
   flex-direction: column;
 }
 
+.pic-container {
+  margin-top: 100px;
+}
 .pic-container img {
-  padding-top: 70px;
   width: 250px;
+  border-radius: 50%;
+  border: solid white 8px;
+}
+
+/* Styles for the about.jsx */
+.about-container {
+  background-color: gray;
+}
+
+.socials ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.socials li {
+  margin: 0 20px;
+}
+.socials a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.socials a:hover {
+  background-color: blue;
 }
