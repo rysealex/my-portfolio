@@ -5,29 +5,30 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 function About() {
   return (
     <div className='about-container'>
-      <h2>About Me</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. Aenean massa. 
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
-        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
-        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. 
-        Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
-        Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
-        Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. 
-        Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
-        Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-        Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, 
-        sem quam semper libero, sit amet adipiscing sem neque sed ipsum. 
-        Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-        Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-        Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. 
-        Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. 
-        Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-      </p>
+      <div className='cwu-container'>
+        <a href='https://www.cwu.edu/' className='cwu-logo'>
+          <img src='cwu-logo.png' alt='cwu-logo'></img>
+        </a>
+      </div>
+      <div className='intro-container'>
+        <h2>Hi, I'm Alex Ryse!</h2>
+        <p>
+          I am currently an undergraduate student at Central Washington University, pursuing a Bachelor's Degree in Computer Science.
+          My passion for computer science drives me to continuosly explore and deepend my knowledge in this dynamic field.
+          I am very eager to learn, grow, and apply my skills to solve real-world challenges.
+          Currently, I am a Mathematics Tutor and Teacher Assistant at my University, where I help support students.
+          After graduation, I plan to pursue a Master's Degree in Computer Science to further specialize my skills and enhance my ability to contribute to innovative projects in the tech industry.
+        </p>
+      </div>
+      <div className='exp-container'>
+        <h3>My Experiences</h3>
+        <ul>
+          <li>Mathematics Tutor</li>
+          <li>Teacher Assistant</li>
+        </ul>
+      </div>
       <div className='socials'>
+        <h3>My Socials</h3>
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/alex-ryse/">

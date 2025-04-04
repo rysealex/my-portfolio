@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import Home from './components/home.jsx';
 import About from './components/about.jsx';
 import Skills from './components/skills.jsx';
@@ -25,19 +27,16 @@ function App() {
   return (
     <div id='page-top'>
       <nav>
-        <div className='nav-container'>
-          <a href='#page-top'><b>Alex Ryse</b></a>
-          <button>Menu</button>
-          <div>
-            <ul>
-              <li><a href="#home">HOME</a></li>
-              <li><a href="#about">ABOUT</a></li>
-              <li><a href="#skills">SKILLS</a></li>
-              <li><a href="#projects">PROJECTS</a></li>
-              <li><a href="#resume">RESUME</a></li>
-            </ul>
-          </div>
+        <div className='nav-left'>
+          <a href='#page-top' className='name-logo'><b>Alex Ryse</b></a>
         </div>
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#resume"><FontAwesomeIcon icon={faFilePdf} /> RESUME</a></li>
+        </ul>
       </nav>
       <section id="home">
         <Home />
