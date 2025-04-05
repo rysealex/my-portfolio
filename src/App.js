@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import Home from './components/home.jsx';
 import About from './components/about.jsx';
 import Skills from './components/skills.jsx';
@@ -51,7 +52,7 @@ function App() {
         <Projects />
       </section>
       <a className="scroll-to-top" href="#page-top">
-        <button>Up</button>
+        <FontAwesomeIcon icon={faAngleUp} />
       </a>
     </div>
   );
