@@ -83,7 +83,7 @@ section {
 }
 
 #projects {
-  background-color: #848484;
+  background-color: #FFFFFF;
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -228,4 +228,34 @@ section {
 }
 .mfizz-cplusplus {
   font-size: 50px;
+}
+
+/* Styles for the contact.jsx */
+.contact-container {
+  background-color: #1c1c1c;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.contact-container h2 {
+  color: #FFFFFF;
+  font-size: 50px;
+}
+.contact-container h3 {
+  color: #FFFFFF;
+  padding: 0 15px;
+}
+.contact-container p {
+  color: #FFFFFF;
+}
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-info a {
+  color: #0E3CBD;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
 }

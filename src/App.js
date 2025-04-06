@@ -6,6 +6,7 @@ import Home from './components/home.jsx';
 import About from './components/about.jsx';
 import Skills from './components/skills.jsx';
 import Projects from './components/projects.jsx';
+import Contact from './components/contact.jsx';
 import './App.css';
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
           <li><a href="#about" className={isLoaded && activeSection === 'about' ? 'active' : ''}>ABOUT</a></li>
           <li><a href="#skills" className={isLoaded && activeSection === 'skills' ? 'active' : ''}>SKILLS</a></li>
           <li><a href="#projects" className={isLoaded && activeSection === 'projects' ? 'active' : ''}>PROJECTS</a></li>
+          <li><a href="#contact" className={isLoaded && activeSection === 'contact' ? 'active' : ''}>CONTACT</a></li>
           <li><a href="Resume Alex Ryse Upd.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b></a></li>
         </ul>
       </nav>
@@ -92,6 +94,9 @@ function App() {
       </section>
       <section id="projects">
         <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
       <a className="scroll-to-top" href="#page-top">
         <FontAwesomeIcon icon={faAngleUp} />
