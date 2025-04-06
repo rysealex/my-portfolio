@@ -49,6 +49,9 @@ nav a {
 nav a:hover {
   color: #0E3CBD;
 }
+nav a.active {
+  color: #0E3CBD;
+}
 
 section {
   padding: 100px, 100px;
