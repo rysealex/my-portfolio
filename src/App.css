@@ -330,3 +330,13 @@ section {
 .submit-container button:hover {
   background-color: #25a0de9f;
 }
+.error {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 40px;
+}
+.message-state {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 40px;
+}
