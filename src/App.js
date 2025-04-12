@@ -7,6 +7,7 @@ import About from './components/about.jsx';
 import Skills from './components/skills.jsx';
 import Projects from './components/projects.jsx';
 import Contact from './components/contact.jsx';
+import Footer from './components/footer.jsx';
 import './App.css';
 
 function App() {
@@ -97,6 +98,9 @@ function App() {
       </section>
       <section id="contact">
         <Contact />
+      </section>
+      <section>
+        <Footer />
       </section>
       <a className="scroll-to-top" href="#page-top">
         <FontAwesomeIcon icon={faAngleUp} />

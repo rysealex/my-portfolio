@@ -104,7 +104,8 @@ function Contact() {
       	</p>
       </div>
 			<div className='contact-info'>
-				<h3>Email: <a href='mailto:RyseA@cwu.edu'>RyseA@cwu.edu</a></h3>
+				<h3>Personal Email: <a href='mailto:aryse54@gmail.com'>aryse54@gmail.com</a></h3>
+        <h3>School Email: <a href='mailto:RyseA@cwu.edu'>RyseA@cwu.edu</a></h3>
 				<h3>Phone: <a href='tel:+15099923778'>509-992-3778</a></h3>
 			</div>
 			<div className='form-container'>
