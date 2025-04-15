@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 function Contact() {
@@ -8,6 +8,12 @@ function Contact() {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // contact info use refs
+  const fnameRef = useRef(null);
+  const lnameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
 
   // error messages use state
   const [errorMessages, setErrorMessages] = useState([]);
@@ -52,9 +58,21 @@ function Contact() {
       errors.push("Please enter your message"); 
     }
 
+    // add focus in prioritizing order of top to bottom
+    if (fname === "") {
+      fnameRef.current.focus();
+    } else if (lname === "") {
+      lnameRef.current.focus();
+    } else if (email === "") {
+      emailRef.current.focus();
+    } else if (message === "") {
+      messageRef.current.focus();
+    }
+
     // check for any errors
     if (errors.length > 0) {
       setErrorMessages(errors);
+      
       return;
     }
 
@@ -112,11 +130,11 @@ function Contact() {
 				<form id='contact-form' onSubmit={handleSubmit}>
           <div className='contact-form-container'>
             <div className='input-info-container'>
-              <input type='text' id='fname' placeholder='First Name' onChange={handleFnameChange} value={fname}></input>
-              <input type='text' id='lname' placeholder='Last Name' onChange={handleLnameChange} value={lname}></input>
-              <input type='text' id='email' placeholder='Email' onChange={handleEmailChange} value={email}></input>
+              <input type='text' id='fname' placeholder='First Name' onChange={handleFnameChange} value={fname} ref={fnameRef}></input>
+              <input type='text' id='lname' placeholder='Last Name' onChange={handleLnameChange} value={lname} ref={lnameRef}></input>
+              <input type='text' id='email' placeholder='Email' onChange={handleEmailChange} value={email} ref={emailRef}></input>
 					  </div>
-            <textarea id='message' placeholder='Message' onChange={handleMessageChange} value={message}></textarea>
+            <textarea id='message' placeholder='Message' onChange={handleMessageChange} value={message} ref={messageRef}></textarea>
           </div>
           <p className='error'>
             {errorMessages.map((err, index) => (
