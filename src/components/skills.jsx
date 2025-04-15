@@ -11,6 +11,7 @@ function Skills() {
         <p>
           Below are some of my technical skills, including programming langauges, software, and more.
           <br/>
+          <br/>
           I am always looking to improve and learn new skills as I grow!
         </p>
       </div>

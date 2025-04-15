@@ -69,6 +69,20 @@ function App() {
     return () => window.removeEventListener('scroll', toggleScrollButtonVisibility);
   }, []);
 
+  // handle the nav bar scroll behavior
+  const handleScroll = (e, sectionId) => {
+    e.preventDefault();
+    
+    const section = document.getElementById(sectionId);
+    const navHeight = 60;
+
+    if (section) {
+      const yOffset = -navHeight;
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth'});
+    }
+  };
+
   return (
     <div id='page-top'>
       <nav>
@@ -76,12 +90,36 @@ function App() {
           <a href='#page-top' className='name-logo'><b>Alex Ryse</b></a>
         </div>
         <ul>
-          <li><a href="#home" className={isLoaded && activeSection === 'home' ? 'active' : ''}>HOME</a></li>
-          <li><a href="#about" className={isLoaded && activeSection === 'about' ? 'active' : ''}>ABOUT</a></li>
-          <li><a href="#skills" className={isLoaded && activeSection === 'skills' ? 'active' : ''}>SKILLS</a></li>
-          <li><a href="#projects" className={isLoaded && activeSection === 'projects' ? 'active' : ''}>PROJECTS</a></li>
-          <li><a href="#contact" className={isLoaded && activeSection === 'contact' ? 'active' : ''}>CONTACT</a></li>
-          <li><a href="Resume Alex Ryse Upd.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b></a></li>
+          <li>
+            <a href="#home" onClick={(e) => handleScroll(e, 'home')} className={isLoaded && activeSection === 'home' ? 'active' : ''}>
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={(e) => handleScroll(e, 'about')} className={isLoaded && activeSection === 'about' ? 'active' : ''}>
+              ABOUT
+            </a>
+          </li>
+          <li>
+            <a href="#skills" onClick={(e) => handleScroll(e, 'skills')} className={isLoaded && activeSection === 'skills' ? 'active' : ''}>
+              SKILLS
+            </a>
+          </li>
+          <li>
+            <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className={isLoaded && activeSection === 'projects' ? 'active' : ''}>
+              PROJECTS
+            </a>
+          </li>
+          <li>
+            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className={isLoaded && activeSection === 'contact' ? 'active' : ''}>
+              CONTACT
+            </a>
+          </li>
+          <li>
+            <a href="Resume Alex Ryse Upd.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> 
+              <b>RESUME</b>
+            </a>
+          </li>
         </ul>
       </nav>
       <section id="home">
