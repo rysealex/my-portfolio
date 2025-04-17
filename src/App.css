@@ -242,6 +242,57 @@ section {
 .projects-container h3 {
   font-size: 30px;
 }
+.projects-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tech-stack {
+  background-color: #efefef;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.tech-stack h4 {
+
+}
+.tech-stack ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.project-link a {
+  text-decoration: none;
+  color: #0E3CBD;
+}
+.project-link a:hover {
+  text-decoration: underline;
+}
 .github-button-container {
   margin-top: 50px;
   margin-bottom: 100px;

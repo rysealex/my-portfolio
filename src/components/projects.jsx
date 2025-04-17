@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+// project details
+const projects = [
+  {
+    title: 'Fitness Tracker',
+    image: 'fitness-tracker-small.png',
+    description: 'Web app fitness tracker.',
+    tech: ['React', 'Flask', 'Docker'],
+    link: 'https://github.com/rysealex/fitness-tracker',
+  },
+  {
+    title: 'Guitar Store',
+    image: 'guitar-store.png',
+    description: 'Web app guitar store.',
+    tech: ['JavaScript', 'PHP', 'SQL'],
+    link: 'https://github.com/rysealex/guitar-store',
+  },
+];
+
 function Projects() {
+
+  // determines which project is selected
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <div className='projects-container'>
       <div>
@@ -15,20 +37,39 @@ function Projects() {
         </p>
       </div>
       <div className='projects-showcase'>
-        <div>
-          <img></img>
-          <h3>Fitness Tracker</h3>
-          <p>Web app fitness tracker.</p>
-          <div>
-            <span>React</span>
-            <span>Flask</span>
-            <span>Docker</span>
-          </div>
-          <div>
-            <a>View on my GitHub</a>
+        {projects.map((project, index) => {
+          return (
+            <div
+              key={index}
+              className='project-card'
+              style={{ backgroundImage: `url(${project.image})` }}
+              onClick={() => setSelectedProject(project)}
+            >
+              <div className='overlay'>
+                <h3>{project.title}</h3>
+              </div>
+            </div>  
+          );
+        })}
+      </div>
+      {selectedProject && (
+        <div className='modal'>
+          <div className='modal-container'> 
+            <h2>{selectedProject.title}</h2>
+            <p>{selectedProject.description}</p>
+            <h3>Tech Stack</h3>
+            <ul>
+              {selectedProject.tech.map((item, i) => (
+                <li key={i}><b>{item}</b></li>
+              ))}
+            </ul> 
+            <a href={selectedProject.link} target='_blank'>
+              View on GitHub
+            </a>
+            <span className='close' onClick={() => setSelectedProject(null)}>X</span>
           </div>
         </div>
-      </div>
+      )}
       <div className='visit-github'>
         <div>
           <h3>To view all of my projects</h3>
