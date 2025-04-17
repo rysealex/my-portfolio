@@ -14,8 +14,20 @@ function Projects() {
           I always strive to tackle new projects in my free time to expand my knowledge and experiences!
         </p>
       </div>
-      <div>
-        PROJECTS HERE...
+      <div className='projects-showcase'>
+        <div>
+          <img></img>
+          <h3>Fitness Tracker</h3>
+          <p>Web app fitness tracker.</p>
+          <div>
+            <span>React</span>
+            <span>Flask</span>
+            <span>Docker</span>
+          </div>
+          <div>
+            <a>View on my GitHub</a>
+          </div>
+        </div>
       </div>
       <div className='visit-github'>
         <div>
