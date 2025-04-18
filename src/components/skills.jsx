@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Skills() {
   return (
-    <div className='skills-container'>
+    <div className='skills-container' id='skills'>
       <div>
         <h2>Skills</h2>
         <p>
@@ -17,7 +17,7 @@ function Skills() {
       </div>
       {/* Skill 1 */}
       <div className='row' style={{ marginBottom: '48px' }}>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='java'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faJava} className="fa-4x" />
           </span>
@@ -29,7 +29,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='python'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faPython} className="fa-4x" />
           </span>
@@ -42,7 +42,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='javascript'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faJsSquare} className="fa-4x" />
           </span>
@@ -55,7 +55,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='react'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faReact} className="fa-4x" />
           </span>
@@ -68,7 +68,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='linux'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faUbuntu} className="fa-4x" />
           </span>
@@ -81,7 +81,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='c/c++'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <i className='mfizz-cplusplus'></i>
           </span>
@@ -94,7 +94,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='sql'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faDatabase} className="fa-4x" />
           </span>
@@ -107,7 +107,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='php'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faPhp} className="fa-4x" />
           </span>
@@ -120,7 +120,7 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5">
+        <div className="col-lg-4 col-md-6 mb-5" id='docker'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
             <FontAwesomeIcon icon={faDocker} className="fa-4x" />
           </span>

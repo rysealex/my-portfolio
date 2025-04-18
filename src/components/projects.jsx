@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 // project details
 const projects = [
   {
     title: 'Fitness Tracker',
     image: 'fitness-tracker-small.png',
-    description: 'Web app fitness tracker.',
+    description: 'Developed a fully functional fitness tracker web application with a React frontend and Python Flask ' +
+                  'backend, leveraging Docker to create separate Dockerfiles for each service.\n' +
+                  'Implemented user authentication and features to allow users to update and track personal fitness stats.\n' +
+                  'Enhanced proficiency in Docker, React, Flask, APIs, and containerized web application architectures',
     tech: ['React', 'Flask', 'Docker'],
     link: 'https://github.com/rysealex/fitness-tracker',
   },
   {
     title: 'Guitar Store',
     image: 'guitar-store.png',
-    description: 'Web app guitar store.',
+    description: 'Designed a responsive guitar store web application using JavaScript and jQuery, ' +
+                  'following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.\n' +
+                  'Built the back end using PHP and integrated SQL for managing product inventory and user data, ' +  
+                  'utilizing phpMyAdmin for database management.',
     tech: ['JavaScript', 'PHP', 'SQL'],
     link: 'https://github.com/rysealex/guitar-store',
   },
@@ -24,6 +31,16 @@ function Projects() {
 
   // determines which project is selected
   const [selectedProject, setSelectedProject] = useState(null);
+
+  // disable the scroll when modal open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => (document.body.style.overflow = '');
+  }, [selectedProject]);
 
   return (
     <div className='projects-container'>
@@ -46,7 +63,7 @@ function Projects() {
               onClick={() => setSelectedProject(project)}
             >
               <div className='overlay'>
-                <h3>{project.title}</h3>
+                <h3></h3>
               </div>
             </div>  
           );
@@ -59,14 +76,35 @@ function Projects() {
             <p>{selectedProject.description}</p>
             <h3>Tech Stack</h3>
             <ul>
-              {selectedProject.tech.map((item, i) => (
-                <li key={i}><b>{item}</b></li>
-              ))}
+              {selectedProject.tech.map((item, i) => {
+                // get the current name of tech stack
+                const targetId = typeof item === 'string' ? item.toLowerCase() : null;
+                console.log(targetId);
+                return (
+                  <li 
+                    key={i}
+                    onClick={() => {
+                      setSelectedProject(null); // close the modal
+                      setTimeout(() => {
+                        const el = document.getElementById(targetId);
+                        if (el) {
+                          const yOffset = -100;
+                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                      }, 200); // small delay
+                    }}
+                  >
+                    <b>{item}</b>
+                  </li>
+                );
+              })}
             </ul> 
-            <a href={selectedProject.link} target='_blank'>
-              View on GitHub
+            <b>View on GitHub: </b>
+            <a href={selectedProject.link} target='_blank' rel='noreferrer'>
+              {selectedProject.link}
             </a>
-            <span className='close' onClick={() => setSelectedProject(null)}>X</span>
+            <span className='close' onClick={() => setSelectedProject(null)}><FontAwesomeIcon icon={faX} /></span>
           </div>
         </div>
       )}

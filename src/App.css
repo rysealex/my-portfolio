@@ -254,13 +254,15 @@ section {
   border-radius: 12px;
   position: relative;
   cursor: pointer;
-
+}
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px;
 }
 .overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-
 }
 .modal {
   position: fixed;
@@ -271,24 +273,48 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  z-index: 9999;
 }
-.tech-stack {
-  background-color: #efefef;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-top: 10px;
+.modal-container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 75vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px;
+  position: relative;
 }
-.tech-stack h4 {
-
+.modal-container p {
+  text-align: left;
+  white-space: pre-line;
+  font-size: 16px;
+  line-height: 1.6;
 }
-.tech-stack ul {
+.modal-container a {
+  text-decoration: none;
+  color: #0E3CBD;
+}
+.modal-container a:hover {
+  text-decoration: underline;
+}
+.modal-container ul {
   list-style-type: none;
   padding-left: 0;
-  margin: 0;
+  margin-bottom: 30px;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 40px;
+  cursor: pointer;
 }
 .project-link a {
   text-decoration: none;
   color: #0E3CBD;
+  margin-bottom: 30px;
 }
 .project-link a:hover {
   text-decoration: underline;
