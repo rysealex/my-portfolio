@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faReact, faJava, faPython, faJsSquare, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faX, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 // project details
 const projects = [
   {
     title: 'Fitness Tracker',
     image: 'fitness-tracker-small.png',
-    description: 'Developed a fully functional fitness tracker web application with a React frontend and Python Flask ' +
-                  'backend, leveraging Docker to create separate Dockerfiles for each service.\n' +
-                  'Implemented user authentication and features to allow users to update and track personal fitness stats.\n' +
-                  'Enhanced proficiency in Docker, React, Flask, APIs, and containerized web application architectures',
+    description: (
+      <>
+        Developed a fully functional fitness tracker web application with a{' '}
+        <b>React</b> frontend and{' '}
+        <b>Python Flask</b> backend, leveraging{' '} <b>Docker</b> to create separate Dockerfiles for each service.
+        <br />
+        Implemented user authentication and features to allow users to update and track personal fitness stats.
+        <br />
+        Enhanced proficiency in Docker, React, Flask, APIs, and containerized web application architectures.
+      </>
+    ),
     tech: ['React', 'Flask', 'Docker'],
     link: 'https://github.com/rysealex/fitness-tracker',
   },
@@ -22,10 +29,33 @@ const projects = [
                   'following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.\n' +
                   'Built the back end using PHP and integrated SQL for managing product inventory and user data, ' +  
                   'utilizing phpMyAdmin for database management.',
+    description: (
+      <>
+        Designed a responsive guitar store web application using{' '}
+        <b>JavaScript</b> and{' '} <b>jQuery</b>, 
+        following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.
+        <br />
+        Built the back end using{' '} <b>PHP</b> and integrated{' '} <b>SQL</b>
+        for managing product inventory and user data, utilizing phpMyAdmin for database management.
+      </>
+    ),
     tech: ['JavaScript', 'PHP', 'SQL'],
     link: 'https://github.com/rysealex/guitar-store',
   },
 ];
+
+// tech icons
+const techIcons = {
+  Java: <FontAwesomeIcon icon={faJava} />,
+  Python: <FontAwesomeIcon icon={faPython} />,
+  JavaScript: <FontAwesomeIcon icon={faJsSquare} />,
+  React: <FontAwesomeIcon icon={faReact} />,
+  Linux: <FontAwesomeIcon icon={faUbuntu} />,
+  C: <FontAwesomeIcon icon={''} />,
+  SQL: <FontAwesomeIcon icon={faDatabase} />,
+  PHP: <FontAwesomeIcon icon={faPhp} />,
+  Docker: <FontAwesomeIcon icon={faDocker} />,
+};
 
 function Projects() {
 
@@ -73,38 +103,63 @@ function Projects() {
         <div className='modal'>
           <div className='modal-container'> 
             <h2>{selectedProject.title}</h2>
-            <p>{selectedProject.description}</p>
-            <h3>Tech Stack</h3>
-            <ul>
-              {selectedProject.tech.map((item, i) => {
-                // get the current name of tech stack
-                const targetId = typeof item === 'string' ? item.toLowerCase() : null;
-                console.log(targetId);
-                return (
-                  <li 
-                    key={i}
-                    onClick={() => {
-                      setSelectedProject(null); // close the modal
-                      setTimeout(() => {
-                        const el = document.getElementById(targetId);
-                        if (el) {
-                          const yOffset = -100;
-                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                          window.scrollTo({ top: y, behavior: 'smooth' });
-                        }
-                      }, 200); // small delay
-                    }}
-                  >
-                    <b>{item}</b>
-                  </li>
-                );
-              })}
-            </ul> 
-            <b>View on GitHub: </b>
-            <a href={selectedProject.link} target='_blank' rel='noreferrer'>
-              {selectedProject.link}
-            </a>
-            <span className='close' onClick={() => setSelectedProject(null)}><FontAwesomeIcon icon={faX} /></span>
+            <div className='modal-content'>
+              <div className='modal-description'>
+                <p>{selectedProject.description}</p>
+              </div>
+              <div className='modal-tech'>
+                <h3>Tech Stack</h3>
+                <ul>
+                  {selectedProject.tech.map((item, i) => {
+                    // get the current name of tech stack
+                    const targetId = typeof item === 'string' ? item.toLowerCase() : null;
+                    // get the matching icon
+                    const icon = techIcons[item];
+                    console.log(targetId);
+                    return (
+                      <li 
+                        key={i}
+                        onClick={() => {
+                          setSelectedProject(null); // close the modal
+                          setTimeout(() => {
+                            const el = document.getElementById(targetId);
+                            if (el) {
+                              const yOffset = -200;
+                              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                              window.scrollTo({ top: y, behavior: 'smooth' });
+
+                              // get the icon element id
+                              const iconEl = document.getElementById(`icon-${targetId}`);
+                              if (iconEl) {
+                                setTimeout(() => {
+                                  // add skill pop
+                                  iconEl.classList.add('skill-pop');
+                                  // remove after 0.7 sec
+                                  setTimeout(() => {
+                                    iconEl.classList.remove('skill-pop');
+                                  }, 700);
+                                }, 600);
+                              }
+                            }
+                          }, 200); // small delay
+                        }}
+                      >
+                        {icon && <span className='tech-icon'>{icon}</span>} <b>{item}</b>
+                      </li>
+                    );
+                  })}
+                </ul> 
+              </div>
+            </div>
+            <div className='project-link'>
+              <b>View on GitHub: </b>
+              <a href={selectedProject.link} target='_blank' rel='noreferrer'>
+                {selectedProject.link}
+              </a>
+            </div>
+            <span className='close' onClick={() => setSelectedProject(null)}>
+              <FontAwesomeIcon icon={faX} />
+            </span>
           </div>
         </div>
       )}

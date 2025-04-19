@@ -18,7 +18,7 @@ function Skills() {
       {/* Skill 1 */}
       <div className='row' style={{ marginBottom: '48px' }}>
         <div className="col-lg-4 col-md-6 mb-5" id='java'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-java'>
             <FontAwesomeIcon icon={faJava} className="fa-4x" />
           </span>
           <h3><b>Java</b></h3>
@@ -30,7 +30,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='python'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-python'>
             <FontAwesomeIcon icon={faPython} className="fa-4x" />
           </span>
           <h3><b>Python</b></h3>
@@ -43,7 +43,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='javascript'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-javascript'>
             <FontAwesomeIcon icon={faJsSquare} className="fa-4x" />
           </span>
           <h3><b>JavaScript, HTML, CSS</b></h3>
@@ -56,7 +56,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='react'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-react'>
             <FontAwesomeIcon icon={faReact} className="fa-4x" />
           </span>
           <h3><b>React.js</b></h3>
@@ -69,7 +69,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='linux'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-linux'>
             <FontAwesomeIcon icon={faUbuntu} className="fa-4x" />
           </span>
           <h3><b>Linux (Ubuntu)</b></h3>
@@ -81,8 +81,8 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5" id='c/c++'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+        <div className="col-lg-4 col-md-6 mb-5" id='c'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-c'>
             <i className='mfizz-cplusplus'></i>
           </span>
           <h3><b>C/C++</b></h3>
@@ -95,7 +95,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='sql'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-sql'>
             <FontAwesomeIcon icon={faDatabase} className="fa-4x" />
           </span>
           <h3><b>SQL</b></h3>
@@ -108,7 +108,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='php'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-php'>
             <FontAwesomeIcon icon={faPhp} className="fa-4x" />
           </span>
           <h3><b>PHP</b></h3>
@@ -121,7 +121,7 @@ function Skills() {
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='docker'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary">
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-docker'>
             <FontAwesomeIcon icon={faDocker} className="fa-4x" />
           </span>
           <h3><b>Docker</b></h3>
