@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faReact, faJava, faPython, faJsSquare, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
 import { faX, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import TechPieChart from './techPieChart';
 
 // project details
 const projects = [
@@ -19,27 +20,31 @@ const projects = [
         Enhanced proficiency in Docker, React, Flask, APIs, and containerized web application architectures.
       </>
     ),
-    tech: ['React', 'Flask', 'Docker'],
+    tech: [
+      { id: 0, label: 'React', value: 50 },
+      { id: 1, label: 'Flask', value: 30 },
+      { id: 2, label: 'Docker', value: 20 }
+    ],
     link: 'https://github.com/rysealex/fitness-tracker',
   },
   {
     title: 'Guitar Store',
     image: 'guitar-store.png',
-    description: 'Designed a responsive guitar store web application using JavaScript and jQuery, ' +
-                  'following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.\n' +
-                  'Built the back end using PHP and integrated SQL for managing product inventory and user data, ' +  
-                  'utilizing phpMyAdmin for database management.',
     description: (
       <>
         Designed a responsive guitar store web application using{' '}
         <b>JavaScript</b> and{' '} <b>jQuery</b>, 
         following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.
         <br />
-        Built the back end using{' '} <b>PHP</b> and integrated{' '} <b>SQL</b>
+        Built the back end using{' '} <b>PHP</b> and integrated{' '} <b>SQL </b>
         for managing product inventory and user data, utilizing phpMyAdmin for database management.
       </>
     ),
-    tech: ['JavaScript', 'PHP', 'SQL'],
+    tech: [
+      { id: 0, label: 'JavaScript', value: 50 },
+      { id: 1, label: 'PHP', value: 30 },
+      { id: 2, label: 'SQL', value: 20 }
+    ],
     link: 'https://github.com/rysealex/guitar-store',
   },
 ];
@@ -109,10 +114,41 @@ function Projects() {
               </div>
               <div className='modal-tech'>
                 <h3>Tech Stack</h3>
-                <ul>
-                  {selectedProject.tech.map((item, i) => {
+                <TechPieChart
+                  data={selectedProject.tech}
+                  onSliceClick={(label) => {
+                    console.log(`Skill clicked: ${label}`);
                     // get the current name of tech stack
-                    const targetId = typeof item === 'string' ? item.toLowerCase() : null;
+                    const targetId = label.toLowerCase();
+                    // close the modal 
+                    setSelectedProject(null);
+                    // scroll to skill section
+                    setTimeout(() => {
+                      const el = document.getElementById(targetId);
+                      if (el) {
+                        const yOffset = -200;
+                        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                        // get the icon element id
+                        const iconEl = document.getElementById(`icon-${targetId}`);
+                        if (iconEl) {
+                          setTimeout(() => {
+                            // add skill pop
+                            iconEl.classList.add('skill-pop');
+                            // remove after 0.7 sec
+                            setTimeout(() => {
+                              iconEl.classList.remove('skill-pop');
+                            }, 700);
+                          }, 600);
+                        }
+                      }
+                    }, 200); // small delay
+                  }}
+                />
+                {/*<ul className='tech-legend'>
+                  {selectedProject.tech.map((item, i) => {
+                    const techName = item.label;
+                    
                     // get the matching icon
                     const icon = techIcons[item];
                     console.log(targetId);
@@ -121,34 +157,14 @@ function Projects() {
                         key={i}
                         onClick={() => {
                           setSelectedProject(null); // close the modal
-                          setTimeout(() => {
-                            const el = document.getElementById(targetId);
-                            if (el) {
-                              const yOffset = -200;
-                              const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                              window.scrollTo({ top: y, behavior: 'smooth' });
-
-                              // get the icon element id
-                              const iconEl = document.getElementById(`icon-${targetId}`);
-                              if (iconEl) {
-                                setTimeout(() => {
-                                  // add skill pop
-                                  iconEl.classList.add('skill-pop');
-                                  // remove after 0.7 sec
-                                  setTimeout(() => {
-                                    iconEl.classList.remove('skill-pop');
-                                  }, 700);
-                                }, 600);
-                              }
-                            }
-                          }, 200); // small delay
+                          
                         }}
                       >
-                        {icon && <span className='tech-icon'>{icon}</span>} <b>{item}</b>
+                        {icon && <span className='tech-icon'>{icon}</span>} <b>{techName}</b> - {item.value}%
                       </li>
                     );
                   })}
-                </ul> 
+                </ul> */}
               </div>
             </div>
             <div className='project-link'>

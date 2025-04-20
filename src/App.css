@@ -300,6 +300,9 @@ section {
   box-shadow: 0 0 20px;
   position: relative;
 }
+.modal-container h2 {
+  margin-top: 0;
+}
 .modal-container p {
   text-align: left;
   white-space: pre-line;
@@ -331,11 +334,24 @@ section {
   flex: 1.5;
   min-width: 300px;
 }
+.modal-description p {
+  margin-top: 0;
+}
 .modal-tech {
   flex: 1;
   min-width: 250px;
 }
+.modal-tech h3 {
+  margin-top: 0;
+}
 .tech-icon {
+  cursor: pointer;
+}
+.MuiChartsTooltip-root {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+.MuiPieArc-root {
   cursor: pointer;
 }
 .close {
