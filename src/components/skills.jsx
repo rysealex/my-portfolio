@@ -81,8 +81,8 @@ function Skills() {
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5" id='c'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-c'>
+        <div className="col-lg-4 col-md-6 mb-5" id='c++'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-c++'>
             <i className='mfizz-cplusplus'></i>
           </span>
           <h3><b>C/C++</b></h3>
