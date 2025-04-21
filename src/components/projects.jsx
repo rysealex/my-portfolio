@@ -3,12 +3,45 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faReact, faJava, faPython, faJsSquare, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
 import { faX, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import TechPieChart from './techPieChart';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+// tech icon colors
+/*const techColors = {
+  Java: '#AF7219',
+  Python: '#3573A6',
+  Flask: '#3573A6',
+  JavaScript: '#F1E15A',
+  CSS: '#663398',
+  HTML: '#E44C27',
+  React: '#61DAFB',
+  Linux: '#F47421',
+  C: '#555555',
+  'C++': '#F34B7E',
+  CMake: '#DA3434',
+  SQL: '#E38C00',
+  PHP: '#4E5D94',
+  Docker: '#061D2F'
+};*/
 
 // project details
 const projects = [
   {
     title: 'Fitness Tracker',
-    image: 'fitness-tracker-small.png',
+    images: [
+      {
+        src: 'fitness-tracker-small.png',
+        desc: '',
+      },
+      {
+        src: 'fitness-tracker-small.png',
+        desc: 'Description 1Description 1Description 1Description 1Description 1Description 1',
+      },
+      {
+        src: 'fitness-tracker-small.png',
+        desc: 'Description 2',
+      },
+    ],
     description: (
       <>
         Developed a fully functional fitness tracker web application with a{' '}
@@ -28,7 +61,20 @@ const projects = [
   },
   {
     title: 'Guitar Store',
-    image: 'guitar-store.png',
+    images: [
+      {
+        src: 'guitar-store.png',
+        desc: '',
+      },
+      {
+        src: 'guitar-store.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'guitar-store.png',
+        desc: 'Description 2',
+      },
+    ],
     description: (
       <>
         Designed a responsive guitar store web application using{' '}
@@ -48,7 +94,20 @@ const projects = [
   },
   {
     title: 'Financial Data Filtering App',
-    image: 'fdfa.png',
+    images: [
+      {
+        src: 'fdfa.png',
+        desc: ''
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 1'
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 2'
+      },
+    ],
     description: (
       <>
         This is a take-home project for the ValueGlance Full Stack Software Engineer Intern Position. 
@@ -67,7 +126,20 @@ const projects = [
   },
   {
     title: 'Sets Game',
-    image: 'sets-game.png',
+    images: [
+      {
+        src: 'sets-game.png',
+        desc: '',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 2',
+      },
+    ],
     description: (
       <>
         Recreation of the classic card game 'Set'.
@@ -97,7 +169,20 @@ const projects = [
   },
   {
     title: 'Chat App',
-    image: 'chat-app.png',
+    images: [
+      {
+        src: 'chat-app.png',
+        desc: '',
+      },
+      {
+        src: 'chat-app.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'chat-app.png',
+        desc: 'Description 2',
+      },
+    ],
     description: (
       <>
         Built a chat application using{' '} 
@@ -158,7 +243,7 @@ function Projects() {
             <div
               key={index}
               className='project-card'
-              style={{ backgroundImage: `url(${project.image})` }}
+              style={{ backgroundImage: `url(${project.images[0].src})` }}
               onClick={() => setSelectedProject(project)}
             >
               <div className='overlay'>
@@ -183,7 +268,30 @@ function Projects() {
                   onSliceClick={(label) => {
                     console.log(`Skill clicked: ${label}`);
                     // get the current name of tech stack
-                    const targetId = label.toLowerCase();
+                    let targetId = label.toLowerCase();
+                    // check if targetId is a special case
+                    switch(targetId) {
+                      case 'css':
+                        targetId = 'javascript';
+                        break;
+                      case 'html':
+                        targetId = 'javascript';
+                        break;
+                      case 'tailwindcss':
+                        targetId = 'javascript';
+                        break;
+                      case 'c':
+                        targetId = 'c++';
+                        break;
+                      case 'cmake':
+                        targetId = 'c++';
+                        break;
+                      case 'flask':
+                        targetId = 'python';
+                        break;
+                      default:
+                        break;
+                    }
                     // close the modal 
                     setSelectedProject(null);
                     // scroll to skill section
@@ -231,13 +339,33 @@ function Projects() {
                 </ul> */}
               </div>
             </div>
+            <div className='carousel-container'>
+              <Carousel 
+                selectedItem={0}
+                showThumbs={false}
+                showIndicators={false}
+                infiniteLoop 
+                autoPlay
+                interval={5000}
+                showStatus={false}
+                swipeable
+                dynamicHeight={false}
+              >
+                {selectedProject.images?.slice(1).map((img, idx) => (
+                  <div key={idx}>
+                    <img src={img.src} alt={`${selectedProject.title} screenshot ${idx + 2}`} />
+                    <p className='carousel-desc'>{img.desc}</p>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
             <div className='project-link'>
               <b>View on GitHub: </b>
               <a href={selectedProject.link} target='_blank' rel='noreferrer'>
                 {selectedProject.link}
               </a>
             </div>
-            <span className='close' onClick={() => setSelectedProject(null)}>
+            <span className='close' onClick={() => setSelectedProject(null)} >
               <FontAwesomeIcon icon={faX} />
             </span>
           </div>

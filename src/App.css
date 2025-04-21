@@ -361,6 +361,9 @@ section {
   font-size: 40px;
   cursor: pointer;
 }
+.close:hover {
+  color: #5e5e5e;
+}
 .project-link {
   margin-top: 20px;
   font-size: 16px;
@@ -372,6 +375,21 @@ section {
 }
 .project-link a:hover {
   text-decoration: underline;
+}
+.carousel-container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel-container img {
+  border-radius: 8px;
+  max-height: 400px;
+  object-fit: contain;
+}
+.carousel-container .carousel-desc {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
 }
 .github-button-container {
   margin-top: 50px;
