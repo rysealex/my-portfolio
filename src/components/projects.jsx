@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faReact, faJava, faPython, faJsSquare, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faX, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faX, faDatabase, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import TechPieChart from './techPieChart';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -58,6 +58,7 @@ const projects = [
       { id: 4, label: 'Docker', value: 1.6 }
     ],
     link: 'https://github.com/rysealex/fitness-tracker',
+    currDev: true,
   },
   {
     title: 'Guitar Store',
@@ -91,6 +92,7 @@ const projects = [
       { id: 3, label: 'SQL', value: 1.7 },
     ],
     link: 'https://github.com/rysealex/guitar-store',
+    currDev: false,
   },
   {
     title: 'Financial Data Filtering App',
@@ -123,6 +125,7 @@ const projects = [
       { id: 2, label: 'TailwindCSS', value: 5.1 }
     ],
     link: 'https://github.com/rysealex/financial-data-filtering-app',
+    currDev: false,
   },
   {
     title: 'Sets Game',
@@ -166,6 +169,7 @@ const projects = [
       { id: 1, label: 'CMake', value: 7.3 },
     ],
     link: 'https://github.com/rysealex/sets-game',
+    currDev: true,
   },
   {
     title: 'Chat App',
@@ -195,6 +199,7 @@ const projects = [
       { id: 1, label: 'Firebase', value: 10 }
     ],
     link: 'https://github.com/rysealex/Chat-App',
+    currDev: false,
   },
 ];
 
@@ -247,7 +252,11 @@ function Projects() {
               onClick={() => setSelectedProject(project)}
             >
               <div className='overlay'>
-                <h3></h3>
+                {project.currDev && (
+                  <div className='curr-dev-circle'>
+                    <FontAwesomeIcon icon={faCircleNotch} size='lg' />
+                  </div>
+                )}
               </div>
             </div>  
           );
@@ -259,6 +268,12 @@ function Projects() {
             <h2>{selectedProject.title}</h2>
             <div className='modal-content'>
               <div className='modal-description'>
+                {selectedProject.currDev && (
+                  <div className='curr-dev-container'>
+                    <h4><b>Currently Developing</b></h4>
+                    <FontAwesomeIcon icon={faCircleNotch} size='lg' className='spinner' />
+                  </div>
+                )}
                 <p>{selectedProject.description}</p>
               </div>
               <div className='modal-tech'>
@@ -338,6 +353,9 @@ function Projects() {
                   })}
                 </ul> */}
               </div>
+            </div>
+            <div className='screenshots-header'>
+              <h3>Screenshots</h3>
             </div>
             <div className='carousel-container'>
               <Carousel 
