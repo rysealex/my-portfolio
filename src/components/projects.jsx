@@ -65,7 +65,7 @@ const projects = [
     title: 'Guitar Store',
     images: [
       {
-        src: 'guitar-store.png',
+        src: 'guitar-store-logo2.0.png',
         desc: '',
       },
       {
@@ -179,7 +179,7 @@ const projects = [
     title: 'Chat App',
     images: [
       {
-        src: 'chat-app.png',
+        src: 'chat-app-logo2.0.png',
         desc: '',
       },
       {
@@ -191,7 +191,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: '',
+    demo: 'chat-app-vid.mp4',
     description: (
       <>
         Built a chat application using{' '} 
