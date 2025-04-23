@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faReact, faJava, faPython, faJsSquare, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faX, faDatabase, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faX, faDatabase, faCircleNotch, faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 import TechPieChart from './techPieChart';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -42,6 +42,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
+    demo: '',
     description: (
       <>
         Developed a fully functional fitness tracker web application with a{' '}
@@ -76,6 +77,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
+    demo: '',
     description: (
       <>
         Designed a responsive guitar store web application using{' '}
@@ -110,6 +112,7 @@ const projects = [
         desc: 'Description 2'
       },
     ],
+    demo: 'FDFA-vid.mp4',
     description: (
       <>
         This is a take-home project for the ValueGlance Full Stack Software Engineer Intern Position. 
@@ -143,6 +146,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
+    demo: '',
     description: (
       <>
         Recreation of the classic card game 'Set'.
@@ -187,6 +191,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
+    demo: '',
     description: (
       <>
         Built a chat application using{' '} 
@@ -220,6 +225,21 @@ function Projects() {
 
   // determines which project is selected
   const [selectedProject, setSelectedProject] = useState(null);
+
+  // project video demos
+  const videoRef = useRef(null);
+  // start the video demos on command
+  const handlePlay = () => {
+    if (videoRef.current) {
+      // scroll to the video demo
+      videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // delay the video demo play
+      setTimeout(() => {
+        videoRef.current.play();
+      }, 500);
+    }
+  };
+
 
   // disable the scroll when modal open
   useEffect(() => {
@@ -354,10 +374,18 @@ function Projects() {
                 </ul> */}
               </div>
             </div>
-            <div className='screenshots-header'>
+            {/*<div className='screenshots-header'>
               <h3>Screenshots</h3>
+            </div>*/}
+            <div className='demo-container'>
+              <h3 onClick={handlePlay}>
+                <FontAwesomeIcon icon={faAnglesDown} /> Demo <FontAwesomeIcon icon={faAnglesDown} />
+              </h3>
+              <video className='demo-video' ref={videoRef} width="100%" controls loop>
+                <source src={selectedProject.demo} type='video/mp4' />
+              </video>
             </div>
-            <div className='carousel-container'>
+            {/*<div className='carousel-container'>
               <Carousel 
                 selectedItem={0}
                 showThumbs={false}
@@ -376,7 +404,7 @@ function Projects() {
                   </div>
                 ))}
               </Carousel>
-            </div>
+            </div>*/}
             <div className='project-link'>
               <b>View on GitHub: </b>
               <a href={selectedProject.link} target='_blank' rel='noreferrer'>
