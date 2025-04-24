@@ -119,7 +119,8 @@ const projects = [
         This app, built using{' '} <b>React</b> and {' '}<b>TailwindCSS</b>, 
         fetches annual income statements for AAPL (Apple) from an API endpoint. 
         It provides filtering and sorting options (by date, revenue, and net income), and displays the filtered data in a table. 
-        This app is deployed using{' '} <a href='https://rysealex.github.io/financial-data-filtering-app/'><b>GitHub Pages</b></a>.
+        This app is deployed using{' '} 
+        <a href='https://rysealex.github.io/financial-data-filtering-app/' target="_blank" rel="noopener noreferrer"><b>GitHub Pages</b></a>.
       </>
     ),
     tech: [
@@ -200,8 +201,7 @@ const projects = [
       </>
     ),
     tech: [
-      { id: 0, label: 'Java', value: 90 },
-      { id: 1, label: 'Firebase', value: 10 }
+      { id: 0, label: 'Java', value: 100 },
     ],
     link: 'https://github.com/rysealex/Chat-App',
     currDev: false,
@@ -256,10 +256,12 @@ function Projects() {
       <div>
         <h2>Projects</h2>
         <p>
-          Here you can view some of the projects I have built and developed.
-          <br/>
-          <br/>
-          I always strive to tackle new projects in my free time to expand my knowledge and experiences!
+          Here you can view some of the projects I have built and developed—ranging 
+          from full-stack web applications to system-level tools.
+          <br/><br/>
+          In my free time, I enjoy creating, problem-solving, and learning through hands-on projects.
+          <br/><br/>
+          Every project is an opportunity to grow and push the limits of what I can build!
         </p>
       </div>
       <div className='projects-showcase'>
@@ -422,7 +424,7 @@ function Projects() {
           <h3>To view all of my projects</h3>
         </div>
         <div className='github-button-container'>
-          <a href='https://github.com/rysealex' className='github-button'>
+          <a href='https://github.com/rysealex' className='github-button' target="_blank" rel="noopener noreferrer">
             <b>Visit My GitHub</b> <FontAwesomeIcon icon={faGithub} size="lg"/>
           </a>
         </div>

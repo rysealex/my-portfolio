@@ -19,13 +19,13 @@ function Footer() {
 				<div className='socials' id='footer-socials'>
 					<ul>
 						<li>
-							<a href="https://www.linkedin.com/in/alex-ryse/">
-								<FontAwesomeIcon icon={faLinkedinIn} size="lg"/>
+							<a href="https://www.linkedin.com/in/alex-ryse/" target="_blank" rel="noopener noreferrer">
+								<FontAwesomeIcon icon={faLinkedinIn} />
 							</a>
 						</li>
 						<li>
-							<a href="https://github.com/rysealex">
-								<FontAwesomeIcon icon={faGithub} size="lg"/>
+							<a href="https://github.com/rysealex" target="_blank" rel="noopener noreferrer">
+								<FontAwesomeIcon icon={faGithub} />
 							</a>
 						</li>
 					</ul>
@@ -39,7 +39,9 @@ function Footer() {
 							<a href="#contact"><b>Contact</b></a>
 						</li>
 						<li>
-							<a href="Resume Alex Ryse Upd 2.0.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b></a>
+							<a href="Resume Alex Ryse Upd 2.0.pdf" target="_blank" rel="noopener noreferrer">
+								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b
+							></a>
 						</li>
 					</ul>
 				</div>
