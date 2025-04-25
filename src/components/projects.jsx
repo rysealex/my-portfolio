@@ -30,7 +30,7 @@ const projects = [
     title: 'Fitness Tracker',
     images: [
       {
-        src: 'fitness-tracker-small.png',
+        src: 'fitness-tracker-logo.png',
         desc: '',
       },
       {
@@ -45,11 +45,12 @@ const projects = [
     demo: '',
     description: (
       <>
-        Developed a fully functional fitness tracker web application with a{' '}
-        <b>React</b> frontend and{' '}
-        <b>Python Flask</b> backend, leveraging{' '} <b>Docker</b> to create separate Dockerfiles for each service.
-        Implemented user authentication and features to allow users to update and track personal fitness stats.
-        Enhanced proficiency in Docker, React, Flask, APIs, and containerized web application architectures.
+        Developed a comprehensive fitness tracker web application featuring a{' '}
+        <b>React</b>-based front end and a{' '}<b>Python Flask</b> back end.
+        Using{' '} <b>Docker</b>, I separated services via individual Dockerfiles for better modularity and deployment.
+        The app includes user authentication and personalized features for tracking fitness metrics.
+        Currently, I'm enhancing the platform by integrating a relational database along with new workout log and calorie tracker features.
+        This project has deepened my skills in Docker, React, Flask, API design, and containerized application architecture.
       </>
     ),
     tech: [
@@ -80,11 +81,11 @@ const projects = [
     demo: '',
     description: (
       <>
-        Designed a responsive guitar store web application using{' '}
-        <b>JavaScript</b> and{' '} <b>jQuery</b>, 
-        following the ModelView-Controller (MVC) design pattern for maintainable and scalable code.
-        Built the back end using{' '} <b>PHP</b> and integrated{' '} <b>SQL </b>
-        for managing product inventory and user data, utilizing phpMyAdmin for database management.
+        Created a responsive guitar store web application using{' '}
+        <b>JavaScript</b> and <b>jQuery</b>, structured around the Model-View-Controller (MVC) 
+        design pattern to ensure clean and scalable architecture.
+        Developed the back end with <b>PHP</b> and implemented <b>MySQL</b> as the relational database to manage product inventory and user data.
+        This project strengthened my understanding of full-stack web development, database integration, and dynamic content rendering.
       </>
     ),
     tech: [
@@ -95,86 +96,6 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/guitar-store',
     currDev: false,
-  },
-  {
-    title: 'Financial Data Filtering App',
-    images: [
-      {
-        src: 'fdfa.png',
-        desc: ''
-      },
-      {
-        src: 'fdfa.png',
-        desc: 'Description 1'
-      },
-      {
-        src: 'fdfa.png',
-        desc: 'Description 2'
-      },
-    ],
-    demo: 'FDFA-vid.mp4',
-    description: (
-      <>
-        This is a take-home project for the ValueGlance Full Stack Software Engineer Intern Position. 
-        This app, built using{' '} <b>React</b> and {' '}<b>TailwindCSS</b>, 
-        fetches annual income statements for AAPL (Apple) from an API endpoint. 
-        It provides filtering and sorting options (by date, revenue, and net income), and displays the filtered data in a table. 
-        This app is deployed using{' '} 
-        <a href='https://rysealex.github.io/financial-data-filtering-app/' target="_blank" rel="noopener noreferrer"><b>GitHub Pages</b></a>.
-      </>
-    ),
-    tech: [
-      { id: 0, label: 'React', value: 87.1 },
-      { id: 1, label: 'HTML', value: 7.8 },
-      { id: 2, label: 'TailwindCSS', value: 5.1 }
-    ],
-    link: 'https://github.com/rysealex/financial-data-filtering-app',
-    currDev: false,
-  },
-  {
-    title: 'Sets Game',
-    images: [
-      {
-        src: 'sets-game.png',
-        desc: '',
-      },
-      {
-        src: 'sets-game.png',
-        desc: 'Description 1',
-      },
-      {
-        src: 'sets-game.png',
-        desc: 'Description 2',
-      },
-    ],
-    demo: '',
-    description: (
-      <>
-        Recreation of the classic card game 'Set'.
-        Software used:{' '} <b>Qt Software</b>,{' '} <b>C++</b>,{' '} and <b>CMake</b>.
-        Rules: The object of the game is to find sets of 3 cards
-
-                Each card has 4 features: shape, color, number, and shading
-
-                Shape: ovals, rectangles, or diamonds
-
-                Color: red, purple, or green
-
-                Number, one, two, or three
-
-                Shading: solid, striped, or outlined
-
-                A valid set consists of 3 cards where each of the cards' features are the same or different on each card
-
-                The game continues until the deck is depleted or no more valid sets can be found
-      </>
-    ),
-    tech: [
-      { id: 0, label: 'C++', value: 92.7 },
-      { id: 1, label: 'CMake', value: 7.3 },
-    ],
-    link: 'https://github.com/rysealex/sets-game',
-    currDev: true,
   },
   {
     title: 'Chat App',
@@ -195,9 +116,10 @@ const projects = [
     demo: 'chat-app-vid.mp4',
     description: (
       <>
-        Built a chat application using{' '} 
-        <b>Android Studio</b>,{' '} <b>Java</b>, and {' '}<b>XML</b>.
-        Implemented a real time database using{' '} <b>Firebase</b>.
+        Developed a real-time chat application using <b>Android Studio</b> with <b>Java</b> and <b>XML</b> for the front end.
+        Integrated <b>Firebase</b> to handle user authentication, store user data, and manage real-time messaging updates between users.
+        This project gave me hands-on experience with mobile app development and working with 
+        cloud-based backend services for scalable, real-time communication.
       </>
     ),
     tech: [
@@ -206,6 +128,77 @@ const projects = [
     link: 'https://github.com/rysealex/Chat-App',
     currDev: false,
   },
+  {
+    title: 'Financial Data Filtering App',
+    images: [
+      {
+        src: 'fdfa-canva-logo.png',
+        desc: ''
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 1'
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 2'
+      },
+    ],
+    demo: 'FDFA-vid.mp4',
+    description: (
+      <>
+        Built a lightweight financial data filtering application using{' '} <b>React</b> and{' '} <b>TailwindCSS</b>. {' '}
+        The app fetches annual income statements for Apple (AAPL) from a 
+        real-world financial API—my first experience working with a live company data source.
+        It includes features to filter and sort data by date, revenue, and net income, with results displayed in a dynamic, responsive table.
+        The project is deployed via{' '}
+        <a href='https://rysealex.github.io/financial-data-filtering-app/' target="_blank" rel="noopener noreferrer"><b>GitHub Pages</b></a>
+        {' '}and helped reinforce my skills in API integration, UI design, and client-side data manipulation.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'React', value: 87.1 },
+      { id: 1, label: 'HTML', value: 7.8 },
+      { id: 2, label: 'TailwindCSS', value: 5.1 }
+    ],
+    link: 'https://github.com/rysealex/financial-data-filtering-app',
+    currDev: false,
+  },
+  {
+    title: 'Sets Game',
+    images: [
+      {
+        src: 'sets-game-canva-logo.png',
+        desc: '',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: '',
+    description: (
+      <>
+        A recreation of the classic card game{' '} <i>Set</i>, developed using{' '} <b>C++</b>, <b>CMake</b>, and <b>Qt Software</b>.
+        This project marks my first experience using Qt for game development, introducing me to event-driven programming and GUI design in C++.
+        I’m currently working to complete the game, focusing on refining the 
+        gameplay logic, improving the interface, and enhancing the overall user experience.
+        This project has deepened my understanding of C++ concepts like pointers and memory management 
+        while giving me hands-on experience with building interactive desktop applications.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'C++', value: 92.7 },
+      { id: 1, label: 'CMake', value: 7.3 },
+    ],
+    link: 'https://github.com/rysealex/sets-game',
+    currDev: true,
+  },
+  
 ];
 
 // tech icons
@@ -380,12 +373,21 @@ function Projects() {
               <h3>Screenshots</h3>
             </div>*/}
             <div className='demo-container'>
-              <h3 onClick={handlePlay}>
-                <FontAwesomeIcon icon={faAnglesDown} /> Demo <FontAwesomeIcon icon={faAnglesDown} />
-              </h3>
-              <video className='demo-video' ref={videoRef} width="100%" controls loop>
-                <source src={selectedProject.demo} type='video/mp4' />
-              </video>
+              {selectedProject.currDev && (
+                <div>
+                  <h3 id='demo-soon'>Demo coming soon!</h3>
+                </div>
+              )}
+              {!selectedProject.currDev && (
+                <div>
+                  <h3 onClick={handlePlay}>
+                    <FontAwesomeIcon icon={faAnglesDown} /> Demo <FontAwesomeIcon icon={faAnglesDown} />
+                  </h3>
+                  <video className='demo-video' ref={videoRef} width="100%" controls loop>
+                    <source src={selectedProject.demo} type='video/mp4' />
+                  </video>
+                </div>
+              )}
             </div>
             {/*<div className='carousel-container'>
               <Carousel 

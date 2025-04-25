@@ -220,6 +220,10 @@ section {
   width: 60px;
   height: 60px;
 }
+#mysql-logo {
+  width: 85px;
+  height: 85px;
+}
 .text-faded {
   color:#d0d1d3;
 }
@@ -444,8 +448,12 @@ section {
   cursor: pointer;
 }
 .demo-video {
-  max-width: 800px;
-  max-height: 390px;
+  width: 900px;
+  height: 390px;
+}
+#demo-soon:hover {
+  text-decoration: none;
+  cursor: text;
 }
 .carousel-container {
   display: flex;

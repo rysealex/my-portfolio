@@ -112,12 +112,15 @@ function Skills() {
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='sql'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-sql'>
-            <FontAwesomeIcon icon={faDatabase} className="fa-4x" />
+          <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' />
           </span>
-          <h3><b>SQL</b></h3>
+          <h3><b>MySQL</b></h3>
           <p className="text-faded mb-0">
-          I’ve used SQL in my full-stack guitar shop web application—handling tasks like querying, inserting, and updating data across tables.
-          I plan to continue using SQL in upcoming full-stack projects to build more dynamic, data-driven applications.
+          I’ve used MySQL as the relational database in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b> {' '} web application—handling 
+          tasks like querying, inserting, and updating data across tables.
+          This experience helped me gain a strong foundation in relational databases and efficient data handling.
+          I plan to continue using MySQL in upcoming full-stack projects to build more dynamic, data-driven applications.
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='linux'>
