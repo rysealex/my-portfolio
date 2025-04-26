@@ -30,11 +30,12 @@ function App() {
     // detecting which section is in view
     const observerOptions = {
       rootMargin: '0px',
-      threshold: 0.5, // triggered when 50% of the section is in view 
+      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+      //threshold: 0.5, // triggered when 50% of the section is in view 
     };
 
     const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
+    /*const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         console.log('IntersectionObserver:', entry.target.id);
         if (entry.isIntersecting) {
@@ -42,6 +43,15 @@ function App() {
           setActiveSection(entry.target.id);
         }
       });
+    }, observerOptions);*/
+    const observer = new IntersectionObserver((entries) => {
+      const visibleEntries = entries.filter(entry => entry.isIntersecting);
+      if (visibleEntries.length > 0) {
+        const mostVisibleEntry = visibleEntries.reduce((prev, current) => {
+          return prev.intersectionRatio > current.intersectionRatio ? prev : current;
+        });
+        setActiveSection(mostVisibleEntry.target.id);
+      }
     }, observerOptions);
 
     // observe each section

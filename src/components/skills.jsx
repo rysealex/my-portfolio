@@ -21,7 +21,7 @@ function Skills() {
         <p>
           Below are some of the programming languages, frameworks, libraries, tools, and platforms I’ve worked with.
           <br/><br/>
-          I’m passionate about creating, and I spend a lot of my free time working on personal and 
+          I’m passionate about creating, and I spend a lot of my free time working on personal 
           projects that challenge me to grow as a developer.
           <br/><br/>
           I’m always eager to learn new technologies and expand my skillset as I continue to explore the world of software development!
@@ -105,7 +105,7 @@ function Skills() {
           <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b> {' '}
           web application.
           In this project, I used PHP to handle server-side logic, manage dynamic content, 
-          and connect to a SQL database for data storage and retrieval.
+          and connect to a MySQL database for data storage and retrieval.
           It gave me valuable hands-on experience working with server responses, form validation, 
           and database integration in a real-world scenario.
           </p>

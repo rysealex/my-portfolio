@@ -78,7 +78,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: '',
+    demo: 'guitar-store-vid.mp4',
     description: (
       <>
         Created a responsive guitar store web application using{' '}
@@ -183,7 +183,7 @@ const projects = [
     demo: '',
     description: (
       <>
-        A recreation of the classic card game{' '} <i>Set</i>, developed using{' '} <b>C++</b>, <b>CMake</b>, and <b>Qt Software</b>.
+        A recreation of the classic card game{' '} <i>Set</i>, developed using{' '} <b>C++</b>, <b>CMake</b>, and <b>Qt</b>.
         This project marks my first experience using Qt for game development, introducing me to event-driven programming and GUI design in C++.
         I’m currently working to complete the game, focusing on refining the 
         gameplay logic, improving the interface, and enhancing the overall user experience.
