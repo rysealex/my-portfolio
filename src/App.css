@@ -110,6 +110,7 @@ section {
   align-items: center;
   flex-direction: column;
   padding-bottom: 50px;
+  min-height: 100vh;
 }
 
 .pic-container {
@@ -126,6 +127,7 @@ section {
   background-color: #FFFFFF;
   padding-left: clamp(1rem, 5vw, 100px);
   padding-right: clamp(1rem, 5vw, 100px);
+  min-height: 100vh;
 }
 .about-container h2 {
   padding-top: 85px;
@@ -197,6 +199,7 @@ section {
   background-color: #259FDE;
   padding-left: 100px;
   padding-right: 100px;
+  min-height: 100vh;
 }
 .skills-container h2 {
   color: #FFFFFF;
@@ -272,6 +275,7 @@ section {
   background-color: #FFFFFF;
   padding-left: 100px;
   padding-right: 100px;
+  min-height: 100vh;
 }
 .projects-container h2 {
   font-size: 50px;
@@ -514,6 +518,7 @@ section {
   background-color: #1c1c1c;
   padding-left: 100px;
   padding-right: 100px;
+  min-height: 100vh;
 }
 .contact-container h2 {
   color: #FFFFFF;
@@ -563,11 +568,12 @@ section {
 }
 .contact-form-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  gap: 10rem;
 }
 .contact-form-container #message {
-  margin-left: auto; /* Push the message input to the right */
+  
   margin-top: 50px;
   height: 217px;
   width: 550px;
