@@ -14,7 +14,7 @@ function Footer() {
 				<div className='copyright-container'>
 					<span>Copyright © Alex Ryse {currYear}</span>
 					<br />
-					<span id='last-upd'>Last Updated: April 2025</span>
+					<span id='last-upd'>Last Updated: May 2025</span>
 				</div>
 				<div className='socials' id='footer-socials'>
 					<ul>
@@ -39,7 +39,7 @@ function Footer() {
 							<a href="#contact"><b>Contact</b></a>
 						</li>
 						<li>
-							<a href="Resume Alex Ryse Upd 2.2.pdf" target="_blank" rel="noopener noreferrer">
+							<a href="Resume Alex Ryse Upd 2.3.pdf" target="_blank" rel="noopener noreferrer">
 								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b
 							></a>
 						</li>

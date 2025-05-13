@@ -53,8 +53,8 @@ function Skills() {
           web application using a Python Flask backend, where I’m implementing user authentication, workout tracking, 
           and dynamic data visualization.
           This builds upon my experience developing a{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b> {' '} 
-          ,which involved API integration, data visualization, and efficient data handling.
+          <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b>, 
+          which involved API integration, data visualization, and efficient data handling.
           Working with Python has strengthened my skills in API design, database integration, server-side logic,
           and data visualization.
           </p>
