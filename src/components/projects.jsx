@@ -217,14 +217,15 @@ const projects = [
     demo: 'WordCloudGenDemo.mp4',
     description: (
       <>
-        This Word Cloud Generator, developed in{' '} <b>Python</b>, explores concepts in 
-        data visualization and API integration. Utilizing{' '} <b>matplotlib</b> for creating the visual output 
-        and fetching data from the Datamuse and Dictionary APIs, the application generates customizable 
-        word clouds based on a user-provided theme. The implementation includes a spiral layout algorithm and 
-        collision detection using the{' '} <b>rtree</b> library for efficient word placement.
-        Notably, the project incorporates an interactive element, displaying word definitions on hover.
-        This project has strengthened my understanding of Python libraries for data handling and visualization, 
-        along with the development of interactive command-line applications.
+        This{' '} <b>Python</b>-based Word Cloud Generator empowers users to create visual representations 
+        of text through data visualization and API integration. 
+        Utilizing {' '} <b>matplotlib</b>, the application generates customizable word clouds based on a 
+        user-provided theme, sourcing related words and definitions from the Datamuse and Dictionary APIs.
+        The project incorporates a spiral layout for aesthetic appeal and the 
+        {' '} <b>rtree</b> library for efficient, non-overlapping word placement. 
+        An interactive hover effect displays word definitions, enhancing the user experience.
+        This project deepened my understanding of Python libraries for data handling and visualization 
+        in the context of building interactive command-line tools.
       </>
     ),
     tech: [
