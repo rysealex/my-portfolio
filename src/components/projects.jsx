@@ -198,7 +198,41 @@ const projects = [
     link: 'https://github.com/rysealex/sets-game',
     currDev: true,
   },
-  
+  {
+    title: 'Word Cloud Generator',
+    images: [
+      {
+        src: 'python.png',
+        desc: '',
+      },
+      {
+        src: 'python.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'python.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: 'WordCloudGenDemo.mp4',
+    description: (
+      <>
+        This Word Cloud Generator, developed in{' '} <b>Python</b>, explores concepts in 
+        data visualization and API integration. Utilizing{' '} <b>matplotlib</b> for creating the visual output 
+        and fetching data from the Datamuse and Dictionary APIs, the application generates customizable 
+        word clouds based on a user-provided theme. The implementation includes a spiral layout algorithm and 
+        collision detection using the{' '} <b>rtree</b> library for efficient word placement.
+        Notably, the project incorporates an interactive element, displaying word definitions on hover.
+        This project has strengthened my understanding of Python libraries for data handling and visualization, 
+        along with the development of interactive command-line applications.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'Python', value: 100 },
+    ],
+    link: 'https://github.com/rysealex/word-cloud-generator',
+    currDev: false,
+  },
 ];
 
 // tech icons
