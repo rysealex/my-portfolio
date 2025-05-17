@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const WordCloudForm = () => {
   const [theme, setTheme] = useState('');
-	const [numWords, setNumWords] = useState();
+	const [numWords, setNumWords] = useState('');
 	const [bkgColor, setBkgColor] = useState('white');
 	const [themeColor, setThemeColor] = useState('red');
 	const [otherColors, setOtherColors] = useState(['blue', 'green', 'yellow']);
@@ -34,13 +34,13 @@ const WordCloudForm = () => {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({ 
-					theme_word: theme, 
-					num_words: numWords,
-					bkg_color: bkgColor,
-          theme_color: themeColor,
-          other_colors: otherColors,
-          font_weight: fontWeight,
-          font_type: fontType
+				theme_word: theme, 
+				num_words: numWords,
+				bkg_color: bkgColor,
+				theme_color: themeColor,
+				other_colors: otherColors,
+				font_weight: fontWeight,
+				font_type: fontType
 				})
 			});
 

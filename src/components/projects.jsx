@@ -5,6 +5,7 @@ import { faX, faDatabase, faCircleNotch, faAnglesDown } from '@fortawesome/free-
 import TechPieChart from './techPieChart';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import WordCloudForm from './wordCloudForm';
 
 // tech icon colors
 /*const techColors = {
@@ -61,6 +62,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/fitness-tracker',
     currDev: true,
+    wordCloudInteractive: false,
   },
   {
     title: 'Guitar Store',
@@ -96,6 +98,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/guitar-store',
     currDev: false,
+    wordCloudInteractive: false,
   },
   {
     title: 'Chat App',
@@ -127,6 +130,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/Chat-App',
     currDev: false,
+    wordCloudInteractive: false,
   },
   {
     title: 'Financial Data Filtering App',
@@ -163,6 +167,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/financial-data-filtering-app',
     currDev: false,
+    wordCloudInteractive: false,
   },
   {
     title: 'Sets Game',
@@ -197,6 +202,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/sets-game',
     currDev: true,
+    wordCloudInteractive: false,
   },
   {
     title: 'Word Cloud Generator',
@@ -233,6 +239,7 @@ const projects = [
     ],
     link: 'https://github.com/rysealex/word-cloud-generator',
     currDev: false,
+    wordCloudInteractive: true,
   },
 ];
 
@@ -407,6 +414,11 @@ function Projects() {
             {/*<div className='screenshots-header'>
               <h3>Screenshots</h3>
             </div>*/}
+            {selectedProject.wordCloudInteractive && (
+              <div>
+                <WordCloudForm key="word-cloud-generator-form" />
+              </div>
+            )}
             <div className='demo-container'>
               {selectedProject.currDev && (
                 <div>
