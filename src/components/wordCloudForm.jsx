@@ -11,10 +11,21 @@ const WordCloudForm = () => {
 	const [imageData, setImageData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-	const imgRef = useRef<HTMLImageElement>(null);
+	const wordCloudImageRef = useRef(null);
+	console.log('After useRef:', wordCloudImageRef);
+
+	console.log('WordCloudForm rendered. Initial imgRef:', wordCloudImageRef); // Initial log
+
+	const setWordCloudImageRef = (element) => {
+		console.log('setImgRef received element:', element);
+    wordCloudImageRef.current = element;
+		console.log('setImgRef updated imgRef:', wordCloudImageRef);
+  };
 
 	useEffect(() => {
+		console.log('useEffect - imgRef.current:', wordCloudImageRef.current);
     return () => {
+			console.log('useEffect cleanup - imageData:', imageData);
       if (imageData) {
         URL.revokeObjectURL(imageData);
       }
@@ -27,21 +38,24 @@ const WordCloudForm = () => {
     setImageData(null);
 		setError(null);
 
+		const requestBody = JSON.stringify({
+			theme_word: theme,
+			num_words: numWords,
+			bkg_color: bkgColor,
+			theme_color: themeColor,
+			other_colors: otherColors,
+			font_weight: fontWeight,
+			font_type: fontType
+  	});
+		console.log('Request Body:', requestBody);
+
 		try {
 			const response = await fetch('https://word-cloud-generator-ttv3.onrender.com/generate-cloud', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({ 
-				theme_word: theme, 
-				num_words: numWords,
-				bkg_color: bkgColor,
-				theme_color: themeColor,
-				other_colors: otherColors,
-				font_weight: fontWeight,
-				font_type: fontType
-				})
+				body: requestBody
 			});
 
 			if (!response.ok) {
@@ -62,12 +76,13 @@ const WordCloudForm = () => {
 	};	
 
 	const renderImage = () => {
+		 console.log('renderImage - imageData:', imageData, 'current imgRef:', wordCloudImageRef);
     if (imageData) {
       return (
         <div>
           <h3>Generated Word Cloud:</h3>
           <img
-            ref={imgRef}
+            ref={setWordCloudImageRef}
             src={imageData}
             alt="Generated Word Cloud"
             style={{ maxWidth: '500px', maxHeight: '500px', width: 'auto', height: 'auto' }}
