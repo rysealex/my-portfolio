@@ -467,12 +467,12 @@ section {
 .word-cloud-container {
   margin-top: 50px;
 }
-.word-cloud-container h3 {
+#try-self {
   color: #0E3CBD;
   display: inline-block;
   padding-bottom: 20px;
 }
-.word-cloud-container h3:hover {
+#try-self:hover {
   text-decoration: underline;
   cursor: pointer;
 }

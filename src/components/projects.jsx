@@ -460,7 +460,7 @@ function Projects() {
             </div>*/}
             {selectedProject.wordCloudInteractive && (
               <div className='word-cloud-container'>
-                <h3 onClick={handleWordCloudScroll}>
+                <h3 id='try-self' onClick={handleWordCloudScroll}>
                   <FontAwesomeIcon icon={faAnglesDown} /> Try Yourself <FontAwesomeIcon icon={faAnglesDown} />
                 </h3>
                 <div ref={wordCloudRef}>
