@@ -117,8 +117,8 @@ const WordCloudForm = () => {
 						type='number'
 						name='num-words'
 						min='1'
-						max='75'
-						placeholder='Number of Words'
+						max='10'
+						placeholder='Number of Words (1 to 10)'
 						value={numWords}
 						onChange={(e) => setNumWords(e.target.value)}
 						required
