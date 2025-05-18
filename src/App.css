@@ -464,6 +464,109 @@ section {
   text-decoration: none;
   cursor: text;
 }
+.word-cloud-container {
+  margin-top: 50px;
+}
+.word-cloud-container h3 {
+  color: #0E3CBD;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+.word-cloud-container h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.word-cloud-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.word-cloud-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.word-cloud-form-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.word-cloud-form-selects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.word-cloud-form-inputs input {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 405px;
+  height: 60px;
+  padding-left: 20px;
+  border: 2px solid #1c1c1c;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+.word-cloud-form-inputs input::placeholder {
+  font-weight: bold;
+}
+.word-cloud-form-inputs input:focus {
+  border-color: #0E3CBD;
+}
+.word-cloud-form-selects select {
+  width: 180px;
+  height: 40px;
+  padding-left: 20px;
+  border: 2px solid #1c1c1c;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+.word-cloud-form-selects select:focus {
+  border-color: #0E3CBD;
+}
+.word-cloud-form-submit {
+  display: flex;
+  justify-content: center;
+}
+.word-cloud-form-submit button {
+  margin-top: 30px;
+  padding: 25px 18px;
+  color: #FFFFFF;
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+.word-cloud-form-submit button:hover {
+  background-color: #111111;
+}
+#download-word-cloud {
+  color: #0E3CBD;
+}
+#download-word-cloud:hover {
+  display: inline-block;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .carousel-container {
   display: flex;
   justify-content: center;

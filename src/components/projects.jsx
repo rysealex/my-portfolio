@@ -275,6 +275,13 @@ function Projects() {
     }
   };
 
+  // scroll to the built in word cloud generator
+  const wordCloudRef = useRef(null);
+  const handleWordCloudScroll = () => {
+    if (wordCloudRef.current) {
+      wordCloudRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };  
 
   // disable the scroll when modal open
   useEffect(() => {
@@ -414,11 +421,6 @@ function Projects() {
             {/*<div className='screenshots-header'>
               <h3>Screenshots</h3>
             </div>*/}
-            {selectedProject.wordCloudInteractive && (
-              <div>
-                <WordCloudForm key="word-cloud-generator-form" />
-              </div>
-            )}
             <div className='demo-container'>
               {selectedProject.currDev && (
                 <div>
@@ -456,6 +458,16 @@ function Projects() {
                 ))}
               </Carousel>
             </div>*/}
+            {selectedProject.wordCloudInteractive && (
+              <div className='word-cloud-container'>
+                <h3 onClick={handleWordCloudScroll}>
+                  <FontAwesomeIcon icon={faAnglesDown} /> Try Yourself <FontAwesomeIcon icon={faAnglesDown} />
+                </h3>
+                <div ref={wordCloudRef}>
+                  <WordCloudForm key="word-cloud-generator-form" />
+                </div>
+              </div>
+            )}
             <div className='project-link'>
               <b>View on GitHub: </b>
               <a href={selectedProject.link} target='_blank' rel='noreferrer'>
