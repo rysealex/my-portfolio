@@ -14,7 +14,7 @@ function Footer() {
 				<div className='copyright-container'>
 					<span>Copyright © Alex Ryse {currYear}</span>
 					<br />
-					<span id='last-upd'>Last Updated: May 2025</span>
+					<span id='last-upd'>Last Updated: June 2025</span>
 				</div>
 				<div className='socials' id='footer-socials'>
 					<ul>

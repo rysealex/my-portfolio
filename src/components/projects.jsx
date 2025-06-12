@@ -65,143 +65,45 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: 'Guitar Store',
+    title: 'Wildcat Credit Union',
     images: [
       {
-        src: 'guitar-store-logo2.0.png',
+        src: 'wcu-logo.png',
         desc: '',
       },
       {
-        src: 'guitar-store.png',
+        src: 'wcu-logo.png',
         desc: 'Description 1',
       },
       {
-        src: 'guitar-store.png',
+        src: 'wcu-logo.png',
         desc: 'Description 2',
       },
     ],
-    demo: 'guitar-store-vid.mp4',
+    demo: 'WCU-Demo-Vid.mp4',
     description: (
       <>
-        Created a responsive guitar store web application using{' '}
-        <b>JavaScript</b> and <b>jQuery</b>, structured around the Model-View-Controller (MVC) 
-        design pattern to ensure clean and scalable architecture.
-        Developed the back end with <b>PHP</b> and implemented <b>MySQL</b> as the relational database to manage product inventory and user data.
-        This project strengthened my understanding of full-stack web development, database integration, and dynamic content rendering.
+        This full-stack banking web application, built with a{' '} <b>React</b>
+        {' '} frontend, {' '} <b>Node.js/Express.js</b> backend, and {' '} <b>MySQL</b>
+        {' '} database, was developed following the SDLC with thorough documentation via 
+        Microsoft Visio and Project. As team lead for three developers, I oversaw the 
+        implementation of {' '} <b>Docker</b> for containerization and integrated the 
+        {' '} <b>Google Maps API</b> for an ATM Locator feature, enabling users to find 
+        Wildcat Credit Union ATMs around Central Washington University and get directions. 
+        Key features include secure user authentication, account creation with password encryption and an 
+        account lockdown mechanism, fund transfers, and deposit/receive functionalities. 
+        This project enhanced my skills in modern web technologies, team management, and structured development.
       </>
     ),
     tech: [
-      { id: 0, label: 'PHP', value: 72.6 },
-      { id: 1, label: 'JavaScript', value: 12.9 },
-      { id: 2, label: 'CSS', value: 12.8 },
-      { id: 3, label: 'SQL', value: 1.7 },
+      { id: 0, label: 'React', value: 53.6 },
+      { id: 1, label: 'Node.js/Express.js', value: 32.3 },
+      { id: 2, label: 'CSS', value: 9.6 },
+      { id: 3, label: 'SQL', value: 2.9 },
+      { id: 4, label: 'Docker', value: 1.6 }
     ],
-    link: 'https://github.com/rysealex/guitar-store',
+    link: 'https://github.com/rysealex/wildcat-credit-union',
     currDev: false,
-    wordCloudInteractive: false,
-  },
-  {
-    title: 'Chat App',
-    images: [
-      {
-        src: 'chat-app-logo2.0.png',
-        desc: '',
-      },
-      {
-        src: 'chat-app.png',
-        desc: 'Description 1',
-      },
-      {
-        src: 'chat-app.png',
-        desc: 'Description 2',
-      },
-    ],
-    demo: 'chat-app-vid.mp4',
-    description: (
-      <>
-        Developed a real-time chat application using <b>Android Studio</b> with <b>Java</b> and <b>XML</b> for the front end.
-        Integrated <b>Firebase</b> to handle user authentication, store user data, and manage real-time messaging updates between users.
-        This project gave me hands-on experience with mobile app development and working with 
-        cloud-based backend services for scalable, real-time communication.
-      </>
-    ),
-    tech: [
-      { id: 0, label: 'Java', value: 100 },
-    ],
-    link: 'https://github.com/rysealex/Chat-App',
-    currDev: false,
-    wordCloudInteractive: false,
-  },
-  {
-    title: 'Financial Data Filtering App',
-    images: [
-      {
-        src: 'fdfa-canva-logo.png',
-        desc: ''
-      },
-      {
-        src: 'fdfa.png',
-        desc: 'Description 1'
-      },
-      {
-        src: 'fdfa.png',
-        desc: 'Description 2'
-      },
-    ],
-    demo: 'FDFA-vid.mp4',
-    description: (
-      <>
-        Built a lightweight financial data filtering application using{' '} <b>React</b> and{' '} <b>TailwindCSS</b>. {' '}
-        The app fetches annual income statements for Apple (AAPL) from a 
-        real-world financial API—my first experience working with a live company data source.
-        It includes features to filter and sort data by date, revenue, and net income, with results displayed in a dynamic, responsive table.
-        The project is deployed via{' '}
-        <a href='https://rysealex.github.io/financial-data-filtering-app/' target="_blank" rel="noopener noreferrer"><b>GitHub Pages</b></a>
-        {' '}and helped reinforce my skills in API integration, UI design, and client-side data manipulation.
-      </>
-    ),
-    tech: [
-      { id: 0, label: 'React', value: 87.1 },
-      { id: 1, label: 'HTML', value: 7.8 },
-      { id: 2, label: 'TailwindCSS', value: 5.1 }
-    ],
-    link: 'https://github.com/rysealex/financial-data-filtering-app',
-    currDev: false,
-    wordCloudInteractive: false,
-  },
-  {
-    title: 'Sets Game',
-    images: [
-      {
-        src: 'sets-game-canva-logo.png',
-        desc: '',
-      },
-      {
-        src: 'sets-game.png',
-        desc: 'Description 1',
-      },
-      {
-        src: 'sets-game.png',
-        desc: 'Description 2',
-      },
-    ],
-    demo: '',
-    description: (
-      <>
-        A recreation of the classic card game{' '} <i>Set</i>, developed using{' '} <b>C++</b>, <b>CMake</b>, and <b>Qt</b>.
-        This project marks my first experience using Qt for game development, introducing me to event-driven programming and GUI design in C++.
-        I’m currently working to complete the game, focusing on refining the 
-        gameplay logic, improving the interface, and enhancing the overall user experience.
-        This project has deepened my understanding of C++ concepts like pointers and memory management 
-        while giving me hands-on experience with building interactive desktop applications.
-      </>
-    ),
-    tech: [
-      { id: 0, label: 'C++', value: 92.7 },
-      { id: 1, label: 'CMake', value: 7.3 },
-    ],
-    link: 'https://github.com/rysealex/sets-game',
-    currDev: true,
     wordCloudInteractive: false,
   },
   {
@@ -242,44 +144,142 @@ const projects = [
     wordCloudInteractive: true,
   },
   {
-    title: 'Wildcat Credit Union',
+    title: 'Chat App',
     images: [
       {
-        src: 'wcu-logo.png',
+        src: 'chat-app-logo2.0.png',
         desc: '',
       },
       {
-        src: 'wcu-logo.png',
+        src: 'chat-app.png',
         desc: 'Description 1',
       },
       {
-        src: 'wcu-logo.png',
+        src: 'chat-app.png',
         desc: 'Description 2',
       },
     ],
-    demo: 'WCU-Demo-Vid.mp4',
+    demo: 'chat-app-vid.mp4',
     description: (
       <>
-        This full-stack banking web application, built with a{' '} <b>React</b>
-        {' '} frontend, {' '} <b>Node.js/Express.js</b> backend, and {' '} <b>MySQL</b>
-        {' '} database, was developed following the SDLC with thorough documentation via 
-        Microsoft Visio and Project. As team lead for three developers, I oversaw the 
-        implementation of {' '} <b>Docker</b> for containerization and integrated the 
-        {' '} <b>Google Maps API</b> for an ATM Locator feature, enabling users to find 
-        Wildcat Credit Union ATMs around Central Washington University and get directions. 
-        Key features include secure user authentication, account creation with password encryption and an 
-        account lockdown mechanism, fund transfers, and deposit/receive functionalities. 
-        This project enhanced my skills in modern web technologies, team management, and structured development.
+        Developed a real-time chat application using <b>Android Studio</b> with <b>Java</b> and <b>XML</b> for the front end.
+        Integrated <b>Firebase</b> to handle user authentication, store user data, and manage real-time messaging updates between users.
+        This project gave me hands-on experience with mobile app development and working with 
+        cloud-based backend services for scalable, real-time communication.
       </>
     ),
     tech: [
-      { id: 0, label: 'React', value: 53.6 },
-      { id: 1, label: 'Node.js/Express.js', value: 32.3 },
-      { id: 2, label: 'CSS', value: 9.6 },
-      { id: 3, label: 'SQL', value: 2.9 },
-      { id: 4, label: 'Docker', value: 1.6 }
+      { id: 0, label: 'Java', value: 100 },
     ],
-    link: 'https://github.com/rysealex/wildcat-credit-union',
+    link: 'https://github.com/rysealex/Chat-App',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
+    title: 'Guitar Store',
+    images: [
+      {
+        src: 'guitar-store-logo2.0.png',
+        desc: '',
+      },
+      {
+        src: 'guitar-store.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'guitar-store.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: 'guitar-store-vid.mp4',
+    description: (
+      <>
+        Created a responsive guitar store web application using{' '}
+        <b>JavaScript</b> and <b>jQuery</b>, structured around the Model-View-Controller (MVC) 
+        design pattern to ensure clean and scalable architecture.
+        Developed the back end with <b>PHP</b> and implemented <b>MySQL</b> as the relational database to manage product inventory and user data.
+        This project strengthened my understanding of full-stack web development, database integration, and dynamic content rendering.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'PHP', value: 72.6 },
+      { id: 1, label: 'JavaScript', value: 12.9 },
+      { id: 2, label: 'CSS', value: 12.8 },
+      { id: 3, label: 'SQL', value: 1.7 },
+    ],
+    link: 'https://github.com/rysealex/guitar-store',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
+    title: 'Sets Game',
+    images: [
+      {
+        src: 'sets-game-canva-logo.png',
+        desc: '',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'sets-game.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: '',
+    description: (
+      <>
+        A recreation of the classic card game{' '} <i>Set</i>, developed using{' '} <b>C++</b>, <b>CMake</b>, and <b>Qt</b>.
+        This project marks my first experience using Qt for game development, introducing me to event-driven programming and GUI design in C++.
+        I’m currently working to complete the game, focusing on refining the 
+        gameplay logic, improving the interface, and enhancing the overall user experience.
+        This project has deepened my understanding of C++ concepts like pointers and memory management 
+        while giving me hands-on experience with building interactive desktop applications.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'C++', value: 92.7 },
+      { id: 1, label: 'CMake', value: 7.3 },
+    ],
+    link: 'https://github.com/rysealex/sets-game',
+    currDev: true,
+    wordCloudInteractive: false,
+  },
+  {
+    title: 'Financial Data Filtering App',
+    images: [
+      {
+        src: 'fdfa-canva-logo.png',
+        desc: ''
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 1'
+      },
+      {
+        src: 'fdfa.png',
+        desc: 'Description 2'
+      },
+    ],
+    demo: 'FDFA-vid.mp4',
+    description: (
+      <>
+        Built a lightweight financial data filtering application using{' '} <b>React</b> and{' '} <b>TailwindCSS</b>. {' '}
+        The app fetches annual income statements for Apple (AAPL) from a 
+        real-world financial API—my first experience working with a live company data source.
+        It includes features to filter and sort data by date, revenue, and net income, with results displayed in a dynamic, responsive table.
+        The project is deployed via{' '}
+        <a href='https://rysealex.github.io/financial-data-filtering-app/' target="_blank" rel="noopener noreferrer"><b>GitHub Pages</b></a>
+        {' '}and helped reinforce my skills in API integration, UI design, and client-side data manipulation.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'React', value: 87.1 },
+      { id: 1, label: 'HTML', value: 7.8 },
+      { id: 2, label: 'TailwindCSS', value: 5.1 }
+    ],
+    link: 'https://github.com/rysealex/financial-data-filtering-app',
     currDev: false,
     wordCloudInteractive: false,
   },
@@ -409,6 +409,9 @@ function Projects() {
                         break;
                       case 'flask':
                         targetId = 'python';
+                        break;
+                      case 'node.js/express.js':
+                        targetId = 'javascript';
                         break;
                       default:
                         break;
