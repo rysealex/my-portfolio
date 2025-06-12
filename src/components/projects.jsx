@@ -241,6 +241,47 @@ const projects = [
     currDev: false,
     wordCloudInteractive: true,
   },
+  {
+    title: 'Wildcat Credit Union',
+    images: [
+      {
+        src: 'wcu-logo.png',
+        desc: '',
+      },
+      {
+        src: 'wcu-logo.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'wcu-logo.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: 'WordCloudGenDemo.mp4',
+    description: (
+      <>
+        This{' '} <b>Python</b>-based Word Cloud Generator empowers users to create visual representations 
+        of text through data visualization and API integration. 
+        Utilizing {' '} <b>matplotlib</b>, the application generates customizable word clouds based on a 
+        user-provided theme, sourcing related words and definitions from the Datamuse and Dictionary APIs.
+        The project incorporates a spiral layout for aesthetic appeal and the 
+        {' '} <b>rtree</b> library for efficient, non-overlapping word placement. 
+        An interactive hover effect displays word definitions, enhancing the user experience.
+        This project deepened my understanding of Python libraries for data handling and visualization 
+        in the context of building interactive command-line tools.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'React', value: 53.6 },
+      { id: 1, label: 'Node/Express.js', value: 32.3 },
+      { id: 2, label: 'CSS', value: 9.6 },
+      { id: 3, label: 'SQL', value: 2.9 },
+      { id: 4, label: 'Docker', value: 1.6 }
+    ],
+    link: 'https://github.com/rysealex/wildcat-credit-union',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
 ];
 
 // tech icons
