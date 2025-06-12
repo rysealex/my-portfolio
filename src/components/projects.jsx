@@ -257,23 +257,24 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: 'WordCloudGenDemo.mp4',
+    demo: 'WCU-Demo-Vid.mp4',
     description: (
       <>
-        This{' '} <b>Python</b>-based Word Cloud Generator empowers users to create visual representations 
-        of text through data visualization and API integration. 
-        Utilizing {' '} <b>matplotlib</b>, the application generates customizable word clouds based on a 
-        user-provided theme, sourcing related words and definitions from the Datamuse and Dictionary APIs.
-        The project incorporates a spiral layout for aesthetic appeal and the 
-        {' '} <b>rtree</b> library for efficient, non-overlapping word placement. 
-        An interactive hover effect displays word definitions, enhancing the user experience.
-        This project deepened my understanding of Python libraries for data handling and visualization 
-        in the context of building interactive command-line tools.
+        This full-stack banking web application, built with a{' '} <b>React</b>
+        {' '} frontend, {' '} <b>Node.js/Express.js</b> backend, and {' '} <b>MySQL</b>
+        {' '} database, was developed following the SDLC with thorough documentation via 
+        Microsoft Visio and Project. As team lead for three developers, I oversaw the 
+        implementation of {' '} <b>Docker</b> for containerization and integrated the 
+        {' '} <b>Google Maps API</b> for an ATM Locator feature, enabling users to find 
+        Wildcat Credit Union ATMs around Central Washington University and get directions. 
+        Key features include secure user authentication, account creation with password encryption and an 
+        account lockdown mechanism, fund transfers, and deposit/receive functionalities. 
+        This project enhanced my skills in modern web technologies, team management, and structured development.
       </>
     ),
     tech: [
       { id: 0, label: 'React', value: 53.6 },
-      { id: 1, label: 'Node/Express.js', value: 32.3 },
+      { id: 1, label: 'Node.js/Express.js', value: 32.3 },
       { id: 2, label: 'CSS', value: 9.6 },
       { id: 3, label: 'SQL', value: 2.9 },
       { id: 4, label: 'Docker', value: 1.6 }
