@@ -39,7 +39,7 @@ function Footer() {
 							<a href="#contact"><b>Contact</b></a>
 						</li>
 						<li>
-							<a href="Resume Alex Ryse Upd 2.3.pdf" target="_blank" rel="noopener noreferrer">
+							<a href="Resume Alex Ryse Upd 2.4.pdf" target="_blank" rel="noopener noreferrer">
 								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b
 							></a>
 						</li>
