@@ -14,18 +14,24 @@ function About() {
       <div className='intro-container'>
         <h2>Hi, I'm Alex Ryse!</h2>
         <p>
-          I'm an undergraduate student at Central Washington University, pursuing a Bachelor's degree in Computer Science. 
-          My journey into coding began with a fascination for how technology can be built from the ground up to solve real-world problems—and I’ve been hooked ever since.
-          What started as curiosity quickly turned into a passion for both creative development and logical problem-solving.
+          I'm currently a fourth-year student at Central Washington University, pursuing a Bachelor's degree in Computer Science with a minor in mathematics, and I'm on track to graduate in the spring of 2026. 
+          My journey into coding began four years ago with a fascination for how technology can be built from the ground up to solve real-world problems—and I’ve been hooked ever since.
+          {/* What started as curiosity quickly turned into a passion for both creative development and logical problem-solving. */}
         </p>
         <p>
+          My passion for coding and problem-solving has grown from a simple curiosity into a foundation for my work. 
+          I thrive on both the creative process of building new things and the logical challenge of optimizing solutions. 
+          I am eager to apply this passion to a professional setting. 
+          After graduation, I'm excited to transition into a full-time software engineering role where I can continue to learn and contribute to a team building innovative technology.
+        </p>
+        {/* <p>
           Currently, I work as a Mathematics Tutor and Teacher Assistant at my university, where I support students in understanding core concepts and building confidence in their abilities.
           These experiences have deepened my appreciation for both collaboration and communication within technical fields.
-        </p>
-        <p>
+        </p> */}
+        {/* <p>
           After graduation, I plan to pursue a Master's degree in Computer Science to further specialize my skills and contribute to innovative projects in the tech industry.
           I'm driven by a desire to continuously grow, learn, and create meaningful technologies that make a difference.
-        </p>
+        </p> */}
       </div>
       {/* <div className='exp-container'>
         <h3>My Experience</h3>

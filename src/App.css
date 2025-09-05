@@ -142,28 +142,6 @@ section {
 .intro-container {
   text-align: left;
 }
-.exp-container {
-  text-align: left;
-}
-.exp-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-.exp-item {
-  margin-bottom: 20px;
-}
-.exp-icon {
-  font-size: 40px;
-  margin-right: 20px;
-}
-.icon-text-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.icon-text-container p {
-  margin: 0;
-}
 .socials ul {
   list-style-type: none;
   padding: 0;
@@ -192,6 +170,45 @@ section {
 }
 #about-socials {
   margin-bottom: 40px;
+}
+
+/* Styles for the experience.jsx */
+.experience-container {
+  background-color: #1c1c1c;
+  padding-left: 100px;
+  padding-right: 100px;
+  min-height: 100vh;
+}
+.experience-container h2 {
+  color: #FFFFFF;
+  font-size: 50px;
+  padding-top: 85px;
+}
+.experience-container p {
+  color: #FFFFFF;
+}
+.exp-container {
+  text-align: left;
+}
+.exp-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+.exp-item {
+  margin-bottom: 20px;
+}
+.exp-icon {
+  color: #FFFFFF;
+  font-size: 40px;
+  margin-right: 20px;
+}
+.icon-text-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.icon-text-container p {
+  margin: 0;
 }
 
 /* Styles for the skills.jsx */

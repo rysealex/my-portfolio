@@ -4,9 +4,9 @@ import { faSubscript, faCircleNodes } from '@fortawesome/free-solid-svg-icons';
 
 function Experience() {
   return (
-    <div className='about-container'>
+    <div className='experience-container'>
+			<h2>Experience</h2>
       <div className='exp-container'>
-        <h3>My Experience</h3>
         <ul>
           <li className='exp-item'>
             <div className='icon-text-container'>
@@ -14,9 +14,9 @@ function Experience() {
               <p><b>Mathematics Tutor, Central Washington University</b></p>
             </div>    
             <p>
-            Tutored university students and peers in multiple advanced mathematics courses.
-            Enhanced students’ conceptual understanding and challenged students to find solutions on their own.
-            Helped me develop strong analytical, problem-solving, and communication skills.
+							Tutored university students and peers in multiple advanced mathematics courses.
+							Enhanced students’ conceptual understanding and challenged students to find solutions on their own.
+							Helped me develop strong analytical, problem-solving, and communication skills.
             </p>
           </li>
           <li className='exp-item'>
@@ -25,9 +25,9 @@ function Experience() {
               <p><b>Teacher Assistant (Adv Data Str & File Proc), Central Washington University</b></p>
             </div>
             <p> 
-              Mentored students in applying advanced data structure concepts and file processing techniques under the
-              supervision of the course instructor. Graded assignments, diagnosed errors in student code, and provided actionable feedback to help debug
-              and improve code quality.
+							Mentored students in applying advanced data structure concepts and file processing techniques under the
+							supervision of the course instructor. Graded assignments, diagnosed errors in student code, and provided actionable feedback to help debug
+							and improve code quality.
             </p>
           </li>
         </ul>
