@@ -27,7 +27,7 @@ function About() {
           I'm driven by a desire to continuously grow, learn, and create meaningful technologies that make a difference.
         </p>
       </div>
-      <div className='exp-container'>
+      {/* <div className='exp-container'>
         <h3>My Experience</h3>
         <ul>
           <li className='exp-item'>
@@ -53,7 +53,7 @@ function About() {
             </p>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className='socials' id='about-socials'>
         <h3>Connect with me!</h3>
         <ul>

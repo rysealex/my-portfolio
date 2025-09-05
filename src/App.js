@@ -4,6 +4,7 @@ import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import Home from './components/home.jsx';
 import About from './components/about.jsx';
+import Experience from './components/experience.jsx';
 import Skills from './components/skills.jsx';
 import Projects from './components/projects.jsx';
 import Contact from './components/contact.jsx';
@@ -111,6 +112,11 @@ function App() {
             </a>
           </li>
           <li>
+            <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className={isLoaded && activeSection === 'experience' ? 'active' : ''}>
+              EXPERIENCE
+            </a>
+          </li>
+          <li>
             <a href="#skills" onClick={(e) => handleScroll(e, 'skills')} className={isLoaded && activeSection === 'skills' ? 'active' : ''}>
               SKILLS
             </a>
@@ -137,6 +143,9 @@ function App() {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section id="experience">
+        <Experience />
       </section>
       <section id="skills">
         <Skills />
