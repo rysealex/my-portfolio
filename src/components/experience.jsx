@@ -11,6 +11,28 @@ function Experience() {
           <li className='exp-item'>
             <div className='icon-text-container'>
               <FontAwesomeIcon icon={faSubscript} className='exp-icon'/>
+              <p><b>Software Engineer Intern, Nomms</b></p>
+            </div>    
+            <p>
+							Tutored university students and peers in multiple advanced mathematics courses.
+							Enhanced students’ conceptual understanding and challenged students to find solutions on their own.
+							Helped me develop strong analytical, problem-solving, and communication skills.
+            </p>
+          </li>
+          <li className='exp-item'>
+            <div className='icon-text-container'>
+              <FontAwesomeIcon icon={faSubscript} className='exp-icon'/>
+              <p><b>International Drone Competition, Tokyo Denki University</b></p>
+            </div>    
+            <p>
+							Tutored university students and peers in multiple advanced mathematics courses.
+							Enhanced students’ conceptual understanding and challenged students to find solutions on their own.
+							Helped me develop strong analytical, problem-solving, and communication skills.
+            </p>
+          </li>
+          <li className='exp-item'>
+            <div className='icon-text-container'>
+              <FontAwesomeIcon icon={faSubscript} className='exp-icon'/>
               <p><b>Mathematics Tutor, Central Washington University</b></p>
             </div>    
             <p>
