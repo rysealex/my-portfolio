@@ -272,6 +272,35 @@ section {
   border: solid #ffffff 8px;
 }
 
+.exp-left-align {
+  text-align: left;
+} 
+
+.job-title {
+  color: #FFFFFF;
+  margin-bottom: 1.5em;
+}
+
+.link-group p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+.experience-link {
+  font-size: 18px;
+  color: #0E3CBD;
+  text-decoration: none;
+  font-weight: bold;
+}
+.experience-link:hover {
+  text-decoration: underline;
+}
+
+.link-divider {
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0 0.5em;
+}
+
 /* Styles for the skills.jsx */
 .skills-container {
   background-color: #259FDE;
