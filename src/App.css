@@ -211,6 +211,63 @@ section {
   margin: 0;
 }
 
+/* Styles for the zigzag.jsx */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper > .experience-item {
+  /* border: 2px solid rgb(233, 171, 88); */
+  border-radius: 5px;
+  /* background-color: rgba(233, 171, 88, 0.5); */
+  padding: 1em;
+  margin-bottom: 5em;
+  /* color: #d9480f; */
+  
+  /* Make the experience-item a grid container itself */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* This will create two equal-width columns inside each item */
+  gap: 10em; /* Add some space between text and image */
+  align-items: center; /* Vertically center the text and image */
+}
+
+/* Base styles for all items */
+.wrapper {
+  display: grid;
+  /* This is a single column. We'll use the sub-grid above to create the zigzag. */
+  grid-template-columns: 1fr; 
+}
+
+/* Styles to create the zigzag effect */
+/* Target all even-numbered experience items */
+.wrapper > .experience-item:nth-of-type(even) {
+  /* For even items, reverse the order of the text and image */
+  direction: rtl; /* This is a common trick to reverse grid/flexbox items */
+}
+
+/* Correct the text direction for the inner elements */
+.wrapper > .experience-item:nth-of-type(even) .text-content {
+  direction: ltr;
+}
+
+/* General styles for the content */
+.text-content {
+    /* Your text styles here */
+}
+
+.image-placeholder {
+    /* Your image/icon styles here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-icon {
+    font-size: 5rem;
+    color: #fff;
+}
+
 /* Styles for the skills.jsx */
 .skills-container {
   background-color: #259FDE;

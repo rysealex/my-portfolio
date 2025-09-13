@@ -1,12 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSubscript, faCircleNodes } from '@fortawesome/free-solid-svg-icons';
+import ZigZag from './zigzag';
 
 function Experience() {
   return (
     <div className='experience-container'>
 			<h2>Experience</h2>
-      <div className='exp-container'>
+      {/* <div className='exp-container'>
         <ul>
           <li className='exp-item'>
             <div className='icon-text-container'>
@@ -53,7 +54,8 @@ function Experience() {
             </p>
           </li>
         </ul>
-      </div>
+      </div> */}
+      <ZigZag />
     </div>
   );
 }
