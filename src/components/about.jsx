@@ -1,14 +1,13 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faSubscript, faCircleNodes } from '@fortawesome/free-solid-svg-icons';
+import cwuLogo from '../cwu-logo.png';
 
 function About() {
   return (
     <div className='about-container'>
       <div className='cwu-container'>
         <a href='https://www.cwu.edu/' className='cwu-logo' target="_blank" rel="noopener noreferrer">
-          <img src='cwu-logo.png' alt='cwu-logo'></img>
+          <img src={cwuLogo} alt='cwu-logo'></img>
         </a>
       </div>
       <div className='intro-container'>

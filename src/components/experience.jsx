@@ -1,6 +1,3 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSubscript, faCircleNodes } from '@fortawesome/free-solid-svg-icons';
 import ZigZag from './zigzag';
 
 function Experience() {

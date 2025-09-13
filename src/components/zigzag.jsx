@@ -1,6 +1,6 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSubscript, faCircleNodes, faMicrochip } from '@fortawesome/free-solid-svg-icons'; // Added faMicrochip for a relevant icon
+import nommsLogo from '../nomms.jpg';
+import tduLogo from '../tdu.jpg';
+import cwuLogo from '../cwu-logo.png';
 
 function ZigZag() {
     return (
@@ -15,8 +15,9 @@ function ZigZag() {
                     </p>
                 </div>
                 <div className="image-placeholder">
-                    {/* Placeholder for an image or icon */}
-                    <FontAwesomeIcon icon={faMicrochip} className='item-icon' /> 
+                    <a href='https://ordernomms.com/' target="_blank" rel="noopener noreferrer">
+                        <img src={nommsLogo} alt='nomms-logo' className='item-icon' id='nomms-logo'></img>
+                    </a>
                 </div>
             </div>
             
@@ -30,8 +31,9 @@ function ZigZag() {
                     </p>
                 </div>
                 <div className="image-placeholder">
-                    {/* Placeholder for an image or icon */}
-                    <FontAwesomeIcon icon={faSubscript} className='item-icon' />
+                    <a href='https://www.dendai.ac.jp/en/' target="_blank" rel="noopener noreferrer">
+                        <img src={tduLogo} alt='tdu-logo' className='item-icon'></img>
+                    </a>
                 </div>
             </div>
             
@@ -45,8 +47,9 @@ function ZigZag() {
                     </p>
                 </div>
                 <div className="image-placeholder">
-                    {/* Placeholder for an image or icon */}
-                    <FontAwesomeIcon icon={faCircleNodes} className='item-icon' />
+                    <a href='https://catalog.acalog.cwu.edu/preview_course_nopop.php?catoid=60&coid=135829' target="_blank" rel="noopener noreferrer">
+                        <img src={cwuLogo} alt='cwu-logo' className='item-icon'></img>
+                    </a>
                 </div>
             </div>
             
@@ -60,8 +63,9 @@ function ZigZag() {
                     </p>
                 </div>
                 <div className="image-placeholder">
-                    {/* Placeholder for an image or icon */}
-                    <FontAwesomeIcon icon={faSubscript} className='item-icon' />
+                    <a href='https://www.cwu.edu/academics/academic-resources/learning-commons/tutoring/math-center/index.php' target="_blank" rel="noopener noreferrer">
+                        <img src={cwuLogo} alt='cwu-logo' className='item-icon'></img>
+                    </a>
                 </div>
             </div>
         </div>
