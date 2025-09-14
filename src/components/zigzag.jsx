@@ -1,6 +1,6 @@
-import nommsLogo from '../nomms.jpg';
-import tduLogo from '../tdu.jpg';
-import cwuLogo from '../cwu-logo.png';
+// import nommsLogo from '../nomms.jpg';
+// import tduLogo from '../tdu.jpg';
+// import cwuLogo from '../cwu-logo.png';
 
 function ZigZag() {
     return (
@@ -18,12 +18,12 @@ function ZigZag() {
                         <p><i>Visit the official Nomms page and my resume to learn more:</i></p>
                         <a href='https://ordernomms.com/' target="_blank" rel="noopener noreferrer" className="experience-link">Nomms Official Page</a>
                         <span className="link-divider"> | </span>
-                        <a href='' target="_blank" rel="noopener noreferrer" className="experience-link">Resume</a>
+                        <a href='Resume Alex Ryse 3.0.pdf' target="_blank" rel="noopener noreferrer" className="experience-link">Resume</a>
                     </div>
                 </div>
                 <div className="image-placeholder">
                     <a href='https://ordernomms.com/' target="_blank" rel="noopener noreferrer">
-                        <img src={nommsLogo} alt='nomms-logo' className='item-icon' id='nomms-logo'></img>
+                        <img src='nomms.jpg' alt='nomms-logo' className='item-icon' id='nomms-logo'></img>
                     </a>
                 </div>
             </div>
@@ -46,7 +46,7 @@ function ZigZag() {
                 </div>
                 <div className="image-placeholder">
                     <a href='https://www.dendai.ac.jp/en/' target="_blank" rel="noopener noreferrer">
-                        <img src={tduLogo} alt='tdu-logo' className='item-icon'></img>
+                        <img src='tdu.jpg' alt='tdu-logo' className='item-icon'></img>
                     </a>
                 </div>
             </div>
@@ -69,7 +69,7 @@ function ZigZag() {
                 </div>
                 <div className="image-placeholder">
                     <a href='https://www.cwu.edu/' target="_blank" rel="noopener noreferrer">
-                        <img src={cwuLogo} alt='cwu-logo' className='item-icon'></img>
+                        <img src='cwu-logo.png' alt='cwu-logo' className='item-icon'></img>
                     </a>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
@@ -8,7 +7,7 @@ function Footer() {
 	// get the current year
 	const currYear = new Date().getFullYear();
 
-  return (
+  	return (
 		<div className='footer-container'>
 			<div className='footer-row'>
 				<div className='copyright-container'>
@@ -39,7 +38,7 @@ function Footer() {
 							<a href="#contact"><b>Contact</b></a>
 						</li>
 						<li>
-							<a href="Resume Alex Ryse Upd 2.4.pdf" target="_blank" rel="noopener noreferrer">
+							<a href="Resume Alex Ryse 3.0.pdf" target="_blank" rel="noopener noreferrer">
 								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b
 							></a>
 						</li>
