@@ -46,22 +46,22 @@ const projects = [
     demo: '',
     description: (
       <>
-        Developed a comprehensive fitness tracker web application featuring a{' '}
-        <b>React</b>-based front end and a{' '}<b>Python Flask</b> back end.
-        Using{' '} <b>Docker</b>, I separated services via individual Dockerfiles for better modularity and deployment.
-        The app includes user authentication and personalized features for tracking fitness metrics.
-        Currently, I'm enhancing the platform by integrating a relational database along with new workout log and calorie tracker features.
-        This project has deepened my skills in Docker, React, Flask, API design, and containerized application architecture.
+        This full-stack fitness tracker web application, a personal project built with a{' '} <b>React</b>
+        {' '} frontend, a{' '} <b>Python Flask</b> {' '} backend, and a{' '} <b>MySQL</b> {' '} database on{' '} <b>AWS RDS</b>, was designed with the core functionalities of user management, calorie counting, workout logging, and goal tracking. 
+        To optimize application performance, I implemented a{' '} <b>React Context API</b> {' '} to reduce redundant data fetches by{' '} <b>80%</b> {' '} and a{' '} <b>JSON Web Token (JWT)</b> {' '} authentication system to secure all backend requests. 
+        The entire application was containerized using{' '} <b>Docker</b> {' '} for streamlined deployment. 
+        This project enhanced my skills in full-stack development, database management, and implementing secure, performant web applications.
       </>
     ),
     tech: [
-      { id: 0, label: 'React', value: 81.9 },
-      { id: 2, label: 'CSS', value: 10.5},
-      { id: 3, label: 'Flask', value: 6 },
-      { id: 4, label: 'Docker', value: 1.6 }
+      { id: 0, label: 'React', value: 62.4 },
+      { id: 2, label: 'Flask', value: 27.5 },
+      { id: 3, label: 'CSS', value: 8.1 },
+      { id: 4, label: 'Docker', value: 1.2 },
+      { id: 5, label: 'AWS', value: 0.8 }
     ],
     link: 'https://github.com/rysealex/fitness-tracker',
-    currDev: true,
+    currDev: false,
     wordCloudInteractive: false,
   },
   {
