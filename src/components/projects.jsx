@@ -43,7 +43,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: '',
+    demo: 'FitnessTrackerDemo.mp4',
     description: (
       <>
         This full-stack fitness tracker web application, a personal project built with a{' '} <b>React</b>
