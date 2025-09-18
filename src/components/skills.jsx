@@ -1,5 +1,5 @@
 import React from 'react';
-import { faJava, faPython, faJsSquare, faReact, faUbuntu, faPhp, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faJava, faPython, faJsSquare, faReact, faLinux, faPhp, faDocker, faAws, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -100,7 +100,21 @@ function Skills() {
           and Qt for the graphical user interface.
           </p>
         </div>
-        <div className="col-lg-4 col-md-6 mb-5" id='php'>
+        <div className="col-lg-4 col-md-6 mb-5" id='csharp'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-csharp'>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-line.svg" style={{ width: '4.5rem', height: '4.5rem', filter: 'brightness(0%)' }} />
+          </span>
+          <h3><b>C#</b></h3>
+          <p className="text-faded mb-0">
+          I recently started learning C and C++, and quickly fell in love with the power and control these languages offer.
+          Working with pointers and manual memory allocation was something I hadn’t experienced before.
+          I'm currently working on{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Sets Game</b>{' '}
+          , a card-matching game built in C++ with CMake for project management 
+          and Qt for the graphical user interface.
+          </p>
+        </div>
+        {/* <div className="col-lg-4 col-md-6 mb-5" id='php'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-php'>
             <FontAwesomeIcon icon={faPhp} className="fa-4x" />
           </span>
@@ -114,10 +128,11 @@ function Skills() {
           It gave me valuable hands-on experience working with server responses, form validation, 
           and database integration in a real-world scenario.
           </p>
-        </div>
+        </div> */}
         <div className="col-lg-4 col-md-6 mb-5" id='sql'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-sql'>
-          <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' />
+            {/* <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' /> */}
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" style={{ width: '5rem', height: '5rem', filter: 'brightness(0%)' }} />
           </span>
           <h3><b>MySQL</b></h3>
           <p className="text-faded mb-0">
@@ -131,9 +146,9 @@ function Skills() {
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='linux'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-linux'>
-            <FontAwesomeIcon icon={faUbuntu} className="fa-4x" />
+            <FontAwesomeIcon icon={faLinux} className="fa-4x" />
           </span>
-          <h3><b>Linux (Ubuntu)</b></h3>
+          <h3><b>Linux</b></h3>
           <p className="text-faded mb-0">
           I first started using Ubuntu while learning C, and quickly grew to appreciate the control and flexibility the Linux environment offers.
           I enjoy working with the terminal for compiling code, managing files, and interacting with development tools.
@@ -145,6 +160,57 @@ function Skills() {
             <FontAwesomeIcon icon={faDocker} className="fa-4x" />
           </span>
           <h3><b>Docker</b></h3>
+          <p className="text-faded mb-0">
+          Currently, I am utilizing Docker in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
+          web application,
+          where I created separate Dockerfiles for the different services to streamline development and deployment.
+          I also leveraged Docker for containerization in my{' '} 
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
+          full-stack banking web application, 
+          enabling consistent environments and simplified deployment.
+          I’m planning to continue leveraging Docker and containerization in future projects.
+          </p>
+        </div>
+        <div className="col-lg-4 col-md-6 mb-5" id='aws'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-aws'>
+            <FontAwesomeIcon icon={faAws} className="fa-4x" />
+          </span>
+          <h3><b>AWS</b></h3>
+          <p className="text-faded mb-0">
+          Currently, I am utilizing Docker in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
+          web application,
+          where I created separate Dockerfiles for the different services to streamline development and deployment.
+          I also leveraged Docker for containerization in my{' '} 
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
+          full-stack banking web application, 
+          enabling consistent environments and simplified deployment.
+          I’m planning to continue leveraging Docker and containerization in future projects.
+          </p>
+        </div>
+        <div className="col-lg-4 col-md-6 mb-5" id='nodejs'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-nodejs'>
+            <FontAwesomeIcon icon={faNodeJs} className="fa-4x" />
+          </span>
+          <h3><b>Node.js/Express.js</b></h3>
+          <p className="text-faded mb-0">
+          Currently, I am utilizing Docker in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
+          web application,
+          where I created separate Dockerfiles for the different services to streamline development and deployment.
+          I also leveraged Docker for containerization in my{' '} 
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
+          full-stack banking web application, 
+          enabling consistent environments and simplified deployment.
+          I’m planning to continue leveraging Docker and containerization in future projects.
+          </p>
+        </div>
+        <div className="col-lg-4 col-md-6 mb-5" id='azure'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-azure'>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg" style={{ width: '4rem', height: '4rem', filter: 'brightness(0%)' }} />
+          </span>
+          <h3><b>Azure</b></h3>
           <p className="text-faded mb-0">
           Currently, I am utilizing Docker in my full-stack{' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
