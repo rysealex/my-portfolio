@@ -14,6 +14,15 @@ function Skills() {
     window.scrollTo({ top, behavior: 'smooth' });
   };
 
+  // get the exeperience section component
+  const experienceSection = document.getElementById('experience');
+  // handle scroll to experience section
+  const handleScrollToExperience = () => {
+    const offset = 60; // height above experience header
+    const top = experienceSection.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   return (
     <div className='skills-container' id='skills'>
       <div>
@@ -35,7 +44,7 @@ function Skills() {
           </span>
           <h3><b>Java</b></h3>
           <p className="text-faded mb-0">
-          Java was the first programming language I learned, and I've been developing with it for over 3 years.
+          Java was the first programming language I learned, and I've been developing with it for over 4 years.
           I've built a variety of projects—including a real-time{' '} 
           <b className='skills-project-link' onClick={handleScroll}>Chat App</b>—which helped 
           me deepen my understanding of object-oriented programming and backend logic.
@@ -48,15 +57,15 @@ function Skills() {
           </span>
           <h3><b>Python</b></h3>
           <p className="text-faded mb-0">
-          I use Python for both scripting and web development. Currently, I'm building a full-stack{' '}
+          I use Python for both scripting and web development. I built a full-stack{' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application using a Python Flask backend, where I’m implementing user authentication, workout tracking, 
-          and dynamic data visualization.
+          web application using a Python Flask backend, where I implemented features like
+          calorie counting and workout tracking.
           This builds upon my experience developing a{' '}
           <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b>, 
           which involved API integration, data visualization, and efficient data handling.
-          Working with Python has strengthened my skills in API design, database integration, server-side logic,
-          and data visualization.
+          Additionally, I have experience using Python scripts for autonomous drone navigation and collision detection
+          during an <b className='skills-project-link' onClick={handleScrollToExperience}>International Drone Competition</b> in Tokyo, Japan.
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='javascript'>
@@ -86,6 +95,35 @@ function Skills() {
           <b className='skills-project-link' onClick={handleScroll}>Financial Data Filtering App</b>.
           </p>
         </div>
+        <div className="col-lg-4 col-md-6 mb-5" id='nodejs'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-nodejs'>
+            <FontAwesomeIcon icon={faNodeJs} className="fa-4x" />
+          </span>
+          <h3><b>Node.js/Express.js</b></h3>
+          <p className="text-faded mb-0">
+          My expertise in Node.js and Express.js was a critical component of my work on the {' '} 
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> banking web application. 
+          I led a three-developer team through the entire SDLC, where I personally engineered the complete backend.
+          This involved developing a robust Node.js/Express.js backend that would serve a RESTful API to manage data.
+          I'm eager to continue leveraging these technologies to build scalable and efficient backends for future projects.
+          </p>
+        </div>
+        <div className="col-lg-4 col-md-6 mb-5" id='sql'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-sql'>
+            {/* <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' /> */}
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt='MySQL-logo' style={{ width: '5rem', height: '5rem', filter: 'brightness(0%)' }} />
+          </span>
+          <h3><b>MySQL</b></h3>
+          <p className="text-faded mb-0">
+          I’ve used MySQL as the relational database in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b>, {' '}
+          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b>, and {' '}
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
+          web applications—handling tasks like querying, inserting, and updating data across tables.
+          These experiences helped me gain a strong foundation in relational databases and efficient data handling.
+          I plan to continue using MySQL in upcoming full-stack projects to build more dynamic, data-driven applications.
+          </p>
+        </div>
         <div className="col-lg-4 col-md-6 mb-5" id='c++'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-c++'>
             <img src='c.svg' alt='c-logo' id='c-logo' />
@@ -102,16 +140,13 @@ function Skills() {
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='csharp'>
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-csharp'>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-line.svg" style={{ width: '4.5rem', height: '4.5rem', filter: 'brightness(0%)' }} />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-line.svg" alt='C#-logo' style={{ width: '4.5rem', height: '4.5rem', filter: 'brightness(0%)' }} />
           </span>
           <h3><b>C#</b></h3>
           <p className="text-faded mb-0">
-          I recently started learning C and C++, and quickly fell in love with the power and control these languages offer.
-          Working with pointers and manual memory allocation was something I hadn’t experienced before.
-          I'm currently working on{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Sets Game</b>{' '}
-          , a card-matching game built in C++ with CMake for project management 
-          and Qt for the graphical user interface.
+          My experience with C# was primarily honed during my <b className='skills-project-link' onClick={handleScrollToExperience}>Software Engineer Internship</b> at Nomms. 
+          In this role, I engineered a serverless automation solution using an Azure Function written in C#.
+          This experience not only strengthened my backend development skills but also my ability to contribute to the front end and collaborate within a full Microsoft stack environment.
           </p>
         </div>
         {/* <div className="col-lg-4 col-md-6 mb-5" id='php'>
@@ -129,19 +164,15 @@ function Skills() {
           and database integration in a real-world scenario.
           </p>
         </div> */}
-        <div className="col-lg-4 col-md-6 mb-5" id='sql'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-sql'>
-            {/* <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' /> */}
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" style={{ width: '5rem', height: '5rem', filter: 'brightness(0%)' }} />
+        <div className="col-lg-4 col-md-6 mb-5" id='azure'>
+          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-azure'>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg" alt='Azure-logo' style={{ width: '4rem', height: '4rem', filter: 'brightness(0%)' }} />
           </span>
-          <h3><b>MySQL</b></h3>
+          <h3><b>Azure</b></h3>
           <p className="text-faded mb-0">
-          I’ve used MySQL as the relational database in my full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b> {' '} and {' '}
-          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
-          web applications—handling tasks like querying, inserting, and updating data across tables.
-          These experiences helped me gain a strong foundation in relational databases and efficient data handling.
-          I plan to continue using MySQL in upcoming full-stack projects to build more dynamic, data-driven applications.
+          My understanding and hands-on experience with Microsoft Azure were primarily developed during my <b className='skills-project-link' onClick={handleScrollToExperience}>Software Engineer Internship</b> at Nomms. 
+          I gained practical experience with managing database schema and implementing data migrations to support new features, all while ensuring data integrity.
+          I also developed a strong foundation for building, deploying, and maintaining cloud-native applications in an Azure environment.
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='linux'>
@@ -150,9 +181,11 @@ function Skills() {
           </span>
           <h3><b>Linux</b></h3>
           <p className="text-faded mb-0">
-          I first started using Ubuntu while learning C, and quickly grew to appreciate the control and flexibility the Linux environment offers.
-          I enjoy working with the terminal for compiling code, managing files, and interacting with development tools.
-          Using Linux has helped me better understand system-level operations and strengthened my overall workflow as a developer.
+          I began my journey with Linux while learning C, starting with Ubuntu. 
+          I quickly came to appreciate the control and flexibility of the Linux environment. 
+          Currently, I am expanding my skills with Kali Linux for cybersecurity exploration and learning. 
+          I enjoy leveraging the command line for tasks such as compiling code, managing files, and interacting with various development tools.
+          {/* Using Linux has helped me better understand system-level operations and strengthened my overall workflow as a developer. */}
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='docker'>
@@ -161,7 +194,7 @@ function Skills() {
           </span>
           <h3><b>Docker</b></h3>
           <p className="text-faded mb-0">
-          Currently, I am utilizing Docker in my full-stack{' '}
+          I've utilized Docker in my full-stack{' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
           web application,
           where I created separate Dockerfiles for the different services to streamline development and deployment.
@@ -178,49 +211,9 @@ function Skills() {
           </span>
           <h3><b>AWS</b></h3>
           <p className="text-faded mb-0">
-          Currently, I am utilizing Docker in my full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application,
-          where I created separate Dockerfiles for the different services to streamline development and deployment.
-          I also leveraged Docker for containerization in my{' '} 
-          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
-          full-stack banking web application, 
-          enabling consistent environments and simplified deployment.
-          I’m planning to continue leveraging Docker and containerization in future projects.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id='nodejs'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-nodejs'>
-            <FontAwesomeIcon icon={faNodeJs} className="fa-4x" />
-          </span>
-          <h3><b>Node.js/Express.js</b></h3>
-          <p className="text-faded mb-0">
-          Currently, I am utilizing Docker in my full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application,
-          where I created separate Dockerfiles for the different services to streamline development and deployment.
-          I also leveraged Docker for containerization in my{' '} 
-          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
-          full-stack banking web application, 
-          enabling consistent environments and simplified deployment.
-          I’m planning to continue leveraging Docker and containerization in future projects.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id='azure'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-azure'>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg" style={{ width: '4rem', height: '4rem', filter: 'brightness(0%)' }} />
-          </span>
-          <h3><b>Azure</b></h3>
-          <p className="text-faded mb-0">
-          Currently, I am utilizing Docker in my full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application,
-          where I created separate Dockerfiles for the different services to streamline development and deployment.
-          I also leveraged Docker for containerization in my{' '} 
-          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
-          full-stack banking web application, 
-          enabling consistent environments and simplified deployment.
-          I’m planning to continue leveraging Docker and containerization in future projects.
+          My experience with AWS centers on leveraging its cloud services to support my full-stack <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> web application. 
+          For this project, I used AWS RDS to host a MySQL database, which served as the secure and scalable backend for all user data.
+          Looking ahead, I am keen to explore additional AWS services and features to integrate into future projects.
           </p>
         </div>
       </div>
