@@ -410,9 +410,9 @@ function Projects() {
                       case 'flask':
                         targetId = 'python';
                         break;
-                      case 'node.js/express.js':
-                        targetId = 'javascript';
-                        break;
+                      // case 'node.js/express.js':
+                      //   targetId = 'javascript';
+                      //   break;
                       default:
                         break;
                     }

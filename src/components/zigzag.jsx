@@ -18,7 +18,7 @@ function ZigZag() {
                         <p><i>Visit the official Nomms page and my resume to learn more:</i></p>
                         <a href='https://ordernomms.com/' target="_blank" rel="noopener noreferrer" className="experience-link">Nomms Official Page</a>
                         <span className="link-divider"> | </span>
-                        <a href='Resume Alex Ryse 3.1.pdf' target="_blank" rel="noopener noreferrer" className="experience-link">Resume</a>
+                        <a href='Resume Alex Ryse 3.2.pdf' target="_blank" rel="noopener noreferrer" className="experience-link">Resume</a>
                     </div>
                 </div>
                 <div className="image-placeholder">

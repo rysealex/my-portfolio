@@ -132,7 +132,7 @@ function App() {
             </a>
           </li>
           <li>
-            <a href="Resume Alex Ryse 3.1.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> 
+            <a href="Resume Alex Ryse 3.2.pdf" target='_blank'><FontAwesomeIcon icon={faFilePdf} /> 
               <b>RESUME</b>
             </a>
           </li>
