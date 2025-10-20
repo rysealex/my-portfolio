@@ -131,8 +131,10 @@ function Skills() {
           <h3><b>C/C++</b></h3>
           <p className="text-faded mb-0">
           I recently started learning C and C++, and quickly fell in love with the power and control these languages offer.
-          Working with pointers and manual memory allocation was something I hadn’t experienced before.
-          I'm currently working on{' '}
+          {/* Working with pointers and manual memory allocation was something I hadn’t experienced before. */}
+          I'm currently applying C in my <b className='skills-project-link' onClick={handleScrollToExperience}>Undergraduate Research</b> position, 
+          specifically by developing tools and scripts to support our Red/Blue Team lab manuals.
+          Additionally, I am working on{' '}
           <b className='skills-project-link' onClick={handleScroll}>Sets Game</b>{' '}
           , a card-matching game built in C++ with CMake for project management 
           and Qt for the graphical user interface.
@@ -182,9 +184,14 @@ function Skills() {
           <h3><b>Linux</b></h3>
           <p className="text-faded mb-0">
           I began my journey with Linux while learning C, starting with Ubuntu. 
+          I quickly came to appreciate the control and flexibility of the Linux environment, a skill I now leverage extensively in my{' '} 
+          <b className='skills-project-link' onClick={handleScrollToExperience}>Undergraduate Research</b>. 
+          For the Red/Blue Team lab manuals, I use Kali Linux and Ubuntu VMs to simulate, execute, and analyze attack scenarios. 
+          I enjoy leveraging the command line for compiling C code, managing files, and interacting with core security and development tools.
+          {/* I began my journey with Linux while learning C, starting with Ubuntu. 
           I quickly came to appreciate the control and flexibility of the Linux environment. 
           Currently, I am expanding my skills with Kali Linux for cybersecurity exploration and learning. 
-          I enjoy leveraging the command line for tasks such as compiling code, managing files, and interacting with various development tools.
+          I enjoy leveraging the command line for tasks such as compiling code, managing files, and interacting with various development tools. */}
           {/* Using Linux has helped me better understand system-level operations and strengthened my overall workflow as a developer. */}
           </p>
         </div>

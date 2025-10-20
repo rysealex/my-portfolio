@@ -28,8 +28,31 @@ function ZigZag() {
                     </a>
                 </div>
             </div>
-            
+
             <div className="experience-item item-two">
+                <div className="text-content">
+                    <h3 className='job-title'>Undergraduate Research Assistant, Central Washington University</h3>
+                    <p className='exp-left-align'>
+                        My role as an <b>Undergraduate Research Assistant</b> involved in-depth research and the design of educational cybersecurity content. 
+                        I worked as part of a three-person team to create comprehensive <b>Red/Blue Team lab manuals</b> that directly simulated real-world cyber threats. 
+                        We structured the content around the <b>MITRE ATT&CK</b> framework to ensure modern, relevant training. 
+                        Furthermore, I managed and utilized an <b>ESXi</b> lab range to rigorously test and validate all attack and defense scenarios using essential security tools, ensuring the educational material was technically sound and ready for institutional deployment.
+                    </p>
+                    <div className="link-group">
+                        <p><i>Visit our CWU Cybersecurity GitHub and my resume to learn more:</i></p>
+                        <a href='https://github.com/CWU-cybersecurity' target="_blank" rel="noopener noreferrer" className="experience-link">CWU Cybersecurity GitHub</a>
+                        <span className="link-divider"> | </span>
+                        <a href='Resume Alex Ryse 3.2.pdf' target="_blank" rel="noopener noreferrer" className="experience-link">Resume</a>
+                    </div>
+                </div>
+                <div className="image-placeholder">
+                    <a href='https://github.com/CWU-cybersecurity' target="_blank" rel="noopener noreferrer">
+                        <img src='cwu-cybersecurity.png' alt='cwu-cybersecurty' className='item-icon' id='cwu-cyber-logo'></img>
+                    </a>
+                </div>
+            </div>
+            
+            <div className="experience-item item-three">
                 <div className="text-content">
                     <h3 className='job-title'>International Drone Competition, Tokyo Denki University</h3>
                     <p className='exp-left-align'>
@@ -52,7 +75,7 @@ function ZigZag() {
                 </div>
             </div>
             
-            <div className="experience-item item-three">
+            <div className="experience-item item-four">
                 <div className="text-content">
                     <h3 className='job-title'>Teacher Assistant & Mathematics Tutor, Central Washington University</h3>
                     <p className='exp-left-align'>
@@ -71,29 +94,6 @@ function ZigZag() {
                 <div className="image-placeholder">
                     <a href='https://www.cwu.edu/' target="_blank" rel="noopener noreferrer">
                         <img src='cwu-logo.png' alt='cwu-logo' className='item-icon'></img>
-                    </a>
-                </div>
-            </div>
-
-            <div className="experience-item item-four">
-                <div className="text-content">
-                    <h3 className='job-title'>Undergraduate Research Assistant, Central Washington University</h3>
-                    <p className='exp-left-align'>
-                        As a student at Central Washington University, I have held multiple academic roles that have been foundational to my professional growth. 
-                        As a <b>Teacher Assistant for Advanced Data Structures</b>, I honed my technical abilities by mentoring students and debugging code. 
-                        As a <b>Mathematics Tutor</b>, I developed strong communication skills by guiding students through complex problems. 
-                        These experiences taught me not only how to solve problems but also how to effectively teach others to do the same.
-                    </p>
-                    <div className="link-group">
-                        <p><i>Visit the official university pages to learn more:</i></p>
-                        <a href='https://catalog.acalog.cwu.edu/preview_course_nopop.php?catoid=67&coid=156420' target="_blank" rel="noopener noreferrer" className="experience-link">Teacher Assistant</a>
-                        <span className="link-divider"> | </span>
-                        <a href='https://www.cwu.edu/academics/academic-resources/learning-commons/tutoring/math-center/index.php' target="_blank" rel="noopener noreferrer" className="experience-link">Mathematics Tutor</a>
-                    </div>
-                </div>
-                <div className="image-placeholder">
-                    <a href='https://www.cwu.edu/' target="_blank" rel="noopener noreferrer">
-                        <img src='cwu-cybersecurity.png' alt='cwu-cybersecurty' className='item-icon' id='cwu-cyber-logo'></img>
                     </a>
                 </div>
             </div>
