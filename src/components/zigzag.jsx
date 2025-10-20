@@ -1,6 +1,7 @@
 // import nommsLogo from '../nomms.jpg';
 // import tduLogo from '../tdu.jpg';
 // import cwuLogo from '../cwu-logo.png';
+// import cwuCyber from '../cwu-cybersecurity.png'
 
 function ZigZag() {
     return (
@@ -56,7 +57,7 @@ function ZigZag() {
                     <h3 className='job-title'>Teacher Assistant & Mathematics Tutor, Central Washington University</h3>
                     <p className='exp-left-align'>
                         As a student at Central Washington University, I have held multiple academic roles that have been foundational to my professional growth. 
-                        As a <b>Teacher Assistant for Advanced Data Structures</b>, I honed my technical abilities by mentoring students and debugging code. 
+                        As a <b>Teacher Assistant for Advanced Data Structures and Database Management Systems (DBMS)</b>, I honed my technical abilities by mentoring students and debugging code. 
                         As a <b>Mathematics Tutor</b>, I developed strong communication skills by guiding students through complex problems. 
                         These experiences taught me not only how to solve problems but also how to effectively teach others to do the same.
                     </p>
@@ -70,6 +71,29 @@ function ZigZag() {
                 <div className="image-placeholder">
                     <a href='https://www.cwu.edu/' target="_blank" rel="noopener noreferrer">
                         <img src='cwu-logo.png' alt='cwu-logo' className='item-icon'></img>
+                    </a>
+                </div>
+            </div>
+
+            <div className="experience-item item-four">
+                <div className="text-content">
+                    <h3 className='job-title'>Undergraduate Research Assistant, Central Washington University</h3>
+                    <p className='exp-left-align'>
+                        As a student at Central Washington University, I have held multiple academic roles that have been foundational to my professional growth. 
+                        As a <b>Teacher Assistant for Advanced Data Structures</b>, I honed my technical abilities by mentoring students and debugging code. 
+                        As a <b>Mathematics Tutor</b>, I developed strong communication skills by guiding students through complex problems. 
+                        These experiences taught me not only how to solve problems but also how to effectively teach others to do the same.
+                    </p>
+                    <div className="link-group">
+                        <p><i>Visit the official university pages to learn more:</i></p>
+                        <a href='https://catalog.acalog.cwu.edu/preview_course_nopop.php?catoid=67&coid=156420' target="_blank" rel="noopener noreferrer" className="experience-link">Teacher Assistant</a>
+                        <span className="link-divider"> | </span>
+                        <a href='https://www.cwu.edu/academics/academic-resources/learning-commons/tutoring/math-center/index.php' target="_blank" rel="noopener noreferrer" className="experience-link">Mathematics Tutor</a>
+                    </div>
+                </div>
+                <div className="image-placeholder">
+                    <a href='https://www.cwu.edu/' target="_blank" rel="noopener noreferrer">
+                        <img src='cwu-cybersecurity.png' alt='cwu-cybersecurty' className='item-icon' id='cwu-cyber-logo'></img>
                     </a>
                 </div>
             </div>
