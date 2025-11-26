@@ -6,9 +6,9 @@ function About() {
   return (
     <div className='about-container'>
       <div className='cwu-container'>
-        <a href='https://www.cwu.edu/' className='cwu-logo' target="_blank" rel="noopener noreferrer">
+        {/* <a href='https://www.cwu.edu/' className='cwu-logo' target="_blank" rel="noopener noreferrer">
           <img src='cwu-logo.png' alt='cwu-logo'></img>
-        </a>
+        </a> */}
       </div>
       <div className='intro-container'>
         <h2>Hi, I'm Alex Ryse!</h2>
