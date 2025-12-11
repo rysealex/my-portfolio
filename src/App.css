@@ -58,8 +58,9 @@ nav a.active {
 }
 
 section {
-  padding: 100px, 100px;
+  /* padding: 100px, 100px; */
   text-align: center;
+  background-color: #e4e4e4;
 }
 
 .scroll-to-top {
@@ -124,16 +125,41 @@ section {
 
 /* Styles for the about.jsx */
 .about-container {
-  background-color: #FFFFFF;
+  background-color: #e4e4e4;
   padding-left: clamp(1rem, 5vw, 100px);
   padding-right: clamp(1rem, 5vw, 100px);
   min-height: 100vh;
+  display: flex; /* Enable Flexbox */
+  flex-direction: row; /* Keep elements in a row */
+  justify-content: center; /* Center the main content */
+  align-items: center;
+  gap: 150px; /* Space between the left column and the text */
+  /* padding-top: 85px; */
+}
+/* New style for the left column (Pic + Socials) */
+.left-column {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: column; /* Stack the picture and socials vertically */
+  align-items: center;
+  flex-shrink: 0; /* Prevent the column from shrinking */
+  width: 250px; /* Set a fixed width for the column */
+}
+
+/* New style for the profile picture */
+.profile-pic-container {
+  margin-bottom: 20px; /* Space between the picture and the socials */
+  margin-top: 30px; /* Small space from the top of the container */
+}
+
+.profile-pic {
+  width: 350px; /* Match the column width */
+  height: 350px; /* Keep it square */
+  border-radius: 50%;
+  border: solid #FFFFFF 8px; /* Changed from #FFFFFF for better contrast on white background */
+  object-fit: cover; /* Ensures the image fills the area without distortion */
 }
 .about-container h2 {
-  padding-top: 85px;
+  /* padding-top: 85px; */
 }
 .cwu-container {
   float: right;
@@ -144,6 +170,11 @@ section {
 }
 .intro-container {
   text-align: left;
+  flex-grow: 1; /* Allow the text to grow and take up remaining space */
+  max-width: 800px;
+}
+.socials h3 {
+  text-align: center;
 }
 .socials ul {
   list-style-type: none;
@@ -172,7 +203,23 @@ section {
   background-color: #0E3CBD;
 }
 #about-socials {
-  margin-bottom: 40px;
+  margin-bottom: 0;
+}
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack them vertically on small screens */
+    align-items: center;
+  }
+
+  .left-column {
+    width: 100%; /* Take full width */
+  }
+
+  .intro-container {
+    max-width: 100%;
+    padding-bottom: 30px; /* Add some space at the bottom */
+  }
 }
 
 /* Styles for the experience.jsx */
@@ -180,13 +227,14 @@ section {
   background-color: #1c1c1c;
   padding-left: 100px;
   padding-right: 100px;
-  min-height: 100vh;
-  margin-bottom: -42px;
+  /* min-height: 100vh; */
+  margin-bottom: 0;
 }
 .experience-container h2 {
   color: #FFFFFF;
   font-size: 50px;
   padding-top: 85px;
+  margin-top: 0;
 }
 .experience-container p {
   color: #FFFFFF;
@@ -310,12 +358,14 @@ section {
   background-color: #259FDE;
   padding-left: 100px;
   padding-right: 100px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  padding-bottom: 50px;
 }
 .skills-container h2 {
   color: #FFFFFF;
   font-size: 50px;
   padding-top: 85px;
+  margin-top: 0;
 }
 .skills-container h3 {
   color: #FFFFFF;
@@ -323,7 +373,7 @@ section {
 }
 .skills-container p {
   color: #FFFFFF;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 .service-icon {
   display: flex;
@@ -383,14 +433,16 @@ section {
 
 /* Styles for the projects.jsx */
 .projects-container {
-  background-color: #FFFFFF;
+  background-color: #e4e4e4;
   padding-left: 100px;
   padding-right: 100px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  padding-bottom: 50px;
 }
 .projects-container h2 {
   font-size: 50px;
   padding-top: 85px;
+  margin-top: 0;
 }
 .projects-container h3 {
   font-size: 30px;
@@ -732,12 +784,14 @@ section {
   background-color: #1c1c1c;
   padding-left: 100px;
   padding-right: 100px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  padding-bottom: 50px;
 }
 .contact-container h2 {
   color: #FFFFFF;
   font-size: 50px;
   padding-top: 85px;
+  margin-top: 0;
 }
 .contact-container h3 {
   color: #FFFFFF;
