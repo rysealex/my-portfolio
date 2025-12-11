@@ -1,19 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
-import profilePic from '../profile_pic.png';
-// import cwuLogo from '../cwu-logo.png';
 
 function About() {
   return (
     <div className='about-container'>
-      {/* <div className='cwu-container'>
-        <a href='https://www.cwu.edu/' className='cwu-logo' target="_blank" rel="noopener noreferrer">
-          <img src='cwu-logo.png' alt='cwu-logo'></img>
-        </a>
-      </div> */}
       <div className='left-column'> 
         <div className='profile-pic-container'>
-          <img src={profilePic} alt='Alex Ryse Profile Pic' className='profile-pic' />
+          <img src="profile_pic.png" alt='Alex Ryse Profile Pic' className='profile-pic' />
         </div>
         <div className='socials' id='about-socials'>
           <h3>Connect with me!</h3>
