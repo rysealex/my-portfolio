@@ -91,18 +91,17 @@ section {
 
 .home-container h2 {
   color: #FFFFFF;
-  font-size: 70px;
+  font-size: 80px;
   margin-bottom: 0;
   margin-top: 0.5em;
 }
 .home-container h3 {
   color: #FFFFFF;
-  font-size: 30px;
-  margin-bottom: 75px;
+  font-size: 40px;
 }
 
 .home-container {
-  background-image: url(C:\Users\aryse\OneDrive\Desktop\CS\Projects\my-portfolio\public\cs_background.jpg);
+  background-image: url(C:\Users\aryse\OneDrive\Desktop\CS\Projects\my-portfolio\public\background2.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -121,6 +120,23 @@ section {
   width: 250px;
   border-radius: 50%;
   border: solid #FFFFFF 8px;
+}
+
+.enter-container button {
+  margin-bottom: 70px;
+  padding: 10px 20px;
+  color: black;
+  background-color: white;
+  width: 200px;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+.enter-container button:hover {
+  background-color: #e4e4e4;
 }
 
 /* Styles for the about.jsx */
