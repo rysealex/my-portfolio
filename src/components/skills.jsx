@@ -100,7 +100,7 @@ function Skills() {
           <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-nodejs'>
             <FontAwesomeIcon icon={faNodeJs} className="fa-4x" />
           </span>
-          <h3><b>Node.js/Express.js</b></h3>
+          <h3><b>Node.js, Express.js</b></h3>
           <p className="text-faded mb-0">
           My expertise in Node.js and Express.js was a critical component of my work on the {' '} 
           <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> banking web application. 

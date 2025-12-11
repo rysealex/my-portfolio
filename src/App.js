@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import Home from './components/home.jsx';
@@ -14,6 +15,12 @@ import './App.css';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Toggle function for the hamburger button
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
 
   useEffect(() => {
     // Set isLoaded to true when window finishes loading
@@ -83,6 +90,9 @@ function App() {
   // handle the nav bar scroll behavior
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
+
+    // Close the menu when a link is clicked
+    setIsMenuOpen(false);
     
     const section = document.getElementById(sectionId);
     const navHeight = 60;
@@ -96,11 +106,14 @@ function App() {
 
   return (
     <div id='page-top'>
-      <nav>
+      <nav className={isMenuOpen ? 'menu-open' : ''}>
         <div className='nav-left'>
-          <a href='#page-top' className='name-logo'><b>Alex Ryse</b></a>
+          <a href='#page-top' className='name-logo' onClick={() => setIsMenuOpen(false)}><b>Alex Ryse</b></a>
         </div>
-        <ul>
+        <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle navigation menu">
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+        </button>
+        <ul className={isMenuOpen ? 'mobile-menu' : ''}>
           <li>
             <a href="#home" onClick={(e) => handleScroll(e, 'home')} className={isLoaded && activeSection === 'home' ? 'active' : ''}>
               HOME

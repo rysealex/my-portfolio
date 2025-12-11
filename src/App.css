@@ -56,11 +56,86 @@ nav a:hover {
 nav a.active {
   color: #0E3CBD;
 }
+.hamburger-menu {
+  display: none; /* Hide on desktop by default */
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #1c1c1c; /* Link color */
+  padding: 0 20px;
+  z-index: 101; /* Ensure it's above other elements */
+}
+.hamburger-menu:focus {
+  outline: none;
+}
+.hamburger-menu:hover {
+  color: #0E3CBD;
+}
+/* --- Responsive Navigation (Overwrite previous styles) --- */
+@media (max-width: 992px) {
+  /* 1. Display the hamburger button */
+  .hamburger-menu {
+    display: block; 
+  }
+
+  /* 2. Keep navigation left and right aligned */
+  nav {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .name-logo {
+    margin-left: 0;
+  }
+  
+  /* 3. Hide the main UL by default on mobile */
+  nav ul {
+    /* Hide the desktop menu */
+    display: none;
+  }
+
+  /* 4. Mobile Menu OPEN state */
+  nav ul.mobile-menu {
+    display: flex; /* Show the menu */
+    flex-direction: column; /* Stack links vertically */
+    position: fixed; /* Overlay content */
+    top: 60px; /* Below the nav bar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Full screen height minus nav height */
+    background-color: #848484; /* Same as nav bar background */
+    padding: 20px 0;
+    align-items: center; /* Center links horizontally */
+    z-index: 99;
+    overflow-y: auto; /* Allow scrolling if many links */
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+  }
+
+  nav ul.mobile-menu li {
+    margin: 15px 0; /* Space out the links */
+  }
+
+  nav ul.mobile-menu a {
+    font-size: 20px; /* Larger text for mobile taps */
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
 
 section {
-  /* padding: 100px, 100px; */
   text-align: center;
   background-color: #e4e4e4;
+}
+/* --- NEW GLOBAL MOBILE PADDING --- */
+/* This will apply to ALL sections unless they override it */
+@media (max-width: 992px) {
+  section {
+    /* Use a much smaller, flexible side padding on tablets and mobile */
+    /* padding-left: 20px;
+    padding-right: 20px; */
+  }
 }
 
 .scroll-to-top {
@@ -111,6 +186,7 @@ section {
   flex-direction: column;
   padding-bottom: 50px;
   min-height: 100vh;
+  padding-top: 60px; /* To prevent content from being hidden by the fixed nav */
 }
 
 .pic-container {
@@ -221,20 +297,31 @@ section {
 #about-socials {
   margin-bottom: 0;
 }
-/* Add media query for smaller screens */
-@media (max-width: 768px) {
+/* Add media query for smaller screens, refining your existing one */
+@media (max-width: 992px) {
   .about-container {
-    flex-direction: column; /* Stack them vertically on small screens */
+    /* Stack them vertically on small screens/tablets */
+    flex-direction: column; 
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 50px; /* Adjusted gap when stacked */
   }
 
   .left-column {
-    width: 100%; /* Take full width */
+    width: 100%; 
+    max-width: 300px; /* Limit the size of the picture/socials column */
+  }
+
+  .profile-pic {
+    width: 250px; /* Keep a fixed size when stacked for consistency */
+    height: 250px; 
   }
 
   .intro-container {
     max-width: 100%;
-    padding-bottom: 30px; /* Add some space at the bottom */
+    text-align: center; /* Center text when stacked */
+    padding-bottom: 30px;
   }
 }
 
@@ -245,6 +332,13 @@ section {
   padding-right: 100px;
   /* min-height: 100vh; */
   margin-bottom: 0;
+}
+/* --- NEW FIX FOR EXPERIENCE PADDING ON MOBILE --- */
+@media (max-width: 992px) {
+  .experience-container {
+    padding-left: 20px; /* Use smaller padding on mobile */
+    padding-right: 20px;
+  }
 }
 .experience-container h2 {
   color: #FFFFFF;
@@ -368,6 +462,31 @@ section {
   font-weight: bold;
   margin: 0 0.5em;
 }
+/* New media query for Experience/ZigZag on small screens */
+@media (max-width: 768px) {
+  .wrapper > .experience-item {
+    /* Change to a single column layout */
+    grid-template-columns: 1fr;
+    gap: 2em; /* Reduced gap for stacking */
+    direction: ltr !important; /* Reset direction for all items */
+  }
+
+  /* Reset the direction trick on small screens */
+  .wrapper > .experience-item:nth-of-type(even) .text-content {
+    direction: ltr;
+  }
+  
+  /* Make sure the text is left-aligned on mobile */
+  .exp-left-align {
+    text-align: center;
+  }
+  
+  /* Center the icon when stacked */
+  .image-placeholder {
+    order: -1; /* Place image on top of text */
+    margin-bottom: 20px;
+  }
+}
 
 /* Styles for the skills.jsx */
 .skills-container {
@@ -429,6 +548,19 @@ section {
   flex: 1 1 calc(33.33% - 20px); /* Adjust width based on screen size */
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  .col-lg-4, .col-md-6 {
+    /* 2 items per row for tablets */
+    flex: 1 1 calc(50% - 15px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .col-lg-4, .col-md-6 {
+    /* 1 item per row for very small phones */
+    flex: 1 1 100%; 
+  }
+}
 .mfizz-cplusplus {
   font-size: 50px;
 }
@@ -454,6 +586,13 @@ section {
   padding-right: 100px;
   /* min-height: 100vh; */
   padding-bottom: 50px;
+}
+/* --- NEW FIX FOR PROJECTS PADDING ON MOBILE --- */
+@media (max-width: 992px) {
+  .projects-container {
+    padding-left: 20px; /* Use smaller padding on mobile */
+    padding-right: 20px;
+  }
 }
 .projects-container h2 {
   font-size: 50px;
@@ -481,6 +620,13 @@ section {
 .project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px;
+}
+/* This is a better way to handle touch/hover. You would ideally use a JavaScript solution for better touch handling, but this is a CSS fix. */
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px;
+  }
 }
 .overlay {
   position: absolute;
@@ -675,6 +821,15 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   margin-top: 20px;
+  justify-content: center; /* Horizontally centers the grid tracks within the container */
+  align-items: center;
+}
+@media (max-width: 425px) {
+  .word-cloud-form-selects {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
 }
 .form-group {
   display: flex;
@@ -690,8 +845,6 @@ section {
 .word-cloud-form-inputs input {
   align-items: center;
   justify-content: center;
-  margin: auto;
-  width: 405px;
   height: 60px;
   padding-left: 20px;
   border: 2px solid #1c1c1c;
@@ -911,20 +1064,70 @@ section {
   font-family: 'Montserrat', sans-serif;
   margin-top: 40px;
 }
+/* --- NEW FIX FOR CONTACT FORM WIDTHS --- */
+@media (max-width: 580px) { /* Adjust breakpoint slightly larger than 425px */
+  .input-info-container input {
+    /* Make inputs take full width, respecting the container's 20px padding */
+    width: 100%; 
+    max-width: 100%; /* Ensure it can't exceed the container */
+  }
+
+  .contact-form-container #message {
+    /* Make textarea take full width */
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* --- NEW FIX: Contact Info Vertical Stack on Mobile --- */
+@media (max-width: 768px) {
+  .contact-info {
+    /* Change from horizontal (row) to vertical stack on smaller screens */
+    flex-direction: column;
+    /* Add some vertical spacing between the items when stacked */
+    gap: 15px; 
+  }
+
+  /* Optional: Adjust vertical spacing of the container itself if needed */
+  .contact-container h3 {
+    padding: 0 10px; /* Slight adjustment for better fit */
+  }
+}
+/* You may also want to remove the large gap on contact-form-container at smaller widths: */
+@media (max-width: 1100px) {
+  .contact-form-container {
+    /* ... existing stack styles ... */
+    
+  }
+}
+@media (max-width: 1100px) {
+  .contact-form-container {
+    /* Stack the input columns vertically for tablets/mobile */
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .contact-form-container #message {
+   
+  }
+}
 
 /* Styles for the footer.jsx */
 .footer-container {
-  padding-left: 100px;
-  padding-right: 100px;
-  height: 170px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* Adjust padding for small screens */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: auto; /* Allow height to adjust for stacked content */
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .footer-row {
   display: flex;
-  justify-content: space-around;
   width: 100%;
+  /* Change to vertical stack for mobile */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .copyright-container {
   font-family: 'Montserrat', sans-serif;
@@ -936,10 +1139,11 @@ section {
   align-items: center;
 }
 #last-upd {
-  margin-top: 25px;
+
 }
 #footer-socials {
-  margin-left: 120px;
+  margin-left: 0; /* Remove fixed margin */
+  margin-top: 15px;
 }
 .footer-nav-container {
   display: flex;
@@ -949,6 +1153,9 @@ section {
 .footer-nav-container ul {
   display: flex;
   list-style-type: none;
+  padding-top: 15px;
+  flex-wrap: wrap; /* Allow navigation links to wrap */
+  justify-content: center;
 }
 .footer-nav-container li {
   margin: 0 10px;
