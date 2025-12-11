@@ -28,6 +28,46 @@ import WordCloudForm from './wordCloudForm';
 // project details
 const projects = [
   {
+    title: 'J.A.K.E. Weather',
+    images: [
+      {
+        src: 'jake-logo.png',
+        desc: '',
+      },
+      {
+        src: 'jake-logo.png',
+        desc: 'Description 1Description 1Description 1Description 1Description 1Description 1',
+      },
+      {
+        src: 'jake-logo.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: 'FitnessTrackerDemo.mp4',
+    description: (
+      <>
+        This full-stack weather platform, built with a{' '} <b>React</b> {' '} frontend,{' '} <b>Python Flask</b> {' '} backend, and{' '} <b>MySQL</b> {' '} database, 
+        was developed following the{' '} <b>SDLC</b> {' '} and{' '} <b>Agile Methodology</b> {' '} with thorough documentation via Microsoft Visio and Project.
+        As{' '} <b>Project Manager</b> {' '} and{' '} <b>Team Lead</b> {' '} for three developers, I was responsible for directing team efforts, managing all project documentation, 
+        and overseeing the entire architecture from code to{' '} <b>Docker</b> {' '} containerization. 
+        Key features include a real-time 7-day forecast, secure user authentication, personalized favorite location management, and advanced location searching. 
+        We successfully integrated multiple complex APIs, including{' '} <b>Google Maps (Geocoding/Maps JavaScript)</b> {' '} and{' '} <b>OpenWeather/Open-Meteo</b>, 
+        to deliver a dynamic weather map with customizable overlays for wind speed, precipitation, and temperature.
+        This project significantly enhanced my skills in{' '} <b>technical leadership</b>, robust system design, containerized deployment, and sophisticated external API integration.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'React', value: 64.8 },
+      { id: 2, label: 'Flask', value: 19.4 },
+      { id: 3, label: 'CSS', value: 14.4 },
+      { id: 4, label: 'SQL', value: 1.0 },
+      { id: 4, label: 'Docker', value: 0.4 },
+    ],
+    link: 'https://github.com/rysealex/jake-weather',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
     title: 'Fitness Tracker',
     images: [
       {

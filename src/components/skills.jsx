@@ -57,10 +57,10 @@ function Skills() {
           </span>
           <h3><b>Python</b></h3>
           <p className="text-faded mb-0">
-          I use Python for both scripting and web development. I built a full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application using a Python Flask backend, where I implemented features like
-          calorie counting and workout tracking.
+          I use Python for both scripting and web development. I have built several full-stack applications, including a {' '}
+          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '} and the {' '}
+          <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b> web app, {' '}
+          both powered by a Python Flask backend.
           This builds upon my experience developing a{' '}
           <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b>, 
           which involved API integration, data visualization, and efficient data handling.
@@ -89,7 +89,8 @@ function Skills() {
           React is my most frequently used front-end framework for building modern, scalable web applications.
           My journey with React began after earning a LinkedIn Learning certificate, 
           which helped me quickly grasp core concepts like component structure, props, and state.
-          Since then, I’ve used React extensively in projects like my{' '}
+          Since then, I’ve used React extensively in projects like my {' '}
+          <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b>, {' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b>, {' '}
           <b className='skills-project-link' onClick={handleScroll}>Wilcat Credit Union</b> {' '} and {' '}
           <b className='skills-project-link' onClick={handleScroll}>Financial Data Filtering App</b>.
@@ -116,9 +117,10 @@ function Skills() {
           <h3><b>MySQL</b></h3>
           <p className="text-faded mb-0">
           I’ve used MySQL as the relational database in my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b>, {' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b>, {' '}
-          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b>, and {' '}
-          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
+          <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b>, {' '}
+          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b> {' '}
           web applications—handling tasks like querying, inserting, and updating data across tables.
           These experiences helped me gain a strong foundation in relational databases and efficient data handling.
           I plan to continue using MySQL in upcoming full-stack projects to build more dynamic, data-driven applications.
@@ -201,9 +203,10 @@ function Skills() {
           </span>
           <h3><b>Docker</b></h3>
           <p className="text-faded mb-0">
-          I've utilized Docker in my full-stack{' '}
+          I've utilized Docker in both my full-stack{' '}
+          <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b> and {' '}
           <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '}
-          web application,
+          web applications,
           where I created separate Dockerfiles for the different services to streamline development and deployment.
           I also leveraged Docker for containerization in my{' '} 
           <b className='skills-project-link' onClick={handleScroll}>Wildcat Credit Union</b> {' '}
