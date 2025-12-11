@@ -43,7 +43,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: 'FitnessTrackerDemo.mp4',
+    demo: 'jake-weather-demo.mp4',
     description: (
       <>
         This full-stack weather platform, built with a{' '} <b>React</b> {' '} frontend,{' '} <b>Python Flask</b> {' '} backend, and{' '} <b>MySQL</b> {' '} database, 
