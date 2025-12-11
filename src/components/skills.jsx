@@ -9,7 +9,7 @@ function Skills() {
   const projectSection = document.getElementById('projects');
   // handle scroll to projects section
   const handleScroll = () => {
-    const offset = 80; // height above projects header
+    const offset = 60; // height above projects header
     const top = projectSection.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top, behavior: 'smooth' });
   };
