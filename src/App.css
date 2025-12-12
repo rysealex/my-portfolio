@@ -200,6 +200,11 @@ section {
 .pic-container {
   margin-top: 8em;
 }
+@media (max-width: 425px) {
+  .pic-container {
+    margin-top: 0 !important; 
+  }
+}
 .pic-container img {
   width: 250px;
   border-radius: 50%;
@@ -805,12 +810,6 @@ section {
   margin-bottom: 20px; /* Add space below the video */
 }
 .demo-video {
-  /* Position the video inside the wrapper */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;  /* Takes up 100% of the wrapper's width */
-  height: 100%; /* Takes up 100% of the wrapper's height */
 }
 #demo-soon:hover {
   text-decoration: none;
