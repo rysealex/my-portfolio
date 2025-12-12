@@ -10,11 +10,6 @@ function Footer() {
   	return (
 		<div className='footer-container'>
 			<div className='footer-row'>
-				<div className='copyright-container'>
-					<span>Copyright © Alex Ryse {currYear}</span>
-					<br />
-					<span id='last-upd'>Last Updated: December 2025</span>
-				</div>
 				<div className='socials' id='footer-socials'>
 					<ul>
 						<li>
@@ -35,14 +30,28 @@ function Footer() {
 							<a href="#about"><b>About</b></a>
 						</li>
 						<li>
+							<a href="#experience"><b>Experience</b></a>
+						</li>
+						<li>
+							<a href="#skills"><b>Skills</b></a>
+						</li>
+						<li>
+							<a href="#projects"><b>Projects</b></a>
+						</li>
+						<li>
 							<a href="#contact"><b>Contact</b></a>
 						</li>
 						<li>
 							<a href="Resume Alex Ryse 3.2.pdf" target="_blank" rel="noopener noreferrer">
-								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b
-							></a>
+								<FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b>
+							</a>
 						</li>
 					</ul>
+				</div>
+				<div className='copyright-container'>
+					<span id='last-upd'>Last Updated: December 2025</span>
+					<br />
+					<span>Copyright © Alex Ryse {currYear}</span>
 				</div>
 			</div>
 		</div>

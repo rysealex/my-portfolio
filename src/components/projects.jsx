@@ -517,9 +517,11 @@ function Projects() {
                   <h3 onClick={handlePlay}>
                     <FontAwesomeIcon icon={faAnglesDown} /> Demo <FontAwesomeIcon icon={faAnglesDown} />
                   </h3>
-                  <video className='demo-video' ref={videoRef} width="100%" controls loop>
-                    <source src={selectedProject.demo} type='video/mp4' />
-                  </video>
+                  <div className='video-wrapper'>
+                    <video className='demo-video' ref={videoRef} width="100%" controls loop>
+                      <source src={selectedProject.demo} type='video/mp4' />
+                    </video>
+                  </div>
                 </div>
               )}
             </div>
