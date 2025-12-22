@@ -18,20 +18,34 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 90px;
   background-color: #848484;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
+  transition: height 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+nav.scrolled {
+  height: 60px;
 }
 nav .nav-left {
   display: flex;
   align-items: center;
 }
 .name-logo {
-  font-size: 24px;
+  /* font-size: 24px; */
   margin-left: 2em;
+}
+.name-logo img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+.name-logo img.scrolled {
+  width: 35px;
+  height: 35px;
 }
 nav ul {
   list-style-type: none;
@@ -83,6 +97,7 @@ nav a.active {
   nav {
     justify-content: space-between;
     padding: 0 20px;
+    box-shadow: none !important;
   }
   .name-logo {
     margin-left: 0;
@@ -99,16 +114,23 @@ nav a.active {
     display: flex; /* Show the menu */
     flex-direction: column; /* Stack links vertically */
     position: fixed; /* Overlay content */
-    top: 60px; /* Below the nav bar */
+    top: 90px; /* Below the nav bar (default height) */
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px); /* Full screen height minus nav height */
+    height: calc(100vh - 90px); /* Full screen height minus nav height */
     background-color: #848484; /* Same as nav bar background */
     padding: 20px 0;
     align-items: center; /* Center links horizontally */
     z-index: 99;
     overflow-y: auto; /* Allow scrolling if many links */
     box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    transition: top 0.3s ease;
+  }
+
+  /* When the nav is shrunk, adjust the mobile menu position/height */
+  nav.scrolled ul.mobile-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
   }
 
   nav ul.mobile-menu li {
@@ -194,11 +216,11 @@ section {
   flex-direction: column;
   padding-bottom: 50px;
   min-height: 100vh;
-  padding-top: 60px; /* To prevent content from being hidden by the fixed nav */
+  padding-top: 90px; /* To prevent content from being hidden by the fixed nav */
 }
 
 .pic-container {
-  margin-top: 8em;
+  margin-top: 4em;
 }
 @media (max-width: 425px) {
   .pic-container {
@@ -231,8 +253,8 @@ section {
 /* Styles for the about.jsx */
 .about-container {
   background-color: #e4e4e4;
-  padding-left: clamp(1rem, 5vw, 100px);
-  padding-right: clamp(1rem, 5vw, 100px);
+  padding-left: clamp(1rem, 12vw, 250px);
+  padding-right: clamp(1rem, 12vw, 250px);
   min-height: 100vh;
   display: flex; /* Enable Flexbox */
   flex-direction: row; /* Keep elements in a row */

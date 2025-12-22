@@ -16,6 +16,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Toggle function for the hamburger button
   const toggleMenu = () => {
@@ -74,17 +75,25 @@ function App() {
   useEffect(() => {
     const scrollToTopButton = document.querySelector('.scroll-to-top');
 
-    const toggleScrollButtonVisibility = () => {
-      // if scroll down 200px, show the button
-      if (window.scrollY > 200) {
-        scrollToTopButton.classList.add('show');
-      } else {
-        scrollToTopButton.classList.remove('show');
+    const onScroll = () => {
+      // Toggle "scroll to top" button visibility
+      if (scrollToTopButton) {
+        if (window.scrollY > 200) {
+          scrollToTopButton.classList.add('show');
+        } else {
+          scrollToTopButton.classList.remove('show');
+        }
       }
+
+      // Shrink or expand the nav bar based on scroll position
+      setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', toggleScrollButtonVisibility);
-    return () => window.removeEventListener('scroll', toggleScrollButtonVisibility);
+    // Attach listener and initialize state once
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   // handle the nav bar scroll behavior
@@ -95,7 +104,7 @@ function App() {
     setIsMenuOpen(false);
     
     const section = document.getElementById(sectionId);
-    const navHeight = 60;
+    const navHeight = isScrolled ? 60 : 90;
 
     if (section) {
       const yOffset = -navHeight;
@@ -106,9 +115,12 @@ function App() {
 
   return (
     <div id='page-top'>
-      <nav className={isMenuOpen ? 'menu-open' : ''}>
+			<nav className={`${isMenuOpen ? 'menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
         <div className='nav-left'>
-          <a href='#page-top' className='name-logo' onClick={() => setIsMenuOpen(false)}><b>Alex Ryse</b></a>
+          <a href='#page-top' className='name-logo' onClick={() => setIsMenuOpen(false)}>
+            <img className={`${isScrolled ? 'scrolled' : ''}`} src='favicon-32x32.png' alt='logo' />
+            {/* <b>Alex Ryse</b> */}
+          </a>
         </div>
         <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle navigation menu">
           <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
