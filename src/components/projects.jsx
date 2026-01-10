@@ -184,6 +184,43 @@ const projects = [
     wordCloudInteractive: true,
   },
   {
+    title: 'LZM Landscaping LLC - Official Website',
+    images: [
+      {
+        src: 'lzm-dark.png',
+        desc: '',
+      },
+      {
+        src: 'lzm-dark.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'lzm-dark.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: '',
+    liveLink: 'https://lzmlandscapingllc.com',
+    description: (
+      <>
+        Developed a professional-grade web application for a local landscaping business, focusing on high-performance delivery and lead generation. 
+        Built with{' '} <b>React</b> and{' '} <b>TypeScript</b>, the platform utilizes{' '} <b>React Router</b> for seamless client-side navigation and a mobile-first UI 
+        to ensure accessibility across all devices. 
+        I integrated{' '} <b>EmailJS</b> to handle secure, serverless form submissions and leveraged{' '} <b>React Responsive Carousel</b> for a high-impact project gallery. 
+        By managing the full lifecycle from requirements gathering to automated deployment via{' '} <b>GitHub Pages</b>, I delivered a robust digital storefront that 
+        helps the client connect with their community through a modern, user-centric interface.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'React/TypeScript', value: 51.6 },
+      { id: 1, label: 'CSS', value: 46.1 },
+      { id: 2, label: 'HTML', value: 2.3 },
+    ],
+    link: 'https://github.com/rysealex/lzm-landscaping-llc',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
     title: 'Chat App',
     images: [
       {
@@ -450,6 +487,9 @@ function Projects() {
                       case 'flask':
                         targetId = 'python';
                         break;
+                      case 'react/typescript':
+                        targetId = 'react';
+                        break;
                       // case 'node.js/express.js':
                       //   targetId = 'javascript';
                       //   break;
@@ -512,7 +552,7 @@ function Projects() {
                   <h3 id='demo-soon'>Demo coming soon!</h3>
                 </div>
               )}
-              {!selectedProject.currDev && (
+              {!selectedProject.currDev && selectedProject.demo && (
                 <div>
                   <h3 onClick={handlePlay}>
                     <FontAwesomeIcon icon={faAnglesDown} /> Demo <FontAwesomeIcon icon={faAnglesDown} />
@@ -553,6 +593,14 @@ function Projects() {
                 <div ref={wordCloudRef}>
                   <WordCloudForm key="word-cloud-generator-form" />
                 </div>
+              </div>
+            )}
+            {selectedProject.liveLink && (
+              <div className='project-link'>
+                <b>View Live: </b>
+                <a href={selectedProject.liveLink} target='_blank' rel='noreferrer'>
+                  {selectedProject.liveLink}
+                </a>
               </div>
             )}
             <div className='project-link'>
