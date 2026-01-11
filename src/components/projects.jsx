@@ -147,6 +147,44 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
+    title: 'FirstPass - Real-Time SWE Job Discovery Engine',
+    images: [
+      {
+        src: 'FirstPassLogo.png',
+        desc: '',
+      },
+      {
+        src: 'FirstPassLogo.png',
+        desc: 'Description 1',
+      },
+      {
+        src: 'FirstPassLogo.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: '',
+    description: (
+      <>
+        A high-frequency job discovery engine engineered for the{' '} <b>Raspberry Pi 5</b> to provide a competitive advantage in the software engineering job market 
+        through real-time data acquisition and multi-process automation. 
+        Developed as a full-stack solution using{' '} <b>Python</b>,{' '} <b>Flask</b>, and{' '} <b>SQLite</b>, the platform eliminates application latency by monitoring job boards in the 
+        background and instantly alerting the user via randomized audio notifications the moment a new role is posted. 
+        The project features a decoupled architecture where a persistent scraper engine manages high-intensity data polling and{' '} <b>pygame-based</b> audio alerts, while a 
+        responsive{' '} <b>Tailwind CSS</b> dashboard provides a "zero-inbox" management system for new, saved, and deleted roles. 
+        Optimizing the application for the Raspberry Pi 5 deepened my expertise in developing resilient, low-power internal tooling and managing asynchronous background 
+        processes to solve real-world productivity bottlenecks during a professional job hunt.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'Python', value: 44.7 },
+      { id: 1, label: 'HTML', value: 32.3 },
+      { id: 2, label: 'TailwindCSS', value: 15.4 },
+    ],
+    link: 'https://github.com/rysealex/first-pass',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
     title: 'Word Cloud Generator',
     images: [
       {

@@ -57,15 +57,15 @@ function Skills() {
           </span>
           <h3><b>Python</b></h3>
           <p className="text-faded mb-0">
-          I use Python for both scripting and web development. I have built several full-stack applications, including a {' '}
-          <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '} and the {' '}
-          <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b> web app, {' '}
-          both powered by a Python Flask backend.
-          This builds upon my experience developing a{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b>, 
-          which involved API integration, data visualization, and efficient data handling.
-          Additionally, I have experience using Python scripts for autonomous drone navigation and collision detection
-          during an <b className='skills-project-link' onClick={handleScrollToExperience}>International Drone Competition</b> in Tokyo, Japan.
+            I utilize Python for full-stack development and specialized scripting, recently engineering the {' '}
+            <b className='skills-project-link' onClick={handleScroll}>FirstPass</b> {' '} job discovery engine—a multi-process system optimized for the 
+            Raspberry Pi 5 featuring real-time data polling. 
+            My experience includes building Flask-powered applications like the {' '}
+            <b className='skills-project-link' onClick={handleScroll}>Fitness Tracker</b> {' '} and {' '}
+            <b className='skills-project-link' onClick={handleScroll}>J.A.K.E. Weather</b>, as well as a {' '}
+            <b className='skills-project-link' onClick={handleScroll}>Word Cloud Generator</b>. 
+            Additionally, I developed Python scripts for autonomous navigation and collision detection for an {' '}
+            <b className='skills-project-link' onClick={handleScrollToExperience}>International Drone Competition</b> in Tokyo, Japan.
           </p>
         </div>
         <div className="col-lg-4 col-md-6 mb-5" id='javascript'>
