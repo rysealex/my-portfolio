@@ -162,7 +162,7 @@ const projects = [
         desc: 'Description 2',
       },
     ],
-    demo: '',
+    demo: 'FirstPassDemo.mp4',
     description: (
       <>
         A high-frequency job discovery engine engineered for the{' '} <b>Raspberry Pi 5</b> to provide a competitive advantage in the software engineering job market 
