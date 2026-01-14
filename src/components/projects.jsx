@@ -177,8 +177,9 @@ const projects = [
     ),
     tech: [
       { id: 0, label: 'Python', value: 44.7 },
-      { id: 1, label: 'HTML', value: 32.3 },
-      { id: 2, label: 'TailwindCSS', value: 15.4 },
+      { id: 1, label: 'JavaScript', value: 31.3 },
+      { id: 2, label: 'TailwindCSS', value: 16.0 },
+      { id: 3, label: 'HTML', value: 8.0 },
     ],
     link: 'https://github.com/rysealex/first-pass',
     currDev: false,
