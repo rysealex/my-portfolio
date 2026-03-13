@@ -31,19 +31,19 @@ const projects = [
     title: 'CS Study Cat',
     images: [
       {
-        src: 'CS Study Cat Logo.png',
+        src: 'cs-study-cat-black.png',
         desc: '',
       },
       {
-        src: 'CS Study Cat Logo.png',
+        src: 'cs-study-cat-logo.png',
         desc: 'Description 1Description 1Description 1Description 1Description 1Description 1',
       },
       {
-        src: 'CS Study Cat Logo.png',
+        src: 'cs-study-cat-logo.png',
         desc: 'Description 2',
       },
     ],
-    demo: 'jake-weather-demo.mp4',
+    demo: 'cs-study-cat-demo-hq.mp4',
     description: (
       <>
         This {' '} <b>.NET Blazor</b> {' '} educational platform, built with a {' '} <b>C# Web API</b> {' '} and {' '} <b>SQLite</b> {' '} via 
