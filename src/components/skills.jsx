@@ -149,8 +149,9 @@ function Skills() {
           <h3><b>C#</b></h3>
           <p className="text-faded mb-0">
           My experience with C# was primarily honed during my <b className='skills-project-link' onClick={handleScrollToExperience}>Software Engineer Internship</b> at Nomms. 
-          In this role, I engineered a serverless automation solution using an Azure Function written in C#.
-          This experience not only strengthened my backend development skills but also my ability to contribute to the front end and collaborate within a full Microsoft stack environment.
+          I further expanded these skills as the Team Lead for my Senior Captone Project, <b className='skills-project-link' onClick={handleScroll}>CS Study Cat</b>, 
+          architecting a full-stack .NET Blazor platform integrated with Entity Framework Core and the Google Gemini API. 
+          This project allowed me to master complex backend logic, from database migrations to sophisticated AI orchestration.
           </p>
         </div>
         {/* <div className="col-lg-4 col-md-6 mb-5" id='php'>
