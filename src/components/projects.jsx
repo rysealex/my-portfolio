@@ -28,6 +28,45 @@ import WordCloudForm from './wordCloudForm';
 // project details
 const projects = [
   {
+    title: 'CS Study Cat',
+    images: [
+      {
+        src: 'CS Study Cat Logo.png',
+        desc: '',
+      },
+      {
+        src: 'CS Study Cat Logo.png',
+        desc: 'Description 1Description 1Description 1Description 1Description 1Description 1',
+      },
+      {
+        src: 'CS Study Cat Logo.png',
+        desc: 'Description 2',
+      },
+    ],
+    demo: 'jake-weather-demo.mp4',
+    description: (
+      <>
+        This {' '} <b>.NET Blazor</b> {' '} educational platform, built with a {' '} <b>C# Web API</b> {' '} and {' '} <b>SQLite</b> {' '} via 
+        {' '} <b>Entity Framework Core</b>, was developed as a senior capstone following the {' '} <b>SDLC</b> {' '} and 
+        {' '} <b>Agile Methodology</b> {' '}. As {' '} <b>Project Manager</b> {' '} and {' '} <b>Team Lead</b>, I directed a team of six through the 
+        full software lifecycle, managing all SRS/SDD documentation and 
+        overseeing the N-tier architecture for cross-platform deployment. Key features include AI-powered tutoring, automated flashcards, and diagnostic quizzes, 
+        all grounded in CWU Computer Science syllabi. We successfully integrated the {' '} <b>Google Gemini 3 Flash LLM</b> {' '} using 
+        {' '} <b>Context-Augmented Generation (CAG)</b> {' '} to ensure 
+        curriculum-accurate responses and strict academic integrity. This project validated my skills in technical leadership, sophisticated LLM orchestration, and the 
+        delivery of secure, AI-driven full-stack systems.
+      </>
+    ),
+    tech: [
+      { id: 0, label: 'C#', value: 89.9 },
+      { id: 2, label: 'HTML', value: 6.2 },
+      { id: 3, label: 'CSS', value: 3.9 },
+    ],
+    link: 'https://github.com/nood-leog/CSLLMCapstone',
+    currDev: false,
+    wordCloudInteractive: false,
+  },
+  {
     title: 'J.A.K.E. Weather',
     images: [
       {
@@ -528,6 +567,9 @@ function Projects() {
                         break;
                       case 'react/typescript':
                         targetId = 'react';
+                        break;
+                      case 'c#':
+                        targetId = 'csharp';
                         break;
                       // case 'node.js/express.js':
                       //   targetId = 'javascript';
