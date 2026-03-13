@@ -8,6 +8,30 @@ function ZigZag() {
         <div className="wrapper">
             <div className="experience-item item-one">
                 <div className="text-content">
+                    <h3 className='job-title'>Labs Intern, AT&T</h3>
+                    <p className='exp-left-align'> 
+                        Incoming Technical Intern for the{' '} <b>AT&T Labs program</b> at the Wireless Technology 
+                        Center in Redmond, WA. Joining the CTO organization for the Summer 2026 term, 
+                        I look forward to collaborating with industry leaders on large-scale network 
+                        analytics and contributing to the advancement of next-generation wireless 
+                        technologies.
+                    </p>
+                    <div className="link-group">
+                        <p><i>Visit the official AT&T Labs page and my LinkedIn post to learn more:</i></p>
+                        <a href='https://about.att.com/sites/labs/work-with-us' target="_blank" rel="noopener noreferrer" className="experience-link">AT&T Labs Official Page</a>
+                        <span className="link-divider"> | </span>
+                        <a href='https://www.linkedin.com/posts/alex-ryse_att-attlabs-lifeatatt-activity-7437384829681360896-bUrl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQxvA8By1W3Eq1TwDOzvbiApA_mBZUc_Vo' target="_blank" rel="noopener noreferrer" className="experience-link">LinkedIn Post</a>
+                    </div>
+                </div>
+                <div className="image-placeholder">
+                    <a href='https://about.att.com/sites/labs/work-with-us' target="_blank" rel="noopener noreferrer">
+                        <img src='att-white.jpg' alt='att-logo' className='item-icon' id='att-logo' />
+                    </a>
+                </div>
+            </div>
+
+            <div className="experience-item item-two">
+                <div className="text-content">
                     <h3 className='job-title'>Software Engineer Intern, Nomms</h3>
                     <p className='exp-left-align'> 
                         My internship at Nomms provided hands-on experience in <b>full-stack software development</b>. 
@@ -29,7 +53,7 @@ function ZigZag() {
                 </div>
             </div>
 
-            <div className="experience-item item-two">
+            <div className="experience-item item-three">
                 <div className="text-content">
                     <h3 className='job-title'>Undergraduate Research Assistant, Central Washington University</h3>
                     <p className='exp-left-align'>
@@ -52,7 +76,7 @@ function ZigZag() {
                 </div>
             </div>
             
-            <div className="experience-item item-three">
+            <div className="experience-item item-four">
                 <div className="text-content">
                     <h3 className='job-title'>International Drone Competition, Tokyo Denki University</h3>
                     <p className='exp-left-align'>
@@ -75,7 +99,7 @@ function ZigZag() {
                 </div>
             </div>
             
-            <div className="experience-item item-four">
+            <div className="experience-item item-five">
                 <div className="text-content">
                     <h3 className='job-title'>Teacher Assistant & Mathematics Tutor, Central Washington University</h3>
                     <p className='exp-left-align'>
