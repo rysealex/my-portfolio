@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 nav {
@@ -24,7 +24,9 @@ nav {
   align-items: center;
   justify-content: center;
   z-index: 100;
-  transition: height 0.3s ease, background-color 0.3s ease;
+  transition:
+    height 0.3s ease,
+    background-color 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 nav.scrolled {
@@ -62,13 +64,15 @@ nav li {
 nav a {
   text-decoration: none;
   color: #1c1c1c;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 }
 nav a:hover {
-  color: #0E3CBD;
+  color: #0e3cbd;
 }
 nav a.active {
-  color: #0E3CBD;
+  color: #0e3cbd;
 }
 .hamburger-menu {
   display: none; /* Hide on desktop by default */
@@ -84,13 +88,13 @@ nav a.active {
   outline: none;
 }
 .hamburger-menu:hover {
-  color: #0E3CBD;
+  color: #0e3cbd;
 }
 /* --- Responsive Navigation (Overwrite previous styles) --- */
 @media (max-width: 992px) {
   /* 1. Display the hamburger button */
   .hamburger-menu {
-    display: block; 
+    display: block;
   }
 
   /* 2. Keep navigation left and right aligned */
@@ -102,7 +106,7 @@ nav a.active {
   .name-logo {
     margin-left: 0;
   }
-  
+
   /* 3. Hide the main UL by default on mobile */
   nav ul {
     /* Hide the desktop menu */
@@ -123,7 +127,7 @@ nav a.active {
     align-items: center; /* Center links horizontally */
     z-index: 99;
     overflow-y: auto; /* Allow scrolling if many links */
-    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
     transition: top 0.3s ease;
   }
 
@@ -166,12 +170,14 @@ section {
   background-color: #5e5e5e;
   border-radius: 5%;
   padding: 10px 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   bottom: 20px;
   right: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease-in-out, visibility 0s 0.25s;
+  transition:
+    opacity 0.25s ease-in-out,
+    visibility 0s 0.25s;
   cursor: pointer;
   z-index: 1000;
 }
@@ -187,7 +193,7 @@ section {
 /* Styles for the home.jsx */
 
 .home-container h2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 80px;
   margin-bottom: 0;
   margin-top: 0.5em;
@@ -201,7 +207,7 @@ section {
   }
 }
 .home-container h3 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 40px;
   padding-left: 60px;
   padding-right: 60px;
@@ -226,13 +232,13 @@ section {
 }
 @media (max-width: 425px) {
   .pic-container {
-    margin-top: 4em !important; 
+    margin-top: 4em !important;
   }
 }
 .pic-container img {
   width: 250px;
   border-radius: 50%;
-  border: solid #FFFFFF 8px;
+  border: solid #ffffff 8px;
 }
 
 .enter-container button {
@@ -246,7 +252,7 @@ section {
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .enter-container button:hover {
   background-color: #e4e4e4;
@@ -284,7 +290,7 @@ section {
   width: 350px; /* Match the column width */
   height: 350px; /* Keep it square */
   border-radius: 50%;
-  border: solid #FFFFFF 8px; /* Changed from #FFFFFF for better contrast on white background */
+  border: solid #ffffff 8px; /* Changed from #FFFFFF for better contrast on white background */
   object-fit: cover; /* Ensures the image fills the area without distortion */
 }
 .about-container h2 {
@@ -324,12 +330,14 @@ section {
   height: 65px;
   border-radius: 50%;
   background-color: #1c1c1c;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 30px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 .socials a:hover {
-  background-color: #0E3CBD;
+  background-color: #0e3cbd;
 }
 #about-socials {
   margin-bottom: 0;
@@ -338,7 +346,7 @@ section {
 @media (max-width: 992px) {
   .about-container {
     /* Stack them vertically on small screens/tablets */
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -346,13 +354,13 @@ section {
   }
 
   .left-column {
-    width: 100%; 
+    width: 100%;
     max-width: 300px; /* Limit the size of the picture/socials column */
   }
 
   .profile-pic {
     width: 250px; /* Keep a fixed size when stacked for consistency */
-    height: 250px; 
+    height: 250px;
   }
 
   .intro-container {
@@ -378,13 +386,13 @@ section {
   }
 }
 .experience-container h2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 50px;
   padding-top: 85px;
   margin-top: 0;
 }
 .experience-container p {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .exp-container {
   text-align: left;
@@ -397,7 +405,7 @@ section {
   margin-bottom: 20px;
 }
 .exp-icon {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 40px;
   margin-right: 20px;
 }
@@ -423,7 +431,7 @@ section {
   padding: 1em;
   margin-bottom: 5em;
   /* color: #d9480f; */
-  
+
   /* Make the experience-item a grid container itself */
   display: grid;
   grid-template-columns: 1fr 1fr; /* This will create two equal-width columns inside each item */
@@ -435,7 +443,7 @@ section {
 .wrapper {
   display: grid;
   /* This is a single column. We'll use the sub-grid above to create the zigzag. */
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
 }
 
 /* Styles to create the zigzag effect */
@@ -452,7 +460,7 @@ section {
 
 /* General styles for the content */
 .text-content {
-    /* Your text styles here */
+  /* Your text styles here */
 }
 
 .image-placeholder {
@@ -467,16 +475,17 @@ section {
   border-radius: 50%;
   /* border: solid #ffffff 8px; */
 }
-#nomms-logo, #cwu-cyber-logo {
+#nomms-logo,
+#cwu-cyber-logo {
   border: solid #ffffff 8px;
 }
 
 .exp-left-align {
   text-align: left;
-} 
+}
 
 .job-title {
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 1.5em;
 }
 
@@ -486,7 +495,7 @@ section {
 }
 .experience-link {
   font-size: 18px;
-  color: #0E3CBD;
+  color: #0e3cbd;
   text-decoration: none;
   font-weight: bold;
 }
@@ -512,12 +521,12 @@ section {
   .wrapper > .experience-item:nth-of-type(even) .text-content {
     direction: ltr;
   }
-  
+
   /* Make sure the text is left-aligned on mobile */
   .exp-left-align {
     text-align: center;
   }
-  
+
   /* Center the icon when stacked */
   .image-placeholder {
     order: -1; /* Place image on top of text */
@@ -527,7 +536,7 @@ section {
 
 /* Styles for the skills.jsx */
 .skills-container {
-  background-color: #259FDE;
+  background-color: #259fde;
   padding-left: 100px;
   padding-right: 100px;
   /* min-height: 100vh; */
@@ -540,17 +549,17 @@ section {
   }
 }
 .skills-container h2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 50px;
   padding-top: 85px;
   margin-top: 0;
 }
 .skills-container h3 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 30px;
 }
 .skills-container p {
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 .service-icon {
@@ -559,7 +568,7 @@ section {
   align-items: center;
   width: 110px;
   height: 110px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -572,7 +581,7 @@ section {
   height: 85px;
 }
 .text-faded {
-  color:#d0d1d3;
+  color: #d0d1d3;
 }
 .skills-project-link {
   cursor: pointer;
@@ -587,21 +596,24 @@ section {
   justify-content: space-between;
   gap: 30px;
 }
-.col-lg-4, .col-md-6 {
+.col-lg-4,
+.col-md-6 {
   flex: 1 1 calc(33.33% - 20px); /* Adjust width based on screen size */
   box-sizing: border-box;
 }
 @media (max-width: 768px) {
-  .col-lg-4, .col-md-6 {
+  .col-lg-4,
+  .col-md-6 {
     /* 2 items per row for tablets */
-    flex: 1 1 calc(50% - 15px); 
+    flex: 1 1 calc(50% - 15px);
   }
 }
 
 @media (max-width: 480px) {
-  .col-lg-4, .col-md-6 {
+  .col-lg-4,
+  .col-md-6 {
     /* 1 item per row for very small phones */
-    flex: 1 1 100%; 
+    flex: 1 1 100%;
   }
 }
 .mfizz-cplusplus {
@@ -740,7 +752,7 @@ section {
 }
 .modal-container a {
   text-decoration: none;
-  color: #0E3CBD;
+  color: #0e3cbd;
 }
 .modal-container a:hover {
   text-decoration: underline;
@@ -800,7 +812,7 @@ section {
 }
 .project-link a {
   text-decoration: none;
-  color: #0E3CBD;
+  color: #0e3cbd;
   margin-bottom: 10px;
 }
 .project-link a:hover {
@@ -817,7 +829,7 @@ section {
 }
 .demo-container h3 {
   margin-bottom: 40px;
-  color: #0E3CBD;
+  color: #0e3cbd;
   display: inline-block;
 }
 .demo-container h3:hover {
@@ -828,7 +840,7 @@ section {
   position: relative;
   width: 100%;
   /* For a 16:9 ratio (390px / 900px ≈ 43.33%) */
-  padding-bottom: 43.33%; 
+  padding-bottom: 43.33%;
   height: 0;
   overflow: hidden;
   margin-bottom: 20px; /* Add space below the video */
@@ -843,7 +855,7 @@ section {
   margin-top: 50px;
 }
 #try-self {
-  color: #0E3CBD;
+  color: #0e3cbd;
   display: inline-block;
   padding-bottom: 20px;
 }
@@ -879,7 +891,7 @@ section {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-}
+  }
 }
 .form-group {
   display: flex;
@@ -890,7 +902,7 @@ section {
   text-align: left;
   font-size: 18px;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .word-cloud-form-inputs input {
   align-items: center;
@@ -900,14 +912,14 @@ section {
   border: 2px solid #1c1c1c;
   border-radius: 5px;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   outline: none;
 }
 .word-cloud-form-inputs input::placeholder {
   font-weight: bold;
 }
 .word-cloud-form-inputs input:focus {
-  border-color: #0E3CBD;
+  border-color: #0e3cbd;
 }
 .word-cloud-form-selects select {
   width: 180px;
@@ -916,11 +928,11 @@ section {
   border: 2px solid #1c1c1c;
   border-radius: 5px;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   outline: none;
 }
 .word-cloud-form-selects select:focus {
-  border-color: #0E3CBD;
+  border-color: #0e3cbd;
 }
 .word-cloud-form-submit {
   display: flex;
@@ -929,20 +941,20 @@ section {
 .word-cloud-form-submit button {
   margin-top: 30px;
   padding: 25px 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #1c1c1c;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
 }
 .word-cloud-form-submit button:hover {
   background-color: #111111;
 }
 #download-word-cloud {
-  color: #0E3CBD;
+  color: #0e3cbd;
 }
 #download-word-cloud:hover {
   display: inline-block;
@@ -966,7 +978,7 @@ section {
 }
 .carousel-container .carousel-desc {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   text-align: center;
 }
@@ -985,13 +997,13 @@ section {
 }
 .github-button {
   padding: 25px 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #1c1c1c;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
 }
 .github-button:hover {
@@ -1013,17 +1025,17 @@ section {
   }
 }
 .contact-container h2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 50px;
   padding-top: 85px;
   margin-top: 0;
 }
 .contact-container h3 {
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0 15px;
 }
 .contact-container p {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .contact-info {
   display: flex;
@@ -1031,7 +1043,7 @@ section {
   align-items: center;
 }
 .contact-info a {
-  color: #0E3CBD;
+  color: #0e3cbd;
   text-decoration: none;
 }
 .contact-info a:hover {
@@ -1050,14 +1062,14 @@ section {
   border: 2px solid #1c1c1c;
   border-radius: 5px;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   outline: none;
 }
 .input-info-container input::placeholder {
   font-weight: bold;
 }
 .input-info-container input:focus {
-  border-color: #0E3CBD;
+  border-color: #0e3cbd;
 }
 .contact-form-container {
   display: flex;
@@ -1066,7 +1078,6 @@ section {
   gap: 10rem;
 }
 .contact-form-container #message {
-  
   margin-top: 50px;
   height: 217px;
   width: 550px;
@@ -1074,7 +1085,7 @@ section {
   border: 2px solid #1c1c1c;
   border-radius: 5px;
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   outline: none;
   resize: none;
   white-space: pre-wrap;
@@ -1089,7 +1100,7 @@ section {
   left: 15px;
 }
 .contact-form-container #message:focus {
-  border-color: #0E3CBD;
+  border-color: #0e3cbd;
 }
 .submit-container {
   margin-top: 20px;
@@ -1097,34 +1108,35 @@ section {
 .submit-container button {
   margin-bottom: 70px;
   padding: 10px 20px;
-  color: #FFFFFF;
-  background-color: #259FDE;
+  color: #ffffff;
+  background-color: #259fde;
   width: 200px;
   height: 70px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .submit-container button:hover {
   background-color: #25a0de9f;
 }
 .error {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-top: 40px;
 }
 .message-state {
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-top: 40px;
 }
 /* --- NEW FIX FOR CONTACT FORM WIDTHS --- */
-@media (max-width: 580px) { /* Adjust breakpoint slightly larger than 425px */
+@media (max-width: 580px) {
+  /* Adjust breakpoint slightly larger than 425px */
   .input-info-container input {
     /* Make inputs take full width, respecting the container's 20px padding */
-    width: 100%; 
+    width: 100%;
     max-width: 100%; /* Ensure it can't exceed the container */
   }
 
@@ -1140,7 +1152,7 @@ section {
     /* Change from horizontal (row) to vertical stack on smaller screens */
     flex-direction: column;
     /* Add some vertical spacing between the items when stacked */
-    gap: 15px; 
+    gap: 15px;
   }
 
   /* Optional: Adjust vertical spacing of the container itself if needed */
@@ -1152,7 +1164,6 @@ section {
 @media (max-width: 1100px) {
   .contact-form-container {
     /* ... existing stack styles ... */
-    
   }
 }
 @media (max-width: 1100px) {
@@ -1164,7 +1175,6 @@ section {
   }
 
   .contact-form-container #message {
-   
   }
 }
 
@@ -1186,7 +1196,7 @@ section {
   justify-content: center;
 }
 .copyright-container {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: normal;
   display: flex;
@@ -1195,7 +1205,6 @@ section {
   align-items: center;
 }
 #last-upd {
-
 }
 #footer-socials {
   margin-left: 0; /* Remove fixed margin */
@@ -1217,7 +1226,7 @@ section {
   margin: 0 10px;
 }
 .footer-nav-container a {
-  color: #0E3CBD;
+  color: #0e3cbd;
   text-decoration: none;
 }
 .footer-nav-container a:hover {

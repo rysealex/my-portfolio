@@ -1,49 +1,72 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function About() {
   return (
-    <div className='about-container'>
-      <div className='left-column'> 
-        <div className='profile-pic-container'>
-          <img src="profile_pic.png" alt='Alex Ryse Profile Pic' className='profile-pic' />
+    <div className="about-container">
+      <div className="left-column">
+        <div className="profile-pic-container">
+          <img
+            src="profile_pic.png"
+            alt="Alex Ryse Profile Pic"
+            className="profile-pic"
+          />
         </div>
-        <div className='socials' id='about-socials'>
+        <div className="socials" id="about-socials">
           <h3>Connect with me!</h3>
           <ul>
             <li>
-              <a href="https://www.linkedin.com/in/alex-ryse/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/alex-ryse/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
             </li>
             <li>
-              <a href="https://github.com/rysealex" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/rysealex"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className='intro-container'>
+      <div className="intro-container">
         <h2>Hi, I'm Alex Ryse!</h2>
         <p>
-          I am a recent Computer Science graduate from Central Washington University. During my time at CWU, I served as an <b>Undergraduate Research Assistant</b>, 
-          partnering with faculty to design and implement Red/Blue Team lab manuals and validating attack scenarios within a 
-          virtualized ESXi environment. My academic journey was defined by a commitment to technical excellence—earning 
-          nine Dean’s List honors—and a passion for mentorship, serving as a <b>Teacher Assistant</b> for Advanced Data Structures 
-          and Database Management Systems (DBMS).
+          I am a recent Computer Science graduate from Central Washington
+          University. During my time at CWU, I served as an{" "}
+          <b>Undergraduate Research Assistant</b>, partnering with faculty to
+          design and implement Red/Blue Team lab manuals and validating attack
+          scenarios within a virtualized ESXi environment. My academic journey
+          was defined by a commitment to technical excellence—earning nine
+          Dean’s List honors—and a passion for mentorship, serving as a{" "}
+          <b>Teacher Assistant</b> for Advanced Data Structures and Database
+          Management Systems (DBMS).
         </p>
         <p>
-          This summer, I am moving into the industry as an incoming <b>Labs Intern</b> at <b>AT&T</b>. 
-          Based at the Wireless Technology Center in Redmond, I will be joining the CTO organization to work on large-scale network analytics 
-          and automation.
+          This summer, I am moving into the industry as an incoming{" "}
+          <b>Labs Intern</b> at <b>AT&T</b>. Based at the Wireless Technology
+          Center in Redmond, I will be joining the CTO organization to work on
+          large-scale network analytics and automation.
         </p>
         <p>
-          Looking ahead, I am committed to the <b>University of Washington Bothell</b>, where I will begin my <b>Master of Science in 
-          Computer Science & Software Engineering (CSSE)</b> in September 2026. During my graduate studies, I plan to specialize 
-          in <b>Human-Computer Interaction (HCI)</b>. My goal is to leverage HCI principles to design more intuitive, data-driven interfaces 
-          for complex systems, ensuring that even the most powerful backend infrastructures remain accessible and effective for 
-          the people who rely on them.
+          Looking ahead, I am committed to the{" "}
+          <b>University of Washington Bothell</b>, where I will begin my{" "}
+          <b>
+            Master of Science in Computer Science & Software Engineering (CSSE)
+          </b>{" "}
+          in September 2026. During my graduate studies, I plan to specialize in{" "}
+          <b>Human-Computer Interaction (HCI)</b>. My goal is to leverage HCI
+          principles to design more intuitive, data-driven interfaces for
+          complex systems, ensuring that even the most powerful backend
+          infrastructures remain accessible and effective for the people who
+          rely on them.
         </p>
         {/* <p>
           I'm a fourth-year Computer Science student at Central Washington University, set to graduate in the spring of 2026. 

@@ -1,9 +1,9 @@
-import ZigZag from './zigzag';
+import ZigZag from "./zigzag";
 
 function Experience() {
   return (
-    <div className='experience-container'>
-			<h2>Experience</h2>
+    <div className="experience-container">
+      <h2>Experience</h2>
       {/* <div className='exp-container'>
         <ul>
           <li className='exp-item'>
