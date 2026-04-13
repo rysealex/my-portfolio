@@ -60,7 +60,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="Resume_Alex_Ryse_3.4.pdf"
+                href="Resume_Alex_Ryse.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
