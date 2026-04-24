@@ -59,7 +59,8 @@ function About() {
           Looking ahead, I am committed to the{" "}
           <b>University of Washington Bothell</b>, where I will begin my{" "}
           <b>
-            Master of Science in Computer Science & Software Engineering (CSSE)
+            Master of Science in Computer Science & Software Engineering
+            (MSCSSE)
           </b>{" "}
           in September 2026. During my graduate studies, I plan to specialize in{" "}
           <b>Human-Computer Interaction (HCI)</b>. My goal is to leverage HCI

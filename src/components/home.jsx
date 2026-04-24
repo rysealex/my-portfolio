@@ -21,7 +21,7 @@ function Home() {
       </div>
       <h2>Alex Ryse</h2>
       <h3>
-        CS Graduate | Incoming Labs Intern @ AT&T | Incoming MSCS @ UW Bothell
+        CS Graduate | Incoming Labs Intern @ AT&T | Incoming MSCSSE @ UW Bothell
       </h3>
       <div className="enter-container">
         <button onClick={(e) => handleScroll(e)}>
