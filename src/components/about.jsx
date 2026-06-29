@@ -50,10 +50,12 @@ function About() {
           Management Systems (DBMS).
         </p>
         <p>
-          This summer, I am moving into the industry as an incoming{" "}
-          <b>Labs Intern</b> at <b>AT&T</b>. Based at the Wireless Technology
-          Center in Redmond, I will be joining the CTO organization to work on
-          large-scale network analytics and automation.
+          This summer, I am working in the industry as a{" "}
+          <b>Software Engineer Intern</b> at <b>AT&T Labs</b>. Based at the
+          Willows Technology Center in Redmond, I am part of the CTO
+          organization, focusing on large-scale network analytics and
+          automation. In this role, I implement Radio Access Network (RAN)
+          hardware validation using Python automation scripts and GUI tools.
         </p>
         <p>
           Looking ahead, I am committed to the{" "}

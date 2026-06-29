@@ -8,14 +8,13 @@ function ZigZag() {
     <div className="wrapper">
       <div className="experience-item item-one">
         <div className="text-content">
-          <h3 className="job-title">Labs Intern, AT&T</h3>
+          <h3 className="job-title">Software Engineer Intern, AT&T Labs</h3>
           <p className="exp-left-align">
-            Incoming Technical Intern for the <b>AT&T Labs program</b> at the
-            Wireless Technology Center in Redmond, WA. Joining the CTO
-            organization for the Summer 2026 term, I look forward to
-            collaborating with industry leaders on large-scale network analytics
-            and contributing to the advancement of next-generation wireless
-            technologies.
+            Current Software Engineer Intern for the <b>AT&T Labs</b> program at
+            the Willows Technology Center in Redmond, WA. Working within the CTO
+            organization for the Summer 2026 term, I collaborate with industry
+            leaders on <b>large-scale network analytics</b> and contribute to
+            the advancement of next-generation wireless technologies.
           </p>
           <div className="link-group">
             <p>
