@@ -70,7 +70,7 @@ function Footer() {
           </ul>
         </div>
         <div className="copyright-container">
-          <span id="last-upd">Last Updated: June 2026</span>
+          <span id="last-upd">Last Updated: August 2026</span>
           <br />
           <span>Copyright © Alex Ryse {currYear}</span>
         </div>
