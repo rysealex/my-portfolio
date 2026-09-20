@@ -20,7 +20,7 @@ function Home() {
         <img src="upd_profile_pic.jpg" alt="profile_pic"></img>
       </div>
       <h2>Alex Ryse</h2>
-      <h3>Software Engineer Intern @ AT&T Labs</h3>
+      <h3>MS CSSE @ UW Bothell</h3>
       <div className="enter-container">
         <button onClick={(e) => handleScroll(e)}>
           <b>Enter Portfolio</b>

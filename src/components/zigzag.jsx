@@ -10,11 +10,15 @@ function ZigZag() {
         <div className="text-content">
           <h3 className="job-title">Software Engineer Intern, AT&T Labs</h3>
           <p className="exp-left-align">
-            Current Software Engineer Intern for the <b>AT&T Labs</b> program at
-            the Willows Technology Center in Redmond, WA. Working within the CTO
-            organization for the Summer 2026 term, I collaborate with industry
-            leaders on <b>large-scale network analytics</b> and contribute to
-            the advancement of next-generation wireless technologies.
+            My internship at AT&T Labs provided hands-on experience in{" "}
+            <b>enterprise telemetry and big data automation</b> within the CTO
+            organization. I engineered a full-stack platform using Flask,
+            Streamlit, and PostgreSQL to automate 5G network test analytics for
+            a 20+ engineer Radio Access Network (RAN) team. By designing an
+            automated ETL pipeline for massive telemetric datasets, I reduced
+            report processing time by over 90%—from 1 hour to under 5 minutes.
+            This experience strengthened my technical leadership through weekly
+            engineering demos and cross-functional collaboration.
           </p>
           <div className="link-group">
             <p>
