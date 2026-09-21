@@ -204,9 +204,14 @@ function App() {
             </a>
           </li>
           <li>
-            <a href="Resume_Alex_Ryse.pdf" target="_blank">
+            <a
+              href="Resume_Alex_Ryse.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-resume-btn"
+            >
               <FontAwesomeIcon icon={faFilePdf} />
-              <b>RESUME</b>
+              <span>RESUME</span>
             </a>
           </li>
         </ul>
@@ -229,9 +234,7 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
-      <section>
-        <Footer />
-      </section>
+      <Footer />
       <a className="scroll-to-top" href="#page-top">
         <FontAwesomeIcon icon={faAngleUp} />
       </a>

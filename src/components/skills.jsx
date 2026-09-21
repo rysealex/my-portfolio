@@ -1,444 +1,489 @@
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faJava,
   faPython,
   faJsSquare,
   faReact,
   faLinux,
-  faPhp,
   faDocker,
   faAws,
   faNodeJs,
+  faGitAlt,
+  faPhp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLayerGroup,
+  faCode,
+  faCloud,
+  faDatabase,
+  faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  CSharpIcon,
+  CPlusPlusIcon,
+  TypeScriptIcon,
+  PostgreSQLIcon,
+  SQLiteIcon,
+  MySQLIcon,
+  FirebaseIcon,
+  DotNetIcon,
+  StreamlitIcon,
+  TailwindIcon,
+  AzureIcon,
+  FlaskIcon,
+} from "./skillIcons";
+
+const skillsData = [
+  // ==========================================
+  // 1. LANGUAGES
+  // ==========================================
+  {
+    id: "python",
+    name: "Python",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "Enterprise & Automation",
+    iconType: "fa",
+    faIcon: faPython,
+    description:
+      "Core language for full-stack telemetry, automation, and distributed systems. Developed at AT&T Labs for 5G network telemetry, FirstPass on Raspberry Pi 5, and autonomous drone navigation algorithms.",
+    projects: [
+      { name: "AT&T Labs", target: "experience" },
+      { name: "FirstPass", target: "projects" },
+      { name: "Drone Competition", target: "experience" },
+      { name: "J.A.K.E. Weather", target: "projects" },
+    ],
+  },
+  {
+    id: "csharp",
+    name: "C#",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "Enterprise & Capstone",
+    iconType: "custom",
+    render: CSharpIcon,
+    description:
+      "Utilized across Microsoft enterprise stacks. Architected C# Web APIs and Entity Framework Core backends for CS Study Cat, and engineered ASP.NET features with Azure Functions at Nomms.",
+    projects: [
+      { name: "CS Study Cat", target: "projects" },
+      { name: "Nomms Internship", target: "experience" },
+    ],
+  },
+  {
+    id: "c++",
+    name: "C / C++",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "Systems & Security",
+    iconType: "custom",
+    render: CPlusPlusIcon,
+    description:
+      "Applied in cybersecurity research for Red/Blue Team tooling and attack validation. Developed Sets Game utilizing C++ with CMake and Qt, mastering memory management and pointers.",
+    projects: [
+      { name: "Sets Game", target: "projects" },
+      { name: "CWU Research", target: "experience" },
+    ],
+  },
+  {
+    id: "java",
+    name: "Java",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "4+ Years & TA",
+    iconType: "fa",
+    faIcon: faJava,
+    description:
+      "Foundational OOP language developed over 4+ years. Engineered a real-time Android chat application with Firebase, and supported students as Teaching Assistant in Advanced Data Structures.",
+    projects: [
+      { name: "Chat App", target: "projects" },
+      { name: "Data Structures TA", target: "experience" },
+    ],
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "Modern Frontend",
+    iconType: "custom",
+    render: TypeScriptIcon,
+    description:
+      "Engineered typed, production-ready React client applications. Utilized in LZM Landscaping LLC to enforce strict type contracts, client-side routing, and accessible UI components.",
+    projects: [{ name: "LZM Landscaping", target: "projects" }],
+  },
+  {
+    id: "javascript",
+    name: "JavaScript",
+    category: "languages",
+    categoryLabel: "Language & Web",
+    badge: "Full-Stack Web",
+    iconType: "fa",
+    faIcon: faJsSquare,
+    description:
+      "Essential language for interactive web dashboards, asynchronous data streaming, and REST API integration across React, Node.js, and browser tooling.",
+    projects: [
+      { name: "FirstPass", target: "projects" },
+      { name: "TabiTime", target: "projects" },
+      { name: "Wildcat Credit Union", target: "projects" },
+    ],
+  },
+  {
+    id: "sql",
+    name: "SQL",
+    category: "languages",
+    categoryLabel: "Query Language",
+    badge: "DBMS TA & Big Data",
+    iconType: "fa",
+    faIcon: faDatabase,
+    description:
+      "Expertise in relational database schema design, complex JOIN queries, normalization, and optimization across PostgreSQL, MySQL, and SQLite. Mentored 40+ students as CWU DBMS TA.",
+    projects: [
+      { name: "DBMS Teaching Assistant", target: "experience" },
+      { name: "AT&T Labs", target: "experience" },
+    ],
+  },
+  {
+    id: "php",
+    name: "PHP",
+    category: "languages",
+    categoryLabel: "Language",
+    badge: "MVC Architecture",
+    iconType: "fa",
+    faIcon: faPhp,
+    description:
+      "Developed backend MVC services, database integrations, and dynamic server-side routing in PHP and MySQL for full-stack web applications.",
+    projects: [{ name: "Guitar Store", target: "projects" }],
+  },
+
+  // ==========================================
+  // 2. DATABASES
+  // ==========================================
+  {
+    id: "postgresql",
+    name: "PostgreSQL",
+    category: "databases",
+    categoryLabel: "Relational Database",
+    badge: "AT&T Labs Telemetry",
+    iconType: "custom",
+    render: PostgreSQLIcon,
+    description:
+      "Engineered PostgreSQL databases at AT&T Labs, storing and querying parsed telemetric logs from 50+ CSV files (up to 1GB+ each) of raw 5G RAN data across distributed servers.",
+    projects: [{ name: "AT&T Labs", target: "experience" }],
+  },
+  {
+    id: "sqlite",
+    name: "SQLite",
+    category: "databases",
+    categoryLabel: "Embedded Database",
+    badge: "Local Persistence",
+    iconType: "custom",
+    render: SQLiteIcon,
+    description:
+      "Integrated SQLite with Entity Framework Core in CS Study Cat for zero-latency local curriculum queries, and engineered a persistent multi-process job database for FirstPass on Raspberry Pi 5.",
+    projects: [
+      { name: "CS Study Cat", target: "projects" },
+      { name: "FirstPass", target: "projects" },
+    ],
+  },
+  {
+    id: "mysql",
+    name: "MySQL",
+    category: "databases",
+    categoryLabel: "Relational Database",
+    badge: "AWS RDS & Full-Stack",
+    iconType: "custom",
+    render: MySQLIcon,
+    description:
+      "Configured MySQL relational databases hosted on AWS RDS and containerized Docker environments for user authentication, transactional ledgers, and dynamic querying.",
+    projects: [
+      { name: "Fitness Tracker", target: "projects" },
+      { name: "J.A.K.E. Weather", target: "projects" },
+      { name: "Wildcat Credit Union", target: "projects" },
+    ],
+  },
+  {
+    id: "firebase",
+    name: "Firebase",
+    category: "databases",
+    categoryLabel: "NoSQL & Auth",
+    badge: "Real-Time Cloud",
+    iconType: "custom",
+    render: FirebaseIcon,
+    description:
+      "Integrated Firebase Authentication and Realtime Database into an Android mobile application, enabling instant message synchronization, user profile management, and cloud data rules.",
+    projects: [{ name: "Chat App", target: "projects" }],
+  },
+
+  // ==========================================
+  // 3. LIBRARIES & FRAMEWORKS
+  // ==========================================
+  {
+    id: "react",
+    name: "React",
+    category: "frameworks",
+    categoryLabel: "Frontend Library",
+    badge: "Core Framework",
+    iconType: "fa",
+    faIcon: faReact,
+    description:
+      "Built performant single-page applications with Context API state management, reducing redundant API fetches by 80%. Implemented JWT authentication and dynamic interactive dashboards.",
+    projects: [
+      { name: "Fitness Tracker", target: "projects" },
+      { name: "J.A.K.E. Weather", target: "projects" },
+      { name: "LZM Landscaping", target: "projects" },
+    ],
+  },
+  {
+    id: "dotnet",
+    name: ".NET 9 & Blazor",
+    category: "frameworks",
+    categoryLabel: "Web Framework",
+    badge: "Senior Capstone",
+    iconType: "custom",
+    render: DotNetIcon,
+    description:
+      "Led development of CS Study Cat using .NET 9 and Blazor with C# Web API and Entity Framework Core, architecting cross-platform N-tier components and curriculum-accurate AI tutors.",
+    projects: [{ name: "CS Study Cat", target: "projects" }],
+  },
+  {
+    id: "flask",
+    name: "Flask",
+    category: "frameworks",
+    categoryLabel: "Python Backend",
+    badge: "AT&T Labs & Edge",
+    iconType: "custom",
+    render: FlaskIcon,
+    description:
+      "Developed robust Python REST APIs and backend microservices at AT&T Labs, FirstPass on Raspberry Pi 5, and Fitness Tracker with JWT security.",
+    projects: [
+      { name: "AT&T Labs", target: "experience" },
+      { name: "FirstPass", target: "projects" },
+      { name: "Fitness Tracker", target: "projects" },
+    ],
+  },
+  {
+    id: "streamlit",
+    name: "Streamlit & Plotly",
+    category: "frameworks",
+    categoryLabel: "Analytics & UI",
+    badge: "AT&T Labs Dashboards",
+    iconType: "custom",
+    render: StreamlitIcon,
+    description:
+      "Engineered high-frequency interactive Plotly analytics dashboards and Streamlit UI at AT&T Labs to visualize 5G telemetric KPIs, speeding up team root-cause diagnostics by 90%.",
+    projects: [{ name: "AT&T Labs", target: "experience" }],
+  },
+  {
+    id: "nodejs",
+    name: "Node.js & Express.js",
+    category: "frameworks",
+    categoryLabel: "Backend & API",
+    badge: "RESTful Banking API",
+    iconType: "fa",
+    faIcon: faNodeJs,
+    description:
+      "Architected backend REST APIs with Express.js for Wildcat Credit Union, incorporating account security lockdown logic, password encryption, and MySQL transactions.",
+    projects: [{ name: "Wildcat Credit Union", target: "projects" }],
+  },
+  {
+    id: "tailwind",
+    name: "Tailwind CSS",
+    category: "frameworks",
+    categoryLabel: "CSS Framework",
+    badge: "Zero-Inbox UI",
+    iconType: "custom",
+    render: TailwindIcon,
+    description:
+      "Engineered modern responsive user interfaces and dark-mode dashboards with Tailwind CSS for FirstPass and financial data analytics platforms.",
+    projects: [
+      { name: "FirstPass", target: "projects" },
+      { name: "Financial Data App", target: "projects" },
+    ],
+  },
+
+  // ==========================================
+  // 4. CLOUD, DEVOPS & TOOLS
+  // ==========================================
+  {
+    id: "docker",
+    name: "Docker",
+    category: "cloud",
+    categoryLabel: "Containerization",
+    badge: "Reproducible Envs",
+    iconType: "fa",
+    faIcon: faDocker,
+    description:
+      "Containerized multi-tier web applications into decoupled microservice containers across J.A.K.E. Weather, Fitness Tracker, and Wildcat Credit Union.",
+    projects: [
+      { name: "J.A.K.E. Weather", target: "projects" },
+      { name: "Fitness Tracker", target: "projects" },
+      { name: "Wildcat Credit Union", target: "projects" },
+    ],
+  },
+  {
+    id: "aws",
+    name: "AWS (Amazon Web Services)",
+    category: "cloud",
+    categoryLabel: "Cloud Platform",
+    badge: "AWS RDS MySQL",
+    iconType: "fa",
+    faIcon: faAws,
+    description:
+      "Hosted production relational databases using AWS RDS MySQL for the Fitness Tracker application, managing secure credential environments and automated cloud backups.",
+    projects: [{ name: "Fitness Tracker", target: "projects" }],
+  },
+  {
+    id: "azure",
+    name: "Microsoft Azure",
+    category: "cloud",
+    categoryLabel: "Cloud Platform",
+    badge: "Serverless Automation",
+    iconType: "custom",
+    render: AzureIcon,
+    description:
+      "Engineered an Azure Function serverless automation solution at Nomms that cut user-facing latency by 98%. Performed cloud schema migrations and monitored telemetry.",
+    projects: [{ name: "Nomms Internship", target: "experience" }],
+  },
+  {
+    id: "linux",
+    name: "Linux (Ubuntu & Kali)",
+    category: "cloud",
+    categoryLabel: "Operating Systems",
+    badge: "Security & Edge",
+    iconType: "fa",
+    faIcon: faLinux,
+    description:
+      "Daily command-line mastery across Ubuntu servers, Kali Linux VMs for MITRE ATT&CK cybersecurity research, and headless Raspberry Pi 5 background daemons.",
+    projects: [
+      { name: "CWU Research", target: "experience" },
+      { name: "FirstPass", target: "projects" },
+      { name: "TabiTime", target: "projects" },
+    ],
+  },
+  {
+    id: "git",
+    name: "Git & GitHub",
+    category: "cloud",
+    categoryLabel: "Version Control",
+    badge: "Team Collaboration",
+    iconType: "fa",
+    faIcon: faGitAlt,
+    description:
+      "Directed team source control as Capstone Lead for 6 engineers. Managed Git workflows, branching strategies, automated GitHub Pages pipelines, and open-source contributions.",
+    projects: [
+      { name: "CS Study Cat Lead", target: "projects" },
+      { name: "CWU Cybersecurity Repo", target: "experience" },
+    ],
+  },
+];
+
+const categories = [
+  { id: "all", label: "All Skills", icon: faLayerGroup },
+  { id: "languages", label: "Languages", icon: faCode },
+  { id: "databases", label: "Databases", icon: faDatabase },
+  { id: "frameworks", label: "Libraries & Frameworks", icon: faLaptopCode },
+  { id: "cloud", label: "Cloud & DevOps", icon: faCloud },
+];
+
+
 
 function Skills() {
-  // get the project section component
-  const projectSection = document.getElementById("projects");
-  // handle scroll to projects section
-  const handleScroll = () => {
-    const offset = 60; // height above projects header
-    const top =
-      projectSection.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top, behavior: "smooth" });
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const scrollToTarget = (e, targetSectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(targetSectionId);
+    const navHeight = 70;
+    if (section) {
+      const yOffset = -navHeight;
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
 
-  // get the exeperience section component
-  const experienceSection = document.getElementById("experience");
-  // handle scroll to experience section
-  const handleScrollToExperience = () => {
-    const offset = 60; // height above experience header
-    const top =
-      experienceSection.getBoundingClientRect().top +
-      window.pageYOffset -
-      offset;
-    window.scrollTo({ top, behavior: "smooth" });
+  const filteredSkills =
+    activeCategory === "all"
+      ? skillsData
+      : skillsData.filter((s) => s.category === activeCategory);
+
+  const renderIcon = (skill) => {
+    if (skill.iconType === "custom" && skill.render) {
+      const CustomIcon = skill.render;
+      return <CustomIcon />;
+    }
+    return <FontAwesomeIcon icon={skill.faIcon} className="skill-fa-icon" />;
   };
 
   return (
     <div className="skills-container" id="skills">
-      <div>
-        <h2>Skills</h2>
-        <p>
-          Below are some of the programming languages, frameworks, libraries,
-          tools, and platforms I’ve worked with.
-          <br />
-          <br />
-          I’m passionate about creating, and I spend a lot of my free time
-          working on personal projects that challenge me to grow as a developer.
-          <br />
-          <br />
-          I’m always eager to learn new technologies and expand my skillset as I
-          continue to explore the world of software development!
+      {/* Section Header */}
+      <div className="skills-header">
+        <span className="section-eyebrow">TECHNICAL ARSENAL</span>
+        <h2>Skills & Technologies</h2>
+        <p className="section-subtitle">
+          A comprehensive engineering toolkit verified across enterprise
+          telemetry at AT&T Labs, cloud engineering, cybersecurity research, and
+          full-stack distributed systems.
         </p>
       </div>
-      {/* Skill 1 */}
-      <div className="row" style={{ marginBottom: "48px" }}>
-        <div className="col-lg-4 col-md-6 mb-5" id="java">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-java"
+
+      {/* Filter Category Tabs */}
+      <div className="skills-filter-tabs">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            className={`skills-tab-btn ${
+              activeCategory === cat.id ? "active" : ""
+            }`}
+            onClick={() => setActiveCategory(cat.id)}
           >
-            <FontAwesomeIcon icon={faJava} className="fa-4x" />
-          </span>
-          <h3>
-            <b>Java</b>
-          </h3>
-          <p className="text-faded mb-0">
-            Java was the first programming language I learned, and I've been
-            developing with it for over 4 years. I've built a variety of
-            projects—including a real-time{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Chat App
-            </b>
-            —which helped me deepen my understanding of object-oriented
-            programming and backend logic. Java laid the foundation for my
-            development journey, and I continue to use it to explore new
-            concepts and solve real-world problems.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="python">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-python"
-          >
-            <FontAwesomeIcon icon={faPython} className="fa-4x" />
-          </span>
-          <h3>
-            <b>Python</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I utilize Python for full-stack development and specialized
-            scripting, recently engineering the{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              FirstPass
-            </b>{" "}
-            job discovery engine—a multi-process system optimized for the
-            Raspberry Pi 5 featuring real-time data polling. My experience
-            includes building Flask-powered applications like the{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Fitness Tracker
-            </b>{" "}
-            and{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              J.A.K.E. Weather
-            </b>
-            , as well as a{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Word Cloud Generator
-            </b>
-            . Additionally, I developed Python scripts for autonomous navigation
-            and collision detection for an{" "}
-            <b
-              className="skills-project-link"
-              onClick={handleScrollToExperience}
-            >
-              International Drone Competition
-            </b>{" "}
-            in Tokyo, Japan.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="javascript">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-javascript"
-          >
-            <FontAwesomeIcon icon={faJsSquare} className="fa-4x" />
-          </span>
-          <h3>
-            <b>JavaScript, HTML, CSS</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I have significant experience working with JavaScript, HTML, and CSS
-            to build responsive, user-friendly web applications. These
-            technologies have been essential in developing full-stack projects
-            where I design intuitive front-end interfaces and integrate them
-            with backend services. I enjoy bringing ideas to life in the
-            browser—translating designs into functional, accessible, and clean
-            web experiences.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="react">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-react"
-          >
-            <FontAwesomeIcon icon={faReact} className="fa-4x" />
-          </span>
-          <h3>
-            <b>React</b>
-          </h3>
-          <p className="text-faded mb-0">
-            React is my most frequently used front-end framework for building
-            modern, scalable web applications. My journey with React began after
-            earning a LinkedIn Learning certificate, which helped me quickly
-            grasp core concepts like component structure, props, and state.
-            Since then, I’ve used React extensively in projects like my{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              J.A.K.E. Weather
-            </b>
-            ,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Fitness Tracker
-            </b>
-            ,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Wilcat Credit Union
-            </b>{" "}
-            and{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Financial Data Filtering App
-            </b>
-            .
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="nodejs">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-nodejs"
-          >
-            <FontAwesomeIcon icon={faNodeJs} className="fa-4x" />
-          </span>
-          <h3>
-            <b>Node.js, Express.js</b>
-          </h3>
-          <p className="text-faded mb-0">
-            My expertise in Node.js and Express.js was a critical component of
-            my work on the{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Wildcat Credit Union
-            </b>{" "}
-            banking web application. I led a three-developer team through the
-            entire SDLC, where I personally engineered the complete backend.
-            This involved developing a robust Node.js/Express.js backend that
-            would serve a RESTful API to manage data. I'm eager to continue
-            leveraging these technologies to build scalable and efficient
-            backends for future projects.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="sql">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-sql"
-          >
-            {/* <img src='mysql.svg' alt='mysql-logo' id='mysql-logo' /> */}
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
-              alt="MySQL-logo"
-              style={{
-                width: "5rem",
-                height: "5rem",
-                filter: "brightness(0%)",
-              }}
-            />
-          </span>
-          <h3>
-            <b>MySQL</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I’ve used MySQL as the relational database in my full-stack{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              J.A.K.E. Weather
-            </b>
-            ,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Fitness Tracker
-            </b>
-            ,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Wildcat Credit Union
-            </b>
-            ,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Guitar Shop
-            </b>{" "}
-            web applications—handling tasks like querying, inserting, and
-            updating data across tables. These experiences helped me gain a
-            strong foundation in relational databases and efficient data
-            handling. I plan to continue using MySQL in upcoming full-stack
-            projects to build more dynamic, data-driven applications.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="c++">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-c++"
-          >
-            <img src="c.svg" alt="c-logo" id="c-logo" />
-          </span>
-          <h3>
-            <b>C/C++</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I recently started learning C and C++, and quickly fell in love with
-            the power and control these languages offer.
-            {/* Working with pointers and manual memory allocation was something I hadn’t experienced before. */}
-            I'm currently applying C in my{" "}
-            <b
-              className="skills-project-link"
-              onClick={handleScrollToExperience}
-            >
-              Undergraduate Research
-            </b>{" "}
-            position, specifically by developing tools and scripts to support
-            our Red/Blue Team lab manuals. Additionally, I am working on{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Sets Game
-            </b>{" "}
-            , a card-matching game built in C++ with CMake for project
-            management and Qt for the graphical user interface.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="csharp">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-csharp"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-line.svg"
-              alt="C#-logo"
-              style={{
-                width: "4.5rem",
-                height: "4.5rem",
-                filter: "brightness(0%)",
-              }}
-            />
-          </span>
-          <h3>
-            <b>C#</b>
-          </h3>
-          <p className="text-faded mb-0">
-            My experience with C# was primarily honed during my{" "}
-            <b
-              className="skills-project-link"
-              onClick={handleScrollToExperience}
-            >
-              Software Engineer Internship
-            </b>{" "}
-            at Nomms. I further expanded these skills as the Team Lead for my
-            Senior Captone Project,{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              CS Study Cat
-            </b>
-            , architecting a full-stack .NET Blazor platform integrated with
-            Entity Framework Core and the Google Gemini API. This project
-            allowed me to master complex backend logic, from database migrations
-            to sophisticated AI orchestration.
-          </p>
-        </div>
-        {/* <div className="col-lg-4 col-md-6 mb-5" id='php'>
-          <span className="service-icon rounded-circle mx-auto mb-3 text-secondary" id='icon-php'>
-            <FontAwesomeIcon icon={faPhp} className="fa-4x" />
-          </span>
-          <h3><b>PHP</b></h3>
-          <p className="text-faded mb-0">
-          I have experience using PHP as a backend language in my full-stack{' '}
-          <b className='skills-project-link' onClick={handleScroll}>Guitar Shop</b> {' '}
-          web application.
-          In this project, I used PHP to handle server-side logic, manage dynamic content, 
-          and connect to a MySQL database for data storage and retrieval.
-          It gave me valuable hands-on experience working with server responses, form validation, 
-          and database integration in a real-world scenario.
-          </p>
-        </div> */}
-        <div className="col-lg-4 col-md-6 mb-5" id="azure">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-azure"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-plain.svg"
-              alt="Azure-logo"
-              style={{
-                width: "4rem",
-                height: "4rem",
-                filter: "brightness(0%)",
-              }}
-            />
-          </span>
-          <h3>
-            <b>Azure</b>
-          </h3>
-          <p className="text-faded mb-0">
-            My understanding and hands-on experience with Microsoft Azure were
-            primarily developed during my{" "}
-            <b
-              className="skills-project-link"
-              onClick={handleScrollToExperience}
-            >
-              Software Engineer Internship
-            </b>{" "}
-            at Nomms. I gained practical experience with managing database
-            schema and implementing data migrations to support new features, all
-            while ensuring data integrity. I also developed a strong foundation
-            for building, deploying, and maintaining cloud-native applications
-            in an Azure environment.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="linux">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-linux"
-          >
-            <FontAwesomeIcon icon={faLinux} className="fa-4x" />
-          </span>
-          <h3>
-            <b>Linux</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I began my journey with Linux while learning C, starting with
-            Ubuntu. I quickly came to appreciate the control and flexibility of
-            the Linux environment, a skill I now leverage extensively in my{" "}
-            <b
-              className="skills-project-link"
-              onClick={handleScrollToExperience}
-            >
-              Undergraduate Research
-            </b>
-            . For the Red/Blue Team lab manuals, I use Kali Linux and Ubuntu VMs
-            to simulate, execute, and analyze attack scenarios. I enjoy
-            leveraging the command line for compiling C code, managing files,
-            and interacting with core security and development tools.
-            {/* I began my journey with Linux while learning C, starting with Ubuntu. 
-          I quickly came to appreciate the control and flexibility of the Linux environment. 
-          Currently, I am expanding my skills with Kali Linux for cybersecurity exploration and learning. 
-          I enjoy leveraging the command line for tasks such as compiling code, managing files, and interacting with various development tools. */}
-            {/* Using Linux has helped me better understand system-level operations and strengthened my overall workflow as a developer. */}
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="docker">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-docker"
-          >
-            <FontAwesomeIcon icon={faDocker} className="fa-4x" />
-          </span>
-          <h3>
-            <b>Docker</b>
-          </h3>
-          <p className="text-faded mb-0">
-            I've utilized Docker in both my full-stack{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              J.A.K.E. Weather
-            </b>{" "}
-            and{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Fitness Tracker
-            </b>{" "}
-            web applications, where I created separate Dockerfiles for the
-            different services to streamline development and deployment. I also
-            leveraged Docker for containerization in my{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Wildcat Credit Union
-            </b>{" "}
-            full-stack banking web application, enabling consistent environments
-            and simplified deployment. I’m planning to continue leveraging
-            Docker and containerization in future projects.
-          </p>
-        </div>
-        <div className="col-lg-4 col-md-6 mb-5" id="aws">
-          <span
-            className="service-icon rounded-circle mx-auto mb-3 text-secondary"
-            id="icon-aws"
-          >
-            <FontAwesomeIcon icon={faAws} className="fa-4x" />
-          </span>
-          <h3>
-            <b>AWS</b>
-          </h3>
-          <p className="text-faded mb-0">
-            My experience with AWS centers on leveraging its cloud services to
-            support my full-stack{" "}
-            <b className="skills-project-link" onClick={handleScroll}>
-              Fitness Tracker
-            </b>{" "}
-            web application. For this project, I used AWS RDS to host a MySQL
-            database, which served as the secure and scalable backend for all
-            user data. Looking ahead, I am keen to explore additional AWS
-            services and features to integrate into future projects.
-          </p>
-        </div>
+            <FontAwesomeIcon icon={cat.icon} className="tab-icon" />
+            <span>{cat.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Skills Grid */}
+      <div className="skills-grid">
+        {filteredSkills.map((skill) => (
+          <div key={skill.id} className="skill-card" id={skill.id}>
+            {/* Card Header: Icon + Name + Badge */}
+            <div className="skill-card-header">
+              <div className="service-icon" id={`icon-${skill.id}`}>
+                {renderIcon(skill)}
+              </div>
+              <div className="skill-title-block">
+                <span className="skill-cat-pill">{skill.categoryLabel}</span>
+                <h3 className="skill-name">{skill.name}</h3>
+                {skill.badge && (
+                  <span className="skill-badge">{skill.badge}</span>
+                )}
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="skill-desc">{skill.description}</p>
+
+            {/* Associated Projects Links */}
+            <div className="skill-projects-box">
+              <span className="skill-applied-label">Applied in:</span>
+              <div className="skill-project-chips">
+                {skill.projects.map((proj, pIdx) => (
+                  <span
+                    key={pIdx}
+                    className="skill-project-chip"
+                    onClick={(e) => scrollToTarget(e, proj.target)}
+                    title={`Scroll to ${proj.name}`}
+                  >
+                    {proj.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

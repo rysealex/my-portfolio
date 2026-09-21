@@ -4,7 +4,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 const TechPieChart = ({ data, onSliceClick }) => {
   // handle the slice click
   const handleSliceClick = (event, params) => {
-    const { dataIndex, seriesId } = params;
+    const { dataIndex } = params;
     const clickedData = data?.[dataIndex];
     console.log("Pie slice clicked: ", clickedData);
     if (onSliceClick && clickedData?.label) {
@@ -26,6 +26,39 @@ const TechPieChart = ({ data, onSliceClick }) => {
       onItemClick={handleSliceClick}
       height={220}
       width={220}
+      slotProps={{
+        legend: {
+          labelStyle: {
+            fill: "#ffffff",
+            fontSize: 12.5,
+            fontWeight: 500,
+          },
+        },
+      }}
+      sx={{
+        "& .MuiChartsLegend-root text": {
+          fill: "#ffffff !important",
+          color: "#ffffff !important",
+        },
+        "& .MuiChartsLegend-series text": {
+          fill: "#ffffff !important",
+          color: "#ffffff !important",
+        },
+        "& .MuiChartsLegend-label": {
+          fill: "#ffffff !important",
+          color: "#ffffff !important",
+        },
+        "& .MuiPieArcLabel-root": {
+          fill: "#ffffff !important",
+          color: "#ffffff !important",
+        },
+        "& text": {
+          fill: "#ffffff !important",
+        },
+        "& tspan": {
+          fill: "#ffffff !important",
+        },
+      }}
     />
   );
 };

@@ -1,61 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-  faGithub,
-  faReact,
-  faJava,
-  faPython,
-  faJsSquare,
-  faUbuntu,
-  faPhp,
-  faDocker,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faX,
-  faDatabase,
+  faXmark,
+  faPlay,
+  faArrowUpRightFromSquare,
   faCircleNotch,
   faAnglesDown,
+  faStar,
+  faLaptopCode,
+  faNetworkWired,
+  faBolt,
+  faLayerGroup,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import TechPieChart from "./techPieChart";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import WordCloudForm from "./wordCloudForm";
 
-// tech icon colors
-/*const techColors = {
-  Java: '#AF7219',
-  Python: '#3573A6',
-  Flask: '#3573A6',
-  JavaScript: '#F1E15A',
-  CSS: '#663398',
-  HTML: '#E44C27',
-  React: '#61DAFB',
-  Linux: '#F47421',
-  C: '#555555',
-  'C++': '#F34B7E',
-  CMake: '#DA3434',
-  SQL: '#E38C00',
-  PHP: '#4E5D94',
-  Docker: '#061D2F'
-};*/
-
-// project details
+// Project catalog with enriched metadata
 const projects = [
   {
+    id: "cs-study-cat",
     title: "CS Study Cat",
+    tag: "Senior Capstone & AI",
+    categories: ["featured", "fullstack", "tools"],
+    featured: true,
+    summary:
+      "Full-stack .NET 9 Blazor educational platform built with C# Web API, SQLite, and Google Gemini Flash LLM via Context-Augmented Generation (CAG). Directed team of 6 engineers.",
     images: [
-      {
-        src: "cs-study-cat-black.png",
-        desc: "",
-      },
-      {
-        src: "cs-study-cat-logo.png",
-        desc: "Description 1Description 1Description 1Description 1Description 1Description 1",
-      },
-      {
-        src: "cs-study-cat-logo.png",
-        desc: "Description 2",
-      },
+      { src: "cs-study-cat-black.png", desc: "CS Study Cat Dashboard" },
+      { src: "cs-study-cat-logo.png", desc: "Logo" },
     ],
     demo: "cs-study-cat-demo-hq.mp4",
     description: (
@@ -63,7 +37,7 @@ const projects = [
         This <b>.NET Blazor</b> educational platform, built with a{" "}
         <b>C# Web API</b> and <b>SQLite</b> via <b>Entity Framework Core</b>,
         was developed as a senior capstone following the <b>SDLC</b> and{" "}
-        <b>Agile Methodology</b> . As <b>Project Manager</b> and{" "}
+        <b>Agile Methodology</b>. As <b>Project Manager</b> and{" "}
         <b>Team Lead</b>, I directed a team of six through the full software
         lifecycle, managing all SRS/SDD documentation and overseeing the N-tier
         architecture for cross-platform deployment. Key features include
@@ -86,21 +60,14 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: "FirstPass - Real-Time SWE Job Discovery Engine",
-    images: [
-      {
-        src: "FirstPassLogo.png",
-        desc: "",
-      },
-      {
-        src: "FirstPassLogo.png",
-        desc: "Description 1",
-      },
-      {
-        src: "FirstPassLogo.png",
-        desc: "Description 2",
-      },
-    ],
+    id: "first-pass",
+    title: "FirstPass - SWE Job Discovery Engine",
+    tag: "Edge Engine & Automation",
+    categories: ["featured", "systems", "tools"],
+    featured: true,
+    summary:
+      "Autonomous edge scraper platform on Raspberry Pi 5 eliminating job application latency with Python, Flask, SQLite, multi-process scrapers, pygame audio alerts, and Tailwind CSS zero-inbox dashboard.",
+    images: [{ src: "FirstPassLogo.png", desc: "FirstPass Engine" }],
     demo: "FirstPassDemo.mp4",
     description: (
       <>
@@ -132,20 +99,16 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
+    id: "fitness-tracker",
     title: "Fitness Tracker",
+    tag: "Full-Stack & Cloud",
+    categories: ["featured", "fullstack"],
+    featured: true,
+    summary:
+      "Containerized React and Python Flask fitness platform with AWS RDS MySQL database, JWT authentication, and React Context API state management reducing redundant API fetches by 80%.",
     images: [
-      {
-        src: "fitness-tracker-logo.png",
-        desc: "",
-      },
-      {
-        src: "fitness-tracker-small.png",
-        desc: "Description 1Description 1Description 1Description 1Description 1Description 1",
-      },
-      {
-        src: "fitness-tracker-small.png",
-        desc: "Description 2",
-      },
+      { src: "fitness-tracker-logo.png", desc: "Fitness Tracker Logo" },
+      { src: "fitness-tracker-small.png", desc: "Dashboard Preview" },
     ],
     demo: "FitnessTrackerDemo.mp4",
     description: (
@@ -175,21 +138,14 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: "Tabi旅Time - Your Personal Nihon Travel Nexus & Dashboard",
-    images: [
-      {
-        src: "tabi-time.png",
-        desc: "",
-      },
-      {
-        src: "tabi-time.png",
-        desc: "Description 1Description 1Description 1Description 1Description 1Description 1",
-      },
-      {
-        src: "tabi-time.png",
-        desc: "Description 2",
-      },
-    ],
+    id: "tabi-time",
+    title: "Tabi旅Time - Personal Travel Nexus",
+    tag: "Distributed Systems & HCI",
+    categories: ["featured", "systems"],
+    featured: true,
+    summary:
+      "Edge-computing travel dashboard for Raspberry Pi 5 with Tailscale private mesh, Syncthing real-time P2P media pipeline, ExifTool metadata extraction, and ergonomic Leaflet.js journal.",
+    images: [{ src: "tabi-time.png", desc: "TabiTime Dashboard" }],
     demo: "",
     description: (
       <>
@@ -220,21 +176,14 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
+    id: "jake-weather",
     title: "J.A.K.E. Weather",
-    images: [
-      {
-        src: "jake-logo.png",
-        desc: "",
-      },
-      {
-        src: "jake-logo.png",
-        desc: "Description 1Description 1Description 1Description 1Description 1Description 1",
-      },
-      {
-        src: "jake-logo.png",
-        desc: "Description 2",
-      },
-    ],
+    tag: "Full-Stack & APIs",
+    categories: ["fullstack", "tools"],
+    featured: false,
+    summary:
+      "Interactive weather platform built with React, Python Flask, MySQL, and Docker. Integrates Google Maps JavaScript and Open-Meteo APIs for dynamic forecasts and meteorological overlays.",
+    images: [{ src: "jake-logo.png", desc: "J.A.K.E. Weather" }],
     demo: "jake-weather-demo.mp4",
     description: (
       <>
@@ -261,28 +210,21 @@ const projects = [
       { id: 2, label: "Flask", value: 19.4 },
       { id: 3, label: "CSS", value: 14.4 },
       { id: 4, label: "SQL", value: 1.0 },
-      { id: 4, label: "Docker", value: 0.4 },
+      { id: 5, label: "Docker", value: 0.4 },
     ],
     link: "https://github.com/rysealex/jake-weather",
     currDev: false,
     wordCloudInteractive: false,
   },
   {
+    id: "wildcat-credit-union",
     title: "Wildcat Credit Union",
-    images: [
-      {
-        src: "wcu-logo.png",
-        desc: "",
-      },
-      {
-        src: "wcu-logo.png",
-        desc: "Description 1",
-      },
-      {
-        src: "wcu-logo.png",
-        desc: "Description 2",
-      },
-    ],
+    tag: "Banking API & Docker",
+    categories: ["fullstack"],
+    featured: false,
+    summary:
+      "Full-stack banking web platform with React, Node.js, Express.js, and MySQL. Implemented password encryption, lockdown logic, fund transactions, and Google Maps ATM Locator.",
+    images: [{ src: "wcu-logo.png", desc: "Wildcat Credit Union" }],
     demo: "WCU-Demo-Vid.mp4",
     description: (
       <>
@@ -312,21 +254,14 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
+    id: "word-cloud-generator",
     title: "Word Cloud Generator",
-    images: [
-      {
-        src: "python.png",
-        desc: "",
-      },
-      {
-        src: "python.png",
-        desc: "Description 1",
-      },
-      {
-        src: "python.png",
-        desc: "Description 2",
-      },
-    ],
+    tag: "Data Visualization",
+    categories: ["tools"],
+    featured: false,
+    summary:
+      "Algorithmic text visualization tool using Python and matplotlib, querying Datamuse APIs with spiral geometry layouts and rtree collision bounds. Includes an interactive live generator.",
+    images: [{ src: "python.png", desc: "Word Cloud" }],
     demo: "WordCloudGenDemo.mp4",
     description: (
       <>
@@ -349,21 +284,14 @@ const projects = [
     wordCloudInteractive: true,
   },
   {
-    title: "LZM Landscaping LLC - Official Website",
-    images: [
-      {
-        src: "lzm-dark.png",
-        desc: "",
-      },
-      {
-        src: "lzm-dark.png",
-        desc: "Description 1",
-      },
-      {
-        src: "lzm-dark.png",
-        desc: "Description 2",
-      },
-    ],
+    id: "lzm-landscaping",
+    title: "LZM Landscaping LLC",
+    tag: "Client Production Site",
+    categories: ["fullstack"],
+    featured: false,
+    summary:
+      "High-performance digital storefront engineered with React, TypeScript, and EmailJS. Mobile-first accessible UI with automated GitHub Pages deployment for a local Washington business.",
+    images: [{ src: "lzm-dark.png", desc: "LZM Landscaping Site" }],
     demo: "",
     liveLink: "https://lzmlandscapingllc.com",
     description: (
@@ -374,11 +302,11 @@ const projects = [
         <b>React Router</b> for seamless client-side navigation and a
         mobile-first UI to ensure accessibility across all devices. I integrated{" "}
         <b>EmailJS</b> to handle secure, serverless form submissions and
-        leveraged <b>React Responsive Carousel</b> for a high-impact project
-        gallery. By managing the full lifecycle from requirements gathering to
-        automated deployment via <b>GitHub Pages</b>, I delivered a robust
-        digital storefront that helps the client connect with their community
-        through a modern, user-centric interface.
+        leveraged responsive layouts for a high-impact project gallery. By
+        managing the full lifecycle from requirements gathering to automated
+        deployment via <b>GitHub Pages</b>, I delivered a robust digital
+        storefront that helps the client connect with their community through a
+        modern, user-centric interface.
       </>
     ),
     tech: [
@@ -391,20 +319,16 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: "Chat App",
+    id: "chat-app",
+    title: "Real-Time Android Chat App",
+    tag: "Mobile Development",
+    categories: ["systems"],
+    featured: false,
+    summary:
+      "Native Android application developed with Java and XML, leveraging Firebase Authentication and Realtime Database for instantaneous peer messaging and scalable cloud synchronization.",
     images: [
-      {
-        src: "chat-app-logo2.0.png",
-        desc: "",
-      },
-      {
-        src: "chat-app.png",
-        desc: "Description 1",
-      },
-      {
-        src: "chat-app.png",
-        desc: "Description 2",
-      },
+      { src: "chat-app-logo2.0.png", desc: "Chat App Logo" },
+      { src: "chat-app.png", desc: "Chat UI" },
     ],
     demo: "chat-app-vid.mp4",
     description: (
@@ -423,20 +347,16 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: "Guitar Store",
+    id: "guitar-store",
+    title: "Guitar Store MVC",
+    tag: "MVC Architecture",
+    categories: ["fullstack"],
+    featured: false,
+    summary:
+      "E-commerce web application engineered with PHP, MySQL, JavaScript, and jQuery structured around Model-View-Controller design pattern for product catalog and inventory queries.",
     images: [
-      {
-        src: "guitar-store-logo2.0.png",
-        desc: "",
-      },
-      {
-        src: "guitar-store.png",
-        desc: "Description 1",
-      },
-      {
-        src: "guitar-store.png",
-        desc: "Description 2",
-      },
+      { src: "guitar-store-logo2.0.png", desc: "Guitar Store Logo" },
+      { src: "guitar-store.png", desc: "Store UI" },
     ],
     demo: "guitar-store-vid.mp4",
     description: (
@@ -461,20 +381,16 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
-    title: "Sets Game",
+    id: "sets-game",
+    title: "Sets Game Recreation",
+    tag: "C++ & Desktop GUI",
+    categories: ["systems"],
+    featured: false,
+    summary:
+      "Desktop recreation of the classic card game Set using C++, CMake, and Qt for event-driven GUI gameplay, memory pointer management, and combinatorial pattern algorithms.",
     images: [
-      {
-        src: "sets-game-canva-logo.png",
-        desc: "",
-      },
-      {
-        src: "sets-game.png",
-        desc: "Description 1",
-      },
-      {
-        src: "sets-game.png",
-        desc: "Description 2",
-      },
+      { src: "sets-game-canva-logo.png", desc: "Sets Game Logo" },
+      { src: "sets-game.png", desc: "Gameplay" },
     ],
     demo: "",
     description: (
@@ -499,22 +415,19 @@ const projects = [
     wordCloudInteractive: false,
   },
   {
+    id: "financial-data-app",
     title: "Financial Data Filtering App",
+    tag: "Financial Analytics",
+    categories: ["fullstack", "tools"],
+    featured: false,
+    summary:
+      "Client-side financial analysis application built with React and Tailwind CSS. Fetches live annual statements via REST APIs with dynamic sorting, filtering, and responsive metrics tables.",
     images: [
-      {
-        src: "fdfa-canva-logo.png",
-        desc: "",
-      },
-      {
-        src: "fdfa.png",
-        desc: "Description 1",
-      },
-      {
-        src: "fdfa.png",
-        desc: "Description 2",
-      },
+      { src: "fdfa-canva-logo.png", desc: "App Logo" },
+      { src: "fdfa.png", desc: "Table UI" },
     ],
     demo: "FDFA-vid.mp4",
+    liveLink: "https://rysealex.github.io/financial-data-filtering-app/",
     description: (
       <>
         Built a lightweight financial data filtering application using{" "}
@@ -545,39 +458,29 @@ const projects = [
   },
 ];
 
-// tech icons
-const techIcons = {
-  Java: <FontAwesomeIcon icon={faJava} />,
-  Python: <FontAwesomeIcon icon={faPython} />,
-  JavaScript: <FontAwesomeIcon icon={faJsSquare} />,
-  React: <FontAwesomeIcon icon={faReact} />,
-  Linux: <FontAwesomeIcon icon={faUbuntu} />,
-  C: <FontAwesomeIcon icon={""} />,
-  SQL: <FontAwesomeIcon icon={faDatabase} />,
-  PHP: <FontAwesomeIcon icon={faPhp} />,
-  Docker: <FontAwesomeIcon icon={faDocker} />,
-};
+const filterCategories = [
+  { id: "all", label: "All Works", icon: faLayerGroup },
+  { id: "featured", label: "Featured", icon: faStar },
+  { id: "fullstack", label: "Full-Stack Web", icon: faLaptopCode },
+  { id: "systems", label: "Systems & Edge", icon: faNetworkWired },
+  { id: "tools", label: "AI & Tools", icon: faBolt },
+];
 
 function Projects() {
-  // determines which project is selected
   const [selectedProject, setSelectedProject] = useState(null);
-
-  // project video demos
+  const [activeFilter, setActiveFilter] = useState("all");
   const videoRef = useRef(null);
-  // start the video demos on command
+  const wordCloudRef = useRef(null);
+
   const handlePlay = () => {
     if (videoRef.current) {
-      // scroll to the video demo
       videoRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      // delay the video demo play
       setTimeout(() => {
         videoRef.current.play();
       }, 500);
     }
   };
 
-  // scroll to the built in word cloud generator
-  const wordCloudRef = useRef(null);
   const handleWordCloudScroll = () => {
     if (wordCloudRef.current) {
       wordCloudRef.current.scrollIntoView({
@@ -587,262 +490,381 @@ function Projects() {
     }
   };
 
-  // disable the scroll when modal open
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-    return () => (document.body.style.overflow = "");
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [selectedProject]);
 
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((p) => p.categories.includes(activeFilter));
+
+  const handleSliceClick = (label) => {
+    console.log(`Skill clicked: ${label}`);
+    let targetId = label.toLowerCase();
+    switch (targetId) {
+      case "css":
+      case "html":
+        targetId = "javascript";
+        break;
+      case "c":
+      case "cmake":
+        targetId = "c++";
+        break;
+      case "flask":
+        targetId = "flask";
+        break;
+      case "react/typescript":
+        targetId = "react";
+        break;
+      case "c#":
+        targetId = "csharp";
+        break;
+      case "tailwind":
+      case "tailwindcss":
+        targetId = "tailwind";
+        break;
+      case "sqlite":
+        targetId = "sqlite";
+        break;
+      case "sql":
+        targetId = "sql";
+        break;
+      default:
+        break;
+    }
+    setSelectedProject(null);
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        const yOffset = -120;
+        const y =
+          el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+        const iconEl = document.getElementById(`icon-${targetId}`);
+        if (iconEl) {
+          setTimeout(() => {
+            iconEl.classList.add("skill-pop");
+            setTimeout(() => {
+              iconEl.classList.remove("skill-pop");
+            }, 700);
+          }, 600);
+        }
+      }
+    }, 200);
+  };
+
   return (
-    <div className="projects-container">
-      <div>
-        <h2>Projects</h2>
-        <p>
-          Here you can view some of the projects I have built and
-          developed—ranging from full-stack web applications to system-level
-          tools.
-          <br />
-          <br />
-          In my free time, I enjoy creating, problem-solving, and learning
-          through hands-on projects.
-          <br />
-          <br />
-          Every project is an opportunity to grow and push the limits of what I
-          can build!
+    <div className="projects-container" id="projects">
+      {/* Section Header */}
+      <div className="projects-header">
+        <span className="section-eyebrow">FEATURED PORTFOLIO</span>
+        <h2>Engineering Projects</h2>
+        <p className="section-subtitle">
+          Production web applications, low-power edge computing systems, AI
+          orchestration pipelines, and open-source developer tooling.
         </p>
       </div>
-      <div className="projects-showcase">
-        {projects.map((project, index) => {
-          return (
-            <div
-              key={index}
-              className="project-card"
-              style={{ backgroundImage: `url(${project.images[0].src})` }}
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="overlay">
-                {project.currDev && (
-                  <div className="curr-dev-circle">
-                    <FontAwesomeIcon icon={faCircleNotch} size="lg" />
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
+
+      {/* Filter Tabs */}
+      <div className="projects-filter-tabs">
+        {filterCategories.map((cat) => (
+          <button
+            key={cat.id}
+            className={`projects-tab-btn ${
+              activeFilter === cat.id ? "active" : ""
+            }`}
+            onClick={() => setActiveFilter(cat.id)}
+          >
+            <FontAwesomeIcon icon={cat.icon} className="tab-icon" />
+            <span>{cat.label}</span>
+          </button>
+        ))}
       </div>
-      {selectedProject && (
-        <div className="modal">
-          <div className="modal-container">
-            <h2>{selectedProject.title}</h2>
-            <div className="modal-content">
-              <div className="modal-description">
-                {selectedProject.currDev && (
-                  <div className="curr-dev-container">
-                    <h4>
-                      <b>Currently Developing</b>
-                    </h4>
+
+      {/* Projects Grid Showcase */}
+      <div className="projects-grid">
+        {filteredProjects.map((project) => (
+          <div
+            key={project.id}
+            className={`project-card ${
+              project.featured ? "featured-card" : ""
+            }`}
+            onClick={() => setSelectedProject(project)}
+          >
+            {/* Visual Media Header */}
+            <div className="project-card-media">
+              <div
+                className="project-media-bg"
+                style={{ backgroundImage: `url(${project.images[0].src})` }}
+              />
+              <div className="project-media-overlay" />
+
+              {/* Floating Badges */}
+              <div className="project-media-top">
+                <span className="project-tag-badge">{project.tag}</span>
+                {project.currDev && (
+                  <span className="project-status-badge dev">
                     <FontAwesomeIcon
                       icon={faCircleNotch}
-                      size="lg"
-                      className="spinner"
+                      className="status-spin"
                     />
+                    <span>Developing</span>
+                  </span>
+                )}
+                {project.liveLink && !project.currDev && (
+                  <span className="project-status-badge live">
+                    <span className="live-dot" />
+                    <span>Live</span>
+                  </span>
+                )}
+                {project.demo && !project.currDev && !project.liveLink && (
+                  <span className="project-status-badge demo">
+                    <FontAwesomeIcon icon={faPlay} className="mini-play" />
+                    <span>Demo</span>
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Card Content Body */}
+            <div className="project-card-body">
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-summary">{project.summary}</p>
+
+              {/* Tech Pills */}
+              <div className="project-tech-tags">
+                {project.tech.slice(0, 4).map((t, tIdx) => (
+                  <span key={tIdx} className="project-tech-tag">
+                    {t.label}
+                  </span>
+                ))}
+                {project.tech.length > 4 && (
+                  <span className="project-tech-tag more">
+                    +{project.tech.length - 4}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Card Footer Actions */}
+            <div className="project-card-footer">
+              <span className="project-inspect-link">
+                <span>View Architecture</span>
+                <FontAwesomeIcon icon={faEye} className="inspect-icon" />
+              </span>
+
+              <div className="project-card-actions">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-action-btn"
+                    title="View GitHub Repository"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                )}
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-action-btn live"
+                    title="Open Live Website"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Interactive Detail Modal */}
+      {selectedProject && (
+        <div className="modal" onClick={() => setSelectedProject(null)}>
+          <div
+            className="modal-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="modal-header-bar">
+              <div>
+                <span className="modal-eyebrow">
+                  {selectedProject.tag}
+                </span>
+                <h2 className="modal-title">{selectedProject.title}</h2>
+              </div>
+              <button
+                className="modal-close-btn"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Close modal"
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </div>
+
+            {/* Modal Content Bento */}
+            <div className="modal-content">
+              {/* Left Column: Narrative & Media */}
+              <div className="modal-description-col">
+                {selectedProject.currDev && (
+                  <div className="curr-dev-banner">
+                    <FontAwesomeIcon
+                      icon={faCircleNotch}
+                      className="spinner-icon"
+                    />
+                    <div>
+                      <strong>Active Development in Progress</strong>
+                      <p>
+                        System architecture, schemas, and core backend services
+                        are operational. Interactive live demo in progress.
+                      </p>
+                    </div>
                   </div>
                 )}
-                <p>{selectedProject.description}</p>
-              </div>
-              <div className="modal-tech">
-                <h3>Tech Stack</h3>
-                <TechPieChart
-                  data={selectedProject.tech}
-                  onSliceClick={(label) => {
-                    console.log(`Skill clicked: ${label}`);
-                    // get the current name of tech stack
-                    let targetId = label.toLowerCase();
-                    // check if targetId is a special case
-                    switch (targetId) {
-                      case "css":
-                        targetId = "javascript";
-                        break;
-                      case "html":
-                        targetId = "javascript";
-                        break;
-                      case "tailwindcss":
-                        targetId = "javascript";
-                        break;
-                      case "c":
-                        targetId = "c++";
-                        break;
-                      case "cmake":
-                        targetId = "c++";
-                        break;
-                      case "flask":
-                        targetId = "python";
-                        break;
-                      case "react/typescript":
-                        targetId = "react";
-                        break;
-                      case "c#":
-                        targetId = "csharp";
-                        break;
-                      // case 'node.js/express.js':
-                      //   targetId = 'javascript';
-                      //   break;
-                      default:
-                        break;
-                    }
-                    // close the modal
-                    setSelectedProject(null);
-                    // scroll to skill section
-                    setTimeout(() => {
-                      const el = document.getElementById(targetId);
-                      if (el) {
-                        const yOffset = -200;
-                        const y =
-                          el.getBoundingClientRect().top +
-                          window.pageYOffset +
-                          yOffset;
-                        window.scrollTo({ top: y, behavior: "smooth" });
-                        // get the icon element id
-                        const iconEl = document.getElementById(
-                          `icon-${targetId}`,
-                        );
-                        if (iconEl) {
-                          setTimeout(() => {
-                            // add skill pop
-                            iconEl.classList.add("skill-pop");
-                            // remove after 0.7 sec
-                            setTimeout(() => {
-                              iconEl.classList.remove("skill-pop");
-                            }, 700);
-                          }, 600);
-                        }
-                      }
-                    }, 200); // small delay
-                  }}
-                />
-                {/*<ul className='tech-legend'>
-                  {selectedProject.tech.map((item, i) => {
-                    const techName = item.label;
-                    
-                    // get the matching icon
-                    const icon = techIcons[item];
-                    console.log(targetId);
-                    return (
-                      <li 
-                        key={i}
-                        onClick={() => {
-                          setSelectedProject(null); // close the modal
-                          
-                        }}
+
+                <div className="modal-narrative">
+                  <p>{selectedProject.description}</p>
+                </div>
+
+                {/* Video Demo */}
+                {selectedProject.demo && (
+                  <div className="modal-demo-section">
+                    <div className="demo-header" onClick={handlePlay}>
+                      <FontAwesomeIcon icon={faPlay} className="demo-play-icon" />
+                      <span>Video Walkthrough Demo</span>
+                      <FontAwesomeIcon icon={faAnglesDown} />
+                    </div>
+                    <div className="video-wrapper">
+                      <video
+                        className="demo-video"
+                        ref={videoRef}
+                        width="100%"
+                        controls
+                        loop
                       >
-                        {icon && <span className='tech-icon'>{icon}</span>} <b>{techName}</b> - {item.value}%
-                      </li>
-                    );
-                  })}
-                </ul> */}
-              </div>
-            </div>
-            {/*<div className='screenshots-header'>
-              <h3>Screenshots</h3>
-            </div>*/}
-            <div className="demo-container">
-              {selectedProject.currDev && (
-                <div>
-                  <h3 id="demo-soon">Demo coming soon!</h3>
-                </div>
-              )}
-              {!selectedProject.currDev && selectedProject.demo && (
-                <div>
-                  <h3 onClick={handlePlay}>
-                    <FontAwesomeIcon icon={faAnglesDown} /> Demo{" "}
-                    <FontAwesomeIcon icon={faAnglesDown} />
-                  </h3>
-                  <div className="video-wrapper">
-                    <video
-                      className="demo-video"
-                      ref={videoRef}
-                      width="100%"
-                      controls
-                      loop
+                        <source src={selectedProject.demo} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                )}
+
+                {/* Interactive Word Cloud Form */}
+                {selectedProject.wordCloudInteractive && (
+                  <div className="modal-wordcloud-section">
+                    <div
+                      className="demo-header"
+                      onClick={handleWordCloudScroll}
                     >
-                      <source src={selectedProject.demo} type="video/mp4" />
-                    </video>
+                      <FontAwesomeIcon icon={faBolt} className="demo-play-icon" />
+                      <span>Interactive Live Generator</span>
+                      <FontAwesomeIcon icon={faAnglesDown} />
+                    </div>
+                    <div ref={wordCloudRef} className="wordcloud-wrapper">
+                      <WordCloudForm key="word-cloud-generator-form" />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Tech Breakdown */}
+              <div className="modal-tech-col">
+                <div className="modal-tech-card">
+                  <h3>Tech Stack Distribution</h3>
+                  <div className="chart-box">
+                    <TechPieChart
+                      data={selectedProject.tech}
+                      onSliceClick={handleSliceClick}
+                    />
+                  </div>
+                  <p className="chart-hint">
+                    💡 Click any chart slice to jump directly to verified skill
+                    metrics in Technical Arsenal.
+                  </p>
+
+                  <div className="tech-breakdown-list">
+                    {selectedProject.tech.map((item, i) => (
+                      <div
+                        key={i}
+                        className="tech-breakdown-item"
+                        onClick={() => handleSliceClick(item.label)}
+                        title={`Explore ${item.label} in skills`}
+                      >
+                        <span className="tech-name">{item.label}</span>
+                        <span className="tech-pct">{item.value}%</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              )}
-            </div>
-            {/*<div className='carousel-container'>
-              <Carousel 
-                selectedItem={0}
-                showThumbs={false}
-                showIndicators={false}
-                infiniteLoop 
-                autoPlay
-                interval={5000}
-                showStatus={false}
-                swipeable
-                dynamicHeight={false}
-              >
-                {selectedProject.images?.slice(1).map((img, idx) => (
-                  <div key={idx}>
-                    <img src={img.src} alt={`${selectedProject.title} screenshot ${idx + 2}`} />
-                    <p className='carousel-desc'>{img.desc}</p>
-                  </div>
-                ))}
-              </Carousel>
-            </div>*/}
-            {selectedProject.wordCloudInteractive && (
-              <div className="word-cloud-container">
-                <h3 id="try-self" onClick={handleWordCloudScroll}>
-                  <FontAwesomeIcon icon={faAnglesDown} /> Try Yourself{" "}
-                  <FontAwesomeIcon icon={faAnglesDown} />
-                </h3>
-                <div ref={wordCloudRef}>
-                  <WordCloudForm key="word-cloud-generator-form" />
+
+                {/* Project External Links Box */}
+                <div className="modal-links-card">
+                  <h4>Project Links</h4>
+                  {selectedProject.liveLink && (
+                    <a
+                      href={selectedProject.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-cta-btn live"
+                    >
+                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      <span>Open Live Website</span>
+                    </a>
+                  )}
+                  {selectedProject.link && (
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-cta-btn github"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                      <span>Explore Source Code</span>
+                    </a>
+                  )}
                 </div>
               </div>
-            )}
-            {selectedProject.liveLink && (
-              <div className="project-link">
-                <b>View Live: </b>
-                <a
-                  href={selectedProject.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {selectedProject.liveLink}
-                </a>
-              </div>
-            )}
-            <div className="project-link">
-              <b>View on GitHub: </b>
-              <a href={selectedProject.link} target="_blank" rel="noreferrer">
-                {selectedProject.link}
-              </a>
             </div>
-            <span className="close" onClick={() => setSelectedProject(null)}>
-              <FontAwesomeIcon icon={faX} />
-            </span>
           </div>
         </div>
       )}
-      <div className="visit-github">
-        <div>
-          <h3>To view all of my projects</h3>
-        </div>
-        <div className="github-button-container">
+
+      {/* GitHub Callout Banner */}
+      <div className="projects-github-cta">
+        <div className="github-cta-glow" />
+        <div className="github-cta-content">
+          <div className="github-cta-icon-box">
+            <FontAwesomeIcon icon={faGithub} />
+          </div>
+          <div className="github-cta-text">
+            <h3>Explore More Repositories</h3>
+            <p>
+              Dive deeper into 40+ public repositories, telemetry scripts,
+              open-source tools, and academic courseware on my GitHub.
+            </p>
+          </div>
           <a
             href="https://github.com/rysealex"
-            className="github-button"
+            className="github-cta-btn"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <b>Visit My GitHub</b> <FontAwesomeIcon icon={faGithub} size="lg" />
+            <span>Visit @rysealex on GitHub</span>
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </div>
       </div>

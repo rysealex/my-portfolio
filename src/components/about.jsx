@@ -1,136 +1,190 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGraduationCap,
+  faBriefcase,
+  faLaptopCode,
+  faLocationDot,
+  faEnvelope,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 function About() {
   return (
     <div className="about-container">
-      <div className="left-column">
-        <div className="profile-pic-container">
-          <img
-            src="profile_pic.png"
-            alt="Alex Ryse Profile Pic"
-            className="profile-pic"
-          />
-        </div>
-        <div className="socials" id="about-socials">
-          <h3>Connect with me!</h3>
-          <ul>
-            <li>
+      {/* Section Header */}
+      <div className="about-header">
+        <span className="section-eyebrow">ABOUT ME</span>
+        <h2>Designing Systems Where Power Meets Usability</h2>
+        <p className="section-subtitle">
+          Passionate about building scalable architectures and transforming
+          complex data into intuitive, human-centered interfaces.
+        </p>
+      </div>
+
+      <div className="about-layout">
+        {/* Left Column: Profile Card */}
+        <div className="about-profile-card">
+          <div className="about-pic-wrapper">
+            <img
+              src="profile_pic.png"
+              alt="Alex Ryse Profile"
+              className="about-profile-img"
+            />
+          </div>
+
+          <div className="about-profile-info">
+            <h3>Alex Ryse</h3>
+            <span className="profile-role">Software Engineer</span>
+
+            <div className="profile-meta">
+              <div className="meta-item">
+                <FontAwesomeIcon icon={faLocationDot} className="meta-icon" />
+                <span>Greater Seattle Area, WA</span>
+              </div>
+              <div className="meta-item">
+                <FontAwesomeIcon icon={faGraduationCap} className="meta-icon" />
+                <span>MS CSSE @ UW Bothell</span>
+              </div>
+              <div className="meta-item">
+                <FontAwesomeIcon icon={faBriefcase} className="meta-icon" />
+                <span>Prev. @ AT&T Labs</span>
+              </div>
+            </div>
+
+            <div className="about-social-links">
               <a
                 href="https://www.linkedin.com/in/alex-ryse/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
-            </li>
-            <li>
               <a
                 href="https://github.com/rysealex"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-            </li>
-          </ul>
+              <a href="mailto:aryse54@gmail.com" aria-label="Email Alex">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+              <a
+                href="Resume_Alex_Ryse.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Resume"
+                className="resume-quick-link"
+              >
+                <FontAwesomeIcon icon={faFilePdf} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Bento Narrative Grid */}
+        <div className="about-bento-grid">
+          {/* Card 1: Core Journey */}
+          <div className="bento-card bento-card-featured">
+            <div className="bento-icon-badge">
+              <FontAwesomeIcon icon={faLaptopCode} />
+            </div>
+            <div className="bento-content">
+              <h4>Engineering Journey</h4>
+              <p>
+                I am a recent Computer Science graduate from{" "}
+                <b>Central Washington University</b> with a minor in
+                mathematics, heading to the{" "}
+                <b>University of Washington Bothell</b> for my{" "}
+                <b>
+                  Master of Science in Computer Science & Software Engineering
+                  (MSCSSE)
+                </b>
+                . My passion lies at the intersection of robust backend
+                distributed systems and elegant, ergonomic interfaces.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Industry Impact */}
+          <div className="bento-card">
+            <div className="bento-icon-badge accent-blue">
+              <FontAwesomeIcon icon={faBriefcase} />
+            </div>
+            <div className="bento-content">
+              <h4>Enterprise & Industry Impact</h4>
+              <p>
+                As a <b>Software Engineer Intern at AT&T Labs</b> (Redmond CTO
+                organization), I automated 5G Radio Access Network (RAN) test
+                telemetry—architecting an ETL pipeline that reduced processing
+                time by <b>over 90%</b>. Previously at <b>Nomms</b>, I
+                engineered full-stack features, optimized latency, and performed
+                database migrations.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Research & Mentorship */}
+          <div className="bento-card">
+            <div className="bento-icon-badge accent-purple">
+              <FontAwesomeIcon icon={faShieldHalved} />
+            </div>
+            <div className="bento-content">
+              <h4>Research & Mentorship</h4>
+              <p>
+                At CWU, I served as an <b>Undergraduate Research Assistant</b>,
+                authoring Red/Blue Team cybersecurity lab manuals mapped to the{" "}
+                <b>MITRE ATT&CK</b> framework on an ESXi virtualized range.
+                Dedicated to mentorship, I also served as a{" "}
+                <b>Teaching Assistant</b> for Advanced Data Structures and
+                Database Management Systems (DBMS).
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: Graduate Specialization - HCI */}
+          <div className="bento-card bento-card-wide">
+            <div className="bento-icon-badge accent-cyan">
+              <FontAwesomeIcon icon={faGraduationCap} />
+            </div>
+            <div className="bento-content">
+              <h4>Graduate Focus: Human-Computer Interaction (HCI)</h4>
+              <p>
+                Beginning in September 2026 at UW Bothell, my graduate research
+                focuses on <b>Human-Computer Interaction (HCI)</b>. My goal is
+                to apply cognitive ergonomics and data visualization principles
+                to complex distributed backends—ensuring powerful systems remain
+                intuitive, accessible, and frictionless for the people who rely
+                on them.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 5: Highlight Metric Badges */}
+          {/* <div className="bento-metrics-row">
+            <div className="metric-pill">
+              <span className="metric-num">9×</span>
+              <span className="metric-label">Dean’s List Honors</span>
+            </div>
+            <div className="metric-pill">
+              <span className="metric-num">2×</span>
+              <span className="metric-label">SWE Internships</span>
+            </div>
+            <div className="metric-pill">
+              <span className="metric-num">&gt;90%</span>
+              <span className="metric-label">ETL Speedup</span>
+            </div>
+            <div className="metric-pill">
+              <span className="metric-num">HCI</span>
+              <span className="metric-label">MSCSSE Focus</span>
+            </div>
+          </div> */}
         </div>
       </div>
-      <div className="intro-container">
-        <h2>Hi, I'm Alex Ryse!</h2>
-        <p>
-          I am a recent Computer Science graduate from Central Washington
-          University. During my time at CWU, I served as an{" "}
-          <b>Undergraduate Research Assistant</b>, partnering with faculty to
-          design and implement Red/Blue Team lab manuals and validating attack
-          scenarios within a virtualized ESXi environment. My academic journey
-          was defined by a commitment to technical excellence—earning nine
-          Dean’s List honors—and a passion for mentorship, serving as a{" "}
-          <b>Teacher Assistant</b> for Advanced Data Structures and Database
-          Management Systems (DBMS).
-        </p>
-        <p>
-          This summer, I am working in the industry as a{" "}
-          <b>Software Engineer Intern</b> at <b>AT&T Labs</b>. Based at the
-          Willows Technology Center in Redmond, I am part of the CTO
-          organization, focusing on large-scale network analytics and
-          automation. In this role, I implement Radio Access Network (RAN)
-          hardware validation using Python automation scripts and GUI tools.
-        </p>
-        <p>
-          Looking ahead, I am committed to the{" "}
-          <b>University of Washington Bothell</b>, where I will begin my{" "}
-          <b>
-            Master of Science in Computer Science & Software Engineering
-            (MSCSSE)
-          </b>{" "}
-          in September 2026. During my graduate studies, I plan to specialize in{" "}
-          <b>Human-Computer Interaction (HCI)</b>. My goal is to leverage HCI
-          principles to design more intuitive, data-driven interfaces for
-          complex systems, ensuring that even the most powerful backend
-          infrastructures remain accessible and effective for the people who
-          rely on them.
-        </p>
-        {/* <p>
-          I'm a fourth-year Computer Science student at Central Washington University, set to graduate in the spring of 2026. 
-          My journey into coding began four years ago, driven by a curiosity about how to build technology that solves real-world problems. 
-          What started as curiosity quickly blossomed into a passion for <b>full-stack development</b>, and I love the challenge of bringing an entire application to life, from the user interface all the way to the database.
-        </p>
-        <p>
-          I've spent the past few years building my skills across the stack through personal and academic projects. 
-          I've built projects using popular frameworks and libraries like <b>React</b> for dynamic front-ends and <b>Node.js/Express.js</b> for powerful back-ends, all while managing data with <b>MySQL</b> and <b>AWS RDS</b>. 
-          This hands-on experience has given me a deep appreciation for the entire development lifecycle, and I'm always looking for ways to build more efficient and scalable solutions.
-        </p>
-        <p>
-          I'm excited to bring this passion and experience to a full-time software engineering role after graduation, where I can collaborate with a team to build impactful and innovative technology.
-          I am particularly eager to join a culture where I can continue to learn and grow alongside experienced professionals.
-        </p> */}
-        {/* <p>
-          I'm currently a fourth-year student at Central Washington University, pursuing a Bachelor's degree in Computer Science with a minor in mathematics, and I'm on track to graduate in the spring of 2026. 
-          My journey into coding began four years ago with a fascination for how technology can be built from the ground up to solve real-world problems—and I’ve been hooked ever since.
-        </p>
-        <p>
-          My passion for coding and problem-solving has grown from a simple curiosity into a foundation for my work. 
-          I thrive on both the creative process of building new things and the logical challenge of optimizing solutions. 
-          I am eager to apply this passion to a professional setting. 
-          After graduation, I'm excited to transition into a full-time software engineering role where I can continue to learn and contribute to a team building innovative technology.
-        </p> */}
-        {/* <p>
-          Currently, I work as a Mathematics Tutor and Teacher Assistant at my university, where I support students in understanding core concepts and building confidence in their abilities.
-          These experiences have deepened my appreciation for both collaboration and communication within technical fields.
-        </p> */}
-        {/* <p>
-          After graduation, I plan to pursue a Master's degree in Computer Science to further specialize my skills and contribute to innovative projects in the tech industry.
-          I'm driven by a desire to continuously grow, learn, and create meaningful technologies that make a difference.
-        </p> */}
-      </div>
-      {/* <div className='exp-container'>
-        <h3>My Experience</h3>
-        <ul>
-          <li className='exp-item'>
-            <div className='icon-text-container'>
-              <FontAwesomeIcon icon={faSubscript} className='exp-icon'/>
-              <p><b>Mathematics Tutor, Central Washington University</b></p>
-            </div>    
-            <p>
-            Tutored university students and peers in multiple advanced mathematics courses.
-            Enhanced students’ conceptual understanding and challenged students to find solutions on their own.
-            Helped me develop strong analytical, problem-solving, and communication skills.
-            </p>
-          </li>
-          <li className='exp-item'>
-            <div className='icon-text-container'>
-              <FontAwesomeIcon icon={faCircleNodes} className='exp-icon'/>
-              <p><b>Teacher Assistant (Adv Data Str & File Proc), Central Washington University</b></p>
-            </div>
-            <p> 
-              Mentored students in applying advanced data structure concepts and file processing techniques under the
-              supervision of the course instructor. Graded assignments, diagnosed errors in student code, and provided actionable feedback to help debug
-              and improve code quality.
-            </p>
-          </li>
-        </ul>
-      </div> */}
     </div>
   );
 }

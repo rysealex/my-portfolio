@@ -1,81 +1,62 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
-
 function Footer() {
-  // get the current year
   const currYear = new Date().getFullYear();
 
   return (
-    <div className="footer-container">
-      <div className="footer-row">
-        <div className="socials" id="footer-socials">
-          <ul>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/alex-ryse/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/rysealex"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-          </ul>
+    <footer className="footer-container">
+      <div className="footer-inner">
+        {/* Middle Tier: Social Pills */}
+        <div className="footer-social-tier">
+          <div className="footer-social-links">
+            <a
+              href="https://www.linkedin.com/in/alex-ryse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-pill"
+            >
+              <FontAwesomeIcon icon={faLinkedinIn} />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/rysealex"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-pill"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="Resume_Alex_Ryse.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-pill resume"
+            >
+              <FontAwesomeIcon icon={faFilePdf} />
+              <span>Resume PDF</span>
+            </a>
+          </div>
+
+          <div className="footer-updated">
+            <span className="update-dot" />
+            <span>Last Updated: September 2026</span>
+          </div>
         </div>
-        <div className="footer-nav-container">
-          <ul>
-            <li>
-              <a href="#about">
-                <b>About</b>
-              </a>
-            </li>
-            <li>
-              <a href="#experience">
-                <b>Experience</b>
-              </a>
-            </li>
-            <li>
-              <a href="#skills">
-                <b>Skills</b>
-              </a>
-            </li>
-            <li>
-              <a href="#projects">
-                <b>Projects</b>
-              </a>
-            </li>
-            <li>
-              <a href="#contact">
-                <b>Contact</b>
-              </a>
-            </li>
-            <li>
-              <a
-                href="Resume_Alex_Ryse.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faFilePdf} /> <b>RESUME</b>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="copyright-container">
-          <span id="last-upd">Last Updated: September 2026</span>
-          <br />
-          <span>Copyright © Alex Ryse {currYear}</span>
+
+        {/* Bottom Tier: Copyright & Colophon */}
+        <div className="footer-bottom-tier">
+          <p className="footer-colophon">
+            Designed & Engineered by Alex Ryse with React.
+          </p>
+          <p className="footer-copyright">
+            © {currYear} Alex Ryse. All rights reserved.
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
