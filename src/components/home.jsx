@@ -30,10 +30,10 @@ function Home() {
       }}
     >
       {/* Live Status Pill */}
-      <div className="status-badge">
+      {/* <div className="status-badge">
         <span className="status-dot"></span>
         <span>MS CSSE @ UW Bothell &bull; Prev. @ AT&T Labs</span>
-      </div>
+      </div> */}
 
       {/* Avatar */}
       <div className="pic-container">

@@ -45,11 +45,11 @@ function About() {
               </div>
               <div className="meta-item">
                 <FontAwesomeIcon icon={faGraduationCap} className="meta-icon" />
-                <span>MS CSSE @ UW Bothell</span>
+                <span>MS CSSE @ UW</span>
               </div>
               <div className="meta-item">
                 <FontAwesomeIcon icon={faBriefcase} className="meta-icon" />
-                <span>Prev. @ AT&T Labs</span>
+                <span>Previously @ AT&T Labs</span>
               </div>
             </div>
 
@@ -98,8 +98,8 @@ function About() {
               <p>
                 I am a recent Computer Science graduate from{" "}
                 <b>Central Washington University</b> with a minor in
-                mathematics, heading to the{" "}
-                <b>University of Washington Bothell</b> for my{" "}
+                mathematics, heading to the <b>University of Washington </b> for
+                my{" "}
                 <b>
                   Master of Science in Computer Science & Software Engineering
                   (MSCSSE)
@@ -154,10 +154,10 @@ function About() {
             <div className="bento-content">
               <h4>Graduate Focus: Human-Computer Interaction (HCI)</h4>
               <p>
-                Beginning in September 2026 at UW Bothell, my graduate research
-                focuses on <b>Human-Computer Interaction (HCI)</b>. My goal is
-                to apply cognitive ergonomics and data visualization principles
-                to complex distributed backends—ensuring powerful systems remain
+                Beginning in September 2026 at UW, my graduate research focuses
+                on <b>Human-Computer Interaction (HCI)</b>. My goal is to apply
+                cognitive ergonomics and data visualization principles to
+                complex distributed backends—ensuring powerful systems remain
                 intuitive, accessible, and frictionless for the people who rely
                 on them.
               </p>

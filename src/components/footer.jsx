@@ -42,7 +42,7 @@ function Footer() {
 
           <div className="footer-updated">
             <span className="update-dot" />
-            <span>Last Updated: September 2026</span>
+            <span>Last Updated: October 2026</span>
           </div>
         </div>
 
