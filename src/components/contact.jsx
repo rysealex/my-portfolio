@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -31,6 +32,8 @@ function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const [copiedId, setCopiedId] = useState("");
 
+  const captchaRef = useRef(null);
+
   const handleCopyEmail = (e, emailAddress, id) => {
     e.preventDefault();
     navigator.clipboard.writeText(emailAddress);
@@ -41,19 +44,21 @@ function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const token = captchaRef.current?.getValue();
     const errors = [];
     if (!fname.trim()) errors.push("Please enter your first name");
     if (!lname.trim()) errors.push("Please enter your last name");
     if (!email.trim() || !email.includes("@"))
       errors.push("Please enter a valid email address");
     if (!message.trim()) errors.push("Please enter your message");
+    if (!token) errors.push("Please complete the CAPTCHA verification");
 
     if (errors.length > 0) {
       setErrorMessages(errors);
       if (!fname.trim()) fnameRef.current?.focus();
       else if (!lname.trim()) lnameRef.current?.focus();
       else if (!email.trim()) emailRef.current?.focus();
-      else messageRef.current?.focus();
+      else if (!message.trim()) messageRef.current?.focus();
       return;
     }
 
@@ -65,6 +70,7 @@ function Contact() {
       lname,
       email,
       message,
+      "g-recaptcha-response": token,
     };
 
     emailjs
@@ -75,10 +81,12 @@ function Contact() {
         setLname("");
         setEmail("");
         setMessage("");
+        captchaRef.current?.reset();
         setTimeout(() => setMessageState(""), 6000);
       })
       .catch(() => {
         setMessageState("error");
+        captchaRef.current?.reset();
         setTimeout(() => setMessageState(""), 6000);
       })
       .finally(() => {
@@ -286,6 +294,23 @@ function Contact() {
                 value={message}
                 ref={messageRef}
                 required
+              />
+            </div>
+
+            {/* Google reCAPTCHA v2 */}
+            <div className="form-field captcha-wrapper">
+              <ReCAPTCHA
+                ref={captchaRef}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                theme="dark"
+                onChange={() => {
+                  setErrorMessages((prev) =>
+                    prev.filter(
+                      (msg) =>
+                        msg !== "Please complete the CAPTCHA verification",
+                    ),
+                  );
+                }}
               />
             </div>
 
